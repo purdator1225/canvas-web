@@ -2,47 +2,50 @@ import React from "react";
 import { national, roboto } from "../../utils/font";
 import Image from "next/image";
 import ValuesGrid from "@/components/ValuesGrid";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { UseTranslation, useTranslation } from "next-i18next";
+
+import ValuesGridMobile from "@/components/ValuesGridMobile";
 
 let storyValues = [
   {
     logo: "/images/icons/values-icons/say-yes.png",
-    valueText: "We say yes and exhaust all possibilities for our clients",
+    valueText: "story_values_1",
     index: 1,
   },
   {
-    logo: "/images/icons/values-icons/say-yes.png",
-    valueText: "We are always available to our clients",
+    logo: "/images/icons/values-icons/available-icon.png",
+    valueText: "story_values_2",
     index: 2,
   },
   {
-    logo: "/images/icons/values-icons/say-yes.png",
-    valueText: "We learn something new everyday",
+    logo: "/images/icons/values-icons/learn-icon.png",
+    valueText: "story_values_3",
     index: 3,
   },
   {
-    logo: "/images/icons/values-icons/say-yes.png",
-    valueText: "We encourage healthy social life that expands our network",
+    logo: "/images/icons/values-icons/social-icon.png",
+    valueText: "story_values_4",
     index: 4,
   },
   {
-    logo: "/images/icons/values-icons/say-yes.png",
-    valueText:
-      "We commit to a active lifestyle so that we are able to do our best",
+    logo: "/images/icons/values-icons/commit-icon.png",
+    valueText: "story_values_5",
     index: 5,
   },
   {
-    logo: "/images/icons/values-icons/say-yes.png",
-    valueText: "We believe that every individual has their strength",
+    logo: "/images/icons/values-icons/strengths-icon.png",
+    valueText: "story_values_6",
     index: 6,
   },
   {
-    logo: "/images/icons/values-icons/say-yes.png",
-    valueText: "We own our task from start to finish",
+    logo: "/images/icons/values-icons/tasks-icon.png",
+    valueText: "story_values_7",
     index: 7,
   },
   {
-    logo: "/images/icons/values-icons/say-yes.png",
-    valueText: "We take care not to harm the environment",
+    logo: "/images/icons/values-icons/green-icon.png",
+    valueText: "story_values_8",
     index: 8,
   },
 ];
@@ -59,47 +62,57 @@ let teamImageList = [
   { url: "/images/story-values-pic3.png", caption: "This is the team name" },
 ];
 
-function Story() {
-  return (
-    <div>
-      <div className="bg-white h-screen w-screen flex justify-end relative ">
-        <div className="max-w-[800px] absolute top-[20%]">
-          <h2
-            className={`${national.variable} font-national text-[32px] font-bold tracking-wide text-canvasblue`}
-          >
-            Our Story
-          </h2>
-          <h1
-            className={`${national.variable} uppercase font-national text-[60px] font-bold tracking-wide text-canvasblue`}
-          >
-            founded in 2019, We set out to Reach new heights with our clients
-          </h1>
-        </div>
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["story", "common"])),
+    },
+  };
+}
 
-        <div className="absolute bottom-[-200px]">
-          <div className="story-img-wrapper relative w-[850px] h-[550px] ">
-            <Image
-              fill
-              style={{ objectFit: "cover" }}
-              src={"/images/story-hero.png"}
-            />
+function Story(props) {
+  const { t } = useTranslation();
+
+  return (
+    <div className="bg-white flex flex-col">
+      <div id='top-wrapper' className=" self-end relative max-w-[850px]">
+        <div className="flex w-full flex-col bg-white px-[30px]">
+          <div className="mb-10 mt-24 flex flex-col gap-4">
+            <h2
+              className={`${national.variable} font-national text-[26px] font-medium uppercase leading-[28px] tracking-wide  text-canvasblue sm:text-[32px] sm:font-bold`}
+            >
+              {t("story:story_hero_h2")}
+            </h2>
+            <h1
+              className={`${national.variable} font-national text-[38px] font-medium uppercase leading-[42px] tracking-wide text-canvasblue sm:text-[60px] sm:font-bold sm:leading-[60px]`}
+            >
+              {t("story:story_hero_h1")}
+            </h1>
           </div>
         </div>
+
+        <div
+          data-lag="0.8"
+          className="story-img-wrapper relative aspect-[16/9] w-full"
+        >
+          <Image
+            fill
+            style={{ objectFit: "cover" }}
+            src={"/images/story-hero.png"}
+          />
+        </div>
       </div>
-      <div className="story-para flex h-screen w-screen bg-cover bg-[url('/images/story-container-bg.png')]">
-        <div className="max-w-screen-xl min-h-[50%] m-auto flex justify-between">
+
+      <div
+        id="our-journey"
+        className="story-para flex w-screen bg-[url('/images/story-container-bg.png')] bg-cover"
+      >
+        <div className="flex min-h-[50%] m-auto flex-col gap-8 px-[30px] py-[78px] w-[90vw] max-w-[1280px]">
           <div className="max-w-[507px]">
             <p
               className={`${roboto.variable} font-robo text-[18px] leading-[24px] text-white`}
             >
-              Canvas Global was founded on the constant pursuit of pushing what
-              is possible. We begin our journey with a small but experienced
-              team, each member with at least 10 years within the logistics
-              industry. Our experience in logistics tells us that every business
-              faces different challenges, informing our decision to be more
-              collaborative, to be more customer centric, and more willing to
-              take risks. Today, we pride ourselves to be the explorers of
-              solutions and a bridge of connections for our customers.
+              {t("story:story_para_1")}
             </p>
           </div>
 
@@ -107,22 +120,27 @@ function Story() {
             <p
               className={`${roboto.variable} font-robo text-[18px] leading-[24px] text-white`}
             >
-              We are constantly building new strategic partnerships, new
-              relationships to expand what is possible for our customers.
-              <br />
-              <br />
-              Our team have helped customers find more cost effective routes,
-              new locations to expand, and even new ventures to start. We love
-              every moment spent exploring and making things happen, we are
-              happy to welcome more challenges.
+              {t("story:story_para_2")}
             </p>
           </div>
         </div>
       </div>
 
       <div className="story-values-section w-screen bg-white">
-        <div className="flex justify-between py-[60px] h-[300px] ">
-          <div className="flex gap-5 items-start self-end">
+        <div className="m-auto flex flex-col justify-between gap-4 px-[30px] py-[60px] xl:w-[1280px]">
+          <h1
+            className={`${national.variable} headings leading:text-[32px] w-[300px] font-national text-[26px] font-medium uppercase leading-[28px] tracking-wide text-canvasblue lg:text-[32px] lg:font-bold`}
+          >
+            {t("story:story_values_h1")}
+          </h1>
+
+          <h1
+            className={`${national.variable} headings w-[300px] font-national text-[38px] font-medium uppercase leading-[42px] tracking-wide text-canvasblue lg:text-[60px] lg:font-bold lg:leading-[60px]`}
+          >
+            {t("story:story_values_h2")}
+          </h1>
+
+          <div className="flex items-start gap-5 self-end">
             <Image
               width={80}
               height={80}
@@ -144,40 +162,42 @@ function Story() {
               src="/images/sustainability/sustainability4.png"
             />
           </div>
-          <h1
-            className={`${national.variable} w-[300px] uppercase leading-snug font-national text-[60px] font-bold tracking-wide text-canvasblue`}
-          >
-            Our values make us strong
-          </h1>
         </div>
-        <div className="max-w-[90vw] m-auto py-[150px]">
+        <div className="m-auto xl:w-[1280px]">
+          <ValuesGridMobile
+            valuesList={storyValues}
+            namespace={"story"}
+            bg={"canvasblue"}
+          />
+
           <ValuesGrid
             bg={"canvasblue"}
+            namespace={"story"}
             valuesList={storyValues}
             imageList={storyImageList}
           />
         </div>
       </div>
 
-      <div className="team-culture bg-white py-20">
-        <div className="max-w-screen-xl m-auto">
-          <div className="py-10">
+      <div id="our-team" className="team-culture bg-white py-20">
+        <div className="m-auto max-w-screen-xl">
+          <div className="px-[30px] py-10">
             <h1
-              className={`${national.variable} font-national text-[32px] font-bold text-canvasblue uppercase`}
+              className={`${national.variable} font-national text-[26px] font-medium uppercase leading-[28px] text-canvasblue lg:text-[32px] lg:font-bold`}
             >
-              a Day in our life
+              {t("story:team_h1")}
             </h1>
 
             <h2
-              className={`${national.variable} max-w-[500px] font-national uppercase text-[48px] leading-[58px] font-bold text-canvasblue`}
+              className={`${national.variable} max-w-[500px] font-national text-[38px] font-medium uppercase leading-[42px] tracking-wide text-canvasblue lg:text-[48px] lg:font-bold lg:leading-[58px]`}
             >
-              TEAM cULTURE of canvas global LOgistics
+              {t("story:team_h2")}
             </h2>
           </div>
-          <div className="team-image-wrapper flex justify-between">
+          <div className="team-image-wrapper ml-[30px] flex gap-4 overflow-x-scroll whitespace-nowrap">
             {teamImageList.map((teamImage, index) => (
-              <div key={index} className="w-[30%] flex flex-col gap-3">
-                <div className="relative h-[500px]" key={index}>
+              <div key={index} className="flex flex-col gap-3">
+                <div className="relative h-[500px] w-[260px]" key={index}>
                   <Image
                     fill
                     style={{ objectFit: "cover" }}
@@ -186,7 +206,7 @@ function Story() {
                 </div>
 
                 <p
-                  className={`${roboto.variable} font-robo self-end text-canvasblue text-[16px] leading-[20px]`}
+                  className={`${roboto.variable} self-end font-robo text-[16px] leading-[20px] text-canvasblue`}
                 >
                   {teamImage.caption}
                 </p>

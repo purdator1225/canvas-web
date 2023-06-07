@@ -3,7 +3,7 @@ import React from "react";
 function MapDots({id, position}) {
   return (
     <svg
-    className={`absolute ${position} map-dots opacity-0`}
+    className={`absolute ${position} map-dots opacity-0 `}
       width="28"
       height="28"
       viewBox="0 0 28 28"

@@ -2,30 +2,53 @@ import Image from "next/image";
 import React from "react";
 import { national, roboto } from "../../utils/font";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-function Footer() {
+function Footer({ t }) {
+  let router = useRouter();
+
+  const route = router.asPath;
+
+  console.log(route);
+
   return (
-    <div className="py-[80px] px-10 bg-canvasblue w-screen">
+    <div className="w-screen bg-canvasblue px-10 py-[80px]">
       <div
-        className={`${roboto.variable} font-robo footer-main text-white flex justify-between`}
+        className={`${roboto.variable} footer-main flex justify-between font-robo text-white`}
       >
         <div className="left-side flex flex-col gap-5">
           <div>
             <Image width={230} height={60} src={"/images/icons/logo.png"} />
           </div>
 
-          <div>
-            <h3 className="text-[18px] leading-6 uppercase">Address</h3>
-            <p className="text-[14px] leading-6">
-              18 Unit 34-C, Menara Gurney, Persiaran Gurney 10250 Penang
-              Malaysia
-            </p>
-          </div>
+          <Link
+            rel="noopener noreferrer"
+            href={
+              "https://www.google.com/maps/place/Canvas+Global+Logistics+Sdn.+Bhd.+%E5%8D%8E%E4%B8%B0%E8%BF%9C%E6%B4%8B%E7%89%A9%E6%B5%81/@5.4336213,100.3131806,16.24z/data=!4m6!3m5!1s0x304ac33c63123219:0xdeb7046d5afd3d52!8m2!3d5.4294559!4d100.3193405!16s%2Fg%2F11sk2jpqxf?entry=ttu"
+            }
+          >
+            <div>
+              <h3 className="text-[18px] uppercase leading-6">
+                {t("common:footer_address")}
+              </h3>
+              <p className="text-[14px] leading-6">
+                18 Unit 34-C, Menara Gurney, Persiaran Gurney 10250 Penang
+                Malaysia
+              </p>
+            </div>
+          </Link>
 
           <div>
-            <h3 className="text-[18px] leading-6 uppercase">Contact</h3>
-            <p className="text-[14px] leading-6"> +604 2870130</p>
-            <p>cglbiz@canvasglobal-log.com</p>
+            <h3 className="text-[18px] uppercase leading-6">
+              {t("common:footer_contact")}
+            </h3>
+
+            <Link rel="noopener noreferrer" href="tel:+604 2870130">
+              <p className="text-[14px] leading-6"> +604 2870130</p>
+            </Link>
+            <Link rel="noopener noreferrer" href="mailto:abc@example.com">
+              <p>cglbiz@canvasglobal-log.com</p>
+            </Link>
           </div>
 
           <div className="flex gap-3">
@@ -34,9 +57,11 @@ function Footer() {
             <Image width={18} height={18} src={"/images/icons/twitter.svg"} />
           </div>
         </div>
-        <div className="right-side flex gap-20">
+        <div className="right-side hidden gap-20 sm:flex">
           <div className="flex flex-col gap-5">
-            <h2 className="text-[18px] leading-6 uppercase">Our Services</h2>
+            <h2 className="text-[18px] uppercase leading-6">
+              {t("common:footer_services")}
+            </h2>
 
             <div>
               <Link href={"/"}>
@@ -55,29 +80,48 @@ function Footer() {
           </div>
 
           <div className="flex flex-col gap-5">
-            <h2 className="text-[18px] leading-6 uppercase">Our Partners</h2>
+            <h2 className="text-[18px] uppercase leading-6">
+              {t("common:footer_partnership")}
+            </h2>
 
             <div>
-              <Link href={"/"}>
+              <Link
+                href={`${
+                  router.asPath === "/partnerships"
+                    ? "#asia-log"
+                    : "partnerships/#asia-log"
+                }`}
+              >
                 <p>Asia Log</p>
               </Link>
-              <Link href={"/"}>
+              <Link href={"/partnerships/#pss-depot"}>
                 <p>PSS Depot</p>
               </Link>
             </div>
           </div>
 
           <div className="flex flex-col gap-5">
-            <h2 className="text-[18px] leading-6 uppercase">OUR STORY</h2>
+            <h2 className="text-[18px] uppercase leading-6">
+              {t("common:footer_story")}
+            </h2>
 
             <div>
-              <Link href={"/"}>
-                <p>Our Mission</p>
-              </Link>
-              <Link href={"/"}>
+              <Link
+                href={`${
+                  route.asPath !== "/story.js"
+                    ? "/story/#our-journey"
+                    : "#our-journey"
+                }`}
+              >
                 <p>Our Journey</p>
               </Link>
-              <Link href={"/"}>
+              <Link
+                href={`${
+                  route.asPath !== "/story.js"
+                    ? "/story/#our-team"
+                    : "#our-team"
+                }`}
+              >
                 <p>Our Team</p>
               </Link>
             </div>
@@ -85,11 +129,13 @@ function Footer() {
         </div>
       </div>
 
-      <div className="footer-bottom border-t border-t-solid border-t-[1px] flex justify-between py-10 mt-10">
-        <div className="text-white">©Canvas Global Logistics 2023, All right reserved.</div>
+      <div className="footer-bottom border-t-solid mt-10 flex justify-between border-t-[1px] py-10">
+        <div className="text-white">{t("common:footer_disclaimer")}</div>
 
-        <div className="text-white flex gap-5"><Link href={"/"}>Privacy Policy</Link>
-        <Link href={"/"}>Terms and Conditions</Link></div>
+        <div className="flex gap-5 text-white">
+          <Link href={"/"}> {t("common:footer_privacy")}</Link>
+          <Link href={"/"}>{t("common:footer_tnc")}</Link>
+        </div>
       </div>
     </div>
   );

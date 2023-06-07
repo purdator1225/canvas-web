@@ -1,15 +1,19 @@
 import React from "react";
 import ValueCard from "./ValueCard";
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
 
-function ValuesGrid({ valuesList, imageList, bg }) {
+function ValuesGrid({ valuesList, imageList, bg, namespace }) {
+
+  const {t} = useTranslation();
+
   return (
-    <div className="grid eight-grid">
+    <div className="hidden lg:grid eight-grid w-full">
       {valuesList.map((value, index) => (
         <ValueCard
           bg={bg}
           key={index}
-          valueText={value.valueText}
+          valueText={t(`${namespace}:${value.valueText}`)}
           logo={value.logo}
           index={value.index}
         />
