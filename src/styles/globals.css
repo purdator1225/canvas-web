@@ -63,6 +63,9 @@ body {
 input , textarea{
   background: transparent;
   border-bottom: 1px solid white;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+
   
   
 }
