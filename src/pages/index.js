@@ -18,6 +18,9 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/dist/DrawSVGPlugin";
 import { SplitText } from "gsap/dist/SplitText";
+import { motion, useScroll, useTransform } from "framer-motion";
+
+
 
 import { useEffect, useRef } from "react";
 import MapRoutes from "@/components/maproutes";
@@ -35,7 +38,7 @@ const HeroCard = ({ text, logo, url, scrollTo }) => {
   return (
     <div
       onClick={() => scrollTo(url)}
-      className="flex aspect-square min-h-[180px] min-w-[160px] p-4  flex-col gap-[28px] transition-colors hover:cursor-pointer hover:bg-[rgba(44,182,108,0.7)]"
+      className="flex aspect-square min-h-[180px] min-w-[160px] flex-col  gap-[28px] p-4 transition-colors hover:cursor-pointer hover:bg-[rgba(44,182,108,0.7)]"
     >
       <hr className="h-[4px] w-full bg-white"></hr>
       <h3
@@ -59,12 +62,21 @@ export default function Home(props) {
 
   // console.log(scrollTo);
 
-  console.log(props.locale);
+  // console.log(props.locale);
 
   const { t } = useTranslation();
 
   // animate banner
   const index = useRef();
+
+  //mobile horizontal scroll values section
+  const horizontalRef = useRef(null);
+
+  const { scrollXProgress } = useScroll({
+    container: horizontalRef,
+  });
+
+  let shipMovement = useTransform(scrollXProgress, [0,1], ['35%', '100%']);
 
   useEffect(() => {
     let context = gsap.context(() => {
@@ -170,7 +182,6 @@ export default function Home(props) {
             start: "50% 10%",
             end: "150% 50%",
           },
-          
         }
       );
       // ).from("#achievement-card", {
@@ -260,11 +271,11 @@ export default function Home(props) {
 
         <div
           id="hero"
-          className="relative hidden h-screen w-screen items-center justify-center bg-[url('/images/home-hero-pattern.png')] bg-cover sm:flex"
+          className="relative hidden h-screen w-screen justify-center bg-[url('/images/home-hero-pattern.png')] bg-cover sm:flex"
         >
           <div
             id="hero-text-wrapper"
-            className="z-[10] m-auto flex w-full flex-col gap-[100px] pl-[30px] lg:w-[1280px] lg:bg-none"
+            className="z-[10] self-end mb-[5vh] flex w-full flex-col gap-[50px] pl-[30px] lg:pl-0 lg:w-[1280px] lg:bg-none"
           >
             <div className="flex w-[400px] flex-col justify-center gap-6 text-white">
               <h1
@@ -388,16 +399,21 @@ export default function Home(props) {
             color={"canvasblue"}
             route={"/services"}
             text="Our Values"
-            logo={"/images/icons/our-values.svg"}
+            logo={"/images/icons/our-values.png"}
           />
         </div>
 
         <div
           id="strengths-mobile"
-          className="achievement-section-mobile flex flex-col items-center overflow-x-scroll bg-white sm:hidden"
+          ref={horizontalRef}
+          className="achievement-section-mobile flex flex-col overflow-x-scroll bg-white sm:hidden"
         >
-          <div className="ship-wrapper m-auto flex w-[1500px] justify-center">
-            <div
+          <div
+      
+            className="ship-wrapper"
+          >
+            <motion.div
+                    style={{ translateX: shipMovement }}
               id="ship-small"
               className="relative my-[70px] h-[100px] w-[600px] sm:hidden"
             >
@@ -406,12 +422,12 @@ export default function Home(props) {
                 src={"/images/ship-small.png"}
                 style={{ objectFit: "cover", width: "100%" }}
               />
-            </div>
+            </motion.div>
           </div>
 
           <div
             id="map-section"
-            className="flex w-full gap-6 px-[30px] py-[30px] text-canvasblue"
+            className="flex gap-6 px-[30px] py-[30px] text-canvasblue"
           >
             <StatsCard
               id="achievement-card"
@@ -456,16 +472,16 @@ export default function Home(props) {
               para={t("home:home_ach_para_6")}
             />
           </div>
-
-         
         </div>
 
-        <PageLinks
+        <div className="hidden">
+          <PageLinks
             color={"canvasblue"}
             route={"/services"}
             text="Our Values"
             logo={"/images/icons/our-values.png"}
           />
+        </div>
 
         <div className="relative h-[600px] w-full bg-white sm:hidden">
           <Image
@@ -842,11 +858,12 @@ export default function Home(props) {
 
           <div className="flex aspect-square w-full items-start justify-between bg-[url('/images/client-testimonial.png')] bg-cover lg:hidden"></div>
 
-          <div className="relative top-[-200px] lg:top-0 w-full items-start justify-between bg-cover lg:flex lg:bg-[url('/images/client-testimonial.png')] lg:py-[100px]">
+          <div className="relative top-[-200px] w-full items-start justify-between bg-cover lg:top-0 lg:flex lg:bg-[url('/images/client-testimonial.png')] lg:py-[100px]">
             <div className="m-auto flex flex-col-reverse items-stretch gap-8 lg:flex-row xl:w-[1280px]">
-
-
-            <div id='mobile-link' className="lg:hidden min-w-[330px] sm:self-center flex-grow max-w-[400px]">
+              <div
+                id="mobile-link"
+                className="min-w-[330px] max-w-[400px] flex-grow sm:self-center lg:hidden"
+              >
                 <PageLinks
                   color="canvasblue"
                   route={"/contact"}
@@ -855,8 +872,7 @@ export default function Home(props) {
                 />
               </div>
 
-
-              <div className="hidden lg:block min-w-[330px] sm:self-center max-w-[400px]">
+              <div className="hidden min-w-[330px] max-w-[400px] sm:self-center lg:block">
                 <PageLinks
                   color="white"
                   route={"/contact"}

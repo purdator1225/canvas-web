@@ -27,23 +27,23 @@ function Navbar({ t }) {
 
   //define variants for language div hover
 
-  const languageMain = {
-    hover: { opacity: 1 },
-    hidden: { opacity: 1 },
-    animate: { x: 1 },
-  };
+  // const languageMain = {
+  //   hover: { opacity: 1 },
+  //   hidden: { opacity: 1 },
+  //   animate: { x: 1 },
+  // };
 
-  const languageSub1 = {
-    hover: { opacity: 1, display: "flex" },
-    hidden: { opacity: 1 },
-    animate: { x: 1 },
-  };
+  // const languageSub1 = {
+  //   hover: { opacity: 1, display: "flex" },
+  //   hidden: { opacity: 1 },
+  //   animate: { x: 1 },
+  // };
 
-  const languageSub2 = {
-    hover: { opacity: 0, width: "0px" },
-    hidden: { opacity: 0 },
-    animate: { x: 1 },
-  };
+  // const languageSub2 = {
+  //   hover: { opacity: 0, width: "0px" },
+  //   hidden: { opacity: 0 },
+  //   animate: { x: 1 },
+  // };
 
   return (
     <>
@@ -78,7 +78,7 @@ function Navbar({ t }) {
               className={`submenu-items-wrapper absolute top-[20%] z-20 m-auto ml-[77px] flex flex-col gap-10 text-[18px] uppercase leading-[24px] text-white ${roboto.variable} font-robo`}
             >
               <div
-                id='locale-toggler'
+                id="locale-toggler"
                 onClick={() => {
                   if (router.locale === "en") {
                     router.push(router.asPath, router.asPath, { locale: "zh" });
@@ -172,66 +172,22 @@ function Navbar({ t }) {
           </div>
 
           <div className="navlinks-wrapper hidden h-full lg:flex">
-            <motion.div
-              whileHover="hover"
-              animate="animate"
-              variants={languageMain}
-              className="language-wrapper flex items-center justify-center gap-3 px-5 text-center"
+            <div
+              onClick={() => {
+                if (router.locale === "en") {
+                  router.push(router.asPath, router.asPath, { locale: "zh" });
+                } else
+                  router.push(router.asPath, router.asPath, { locale: "en" });
+              }}
+              className={`h-full w-full p-[24px] hover:bg-canvasgreen 
+              }`}
             >
-              <motion.div
-                layout
-                variants={languageSub1}
-                className="hidden h-full w-[160px] justify-evenly gap-3"
+              <h3
+                className={`${roboto.variable} font-robo text-[18px] leading-6`}
               >
-                <div
-                  onClick={() => {
-                    router.push(router.asPath, router.asPath, { locale: "zh" });
-                  }}
-                  className={`h-full w-full py-[24px] hover:bg-canvasgreen ${
-                    router.locale !== "zh" ? "bg-none" : "bg-canvasgreen"
-                  }`}
-                >
-                  <h3
-                    className={`${roboto.variable} font-robo text-[18px] leading-6`}
-                  >
-                    简
-                  </h3>
-                </div>
-
-                <div
-                  onClick={() => {
-                    router.push(router.asPath, router.asPath, { locale: "en" });
-                  }}
-                  className={`h-full w-full py-[24px] hover:bg-canvasgreen ${
-                    router.locale === "zh" ? "bg-none" : "bg-canvasgreen"
-                  }`}
-                >
-                  <h3
-                    className={`${roboto.variable} font-robo text-[18px] leading-6`}
-                  >
-                    EN
-                  </h3>
-                </div>
-              </motion.div>
-              <motion.div className="px-2" layout variants={languageSub2}>
-                <svg
-                  width="28"
-                  height="26"
-                  viewBox="0 0 28 26"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M15.1073 16.9144L11.8746 13.7198L11.9127 13.6816C14.1273 11.2125 15.7054 8.37437 16.6346 5.37071H20.3637V2.81891H11.4546V0.273438H8.90908V2.81891H0V5.35162H14.2164C13.3573 7.80797 12.0145 10.1371 10.1818 12.1735C8.99815 10.8562 8.01813 9.42437 7.24178 7.90981H4.69637C5.62544 9.98433 6.89821 11.9444 8.48908 13.7134L2.01725 20.1089L3.81818 21.9098L10.1818 15.5462L14.1401 19.5044L15.1073 16.9144Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M22.2728 10.4531H19.7273L14 25.7259H16.5455L17.9773 21.9077H24.0227L25.4546 25.7259H28L22.2728 10.4531ZM18.9318 19.3622L21 13.8449L23.0682 19.3622H18.9318Z"
-                    fill="white"
-                  />
-                </svg>
-              </motion.div>
-            </motion.div>
+                {router.locale === "zh" ? "EN" : "简"}
+              </h3>
+            </div>
 
             <Link href={"/partnerships"}>
               <div
