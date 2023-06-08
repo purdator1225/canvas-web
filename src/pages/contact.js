@@ -104,6 +104,7 @@ function ContactUs(props) {
             <div className="flex-col flex gap-2 max-w-[280px]">
               <label>{t("contact:contact_name")}</label>
               <input
+                className="shadow-none"
                 required
                 placeholder={t("contact:contact_name")}
                 type="text"
@@ -115,6 +116,7 @@ function ContactUs(props) {
               <div className="flex flex-col gap-2 w-[280px]  ">
                 <label>{t("contact:contact_email")}</label>
                 <input
+                  className="shadow-none"
                   required
                   placeholder={t("contact:contact_email")}
                   type="email"
@@ -125,6 +127,7 @@ function ContactUs(props) {
               <div className="flex flex-col gap-2 w-[280px]">
                 <label>{t("contact:contact_tel")}</label>
                 <input
+                className="shadow-none"
                   required
                   placeholder={t("contact:contact_tel")}
                   type="phone"
@@ -136,7 +139,8 @@ function ContactUs(props) {
             <div className="flex flex-col h-fit gap-2">
               <label>{t("contact:contact_msg")}</label>
               <textarea
-                className="text-white min-h-fit "
+
+                className="text-white min-h-fit shadow-none"
                 placeholder={t("contact:contact_msg")}
                 type="phone"
                 name="phone"
@@ -146,7 +150,7 @@ function ContactUs(props) {
             {/* <button className="p-6 bg-gray-100 text-black self-start" typeof="submit">
             Submit
           </button> */}
-            <button typeof="submit" className="w-[400px]">
+            <button typeof="submit" className="max-w-[400px]">
               <PageLinks text={"Submit"} logo={'/images/icons/submit-button.png'} noclick={true} />
             </button>
           </form>
