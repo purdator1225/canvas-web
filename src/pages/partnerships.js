@@ -178,7 +178,7 @@ function Partner(props) {
         </div>
 
         <div id="asia-log" className="min-h-screen">
-          <div className="m-auto flex-col justify-between px-[30px] py-[60px] lg:py-[160px] xl:w-[1280px]">
+          <div className="m-auto flex-col justify-between  py-[60px] lg:py-[160px] xl:w-[1280px]">
             <div className="flex flex-col items-center justify-between lg:flex-row">
               <div className="py-10">
                 <h1

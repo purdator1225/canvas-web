@@ -129,7 +129,7 @@ function Footer({ t }) {
         </div>
       </div>
 
-      <div className="footer-bottom border-t-solid mt-10 flex justify-between border-t-[1px] py-10">
+      <div className="footer-bottom border-t-solid mt-10 flex flex-col lg:flex-row  justify-between gap-4 border-t-[1px] py-10">
         <div className="text-white">{t("common:footer_disclaimer")}</div>
 
         <div className="flex gap-5 text-white">

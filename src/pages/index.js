@@ -456,13 +456,15 @@ export default function Home(props) {
             />
           </div>
 
-          <PageLinks
+         
+        </div>
+
+        <PageLinks
             color={"canvasblue"}
             route={"/services"}
             text="Our Values"
-            logo={"/images/icons/our-values.svg"}
+            logo={"/images/icons/our-values.png"}
           />
-        </div>
 
         <div className="relative h-[600px] w-full bg-white sm:hidden">
           <Image
@@ -822,7 +824,7 @@ export default function Home(props) {
                 width={125}
                 height={100}
                 style={{ objectFit: "cover" }}
-                src={"/images/clients/federal_oats.png"}
+                src={"/images/clients/federal-oats.png"}
               />
             </div>
           </div>
