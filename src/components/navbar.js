@@ -152,7 +152,7 @@ function Navbar({ t }) {
 
           <div
             onClick={toggleMenu}
-            className="menu-button relative h-[45px] w-[45px] sm:hidden"
+            className="menu-button relative h-[45px] w-[45px] lg:hidden"
           >
             <div
               className={`absolute top-[30%] h-[5px] w-full ${
@@ -171,7 +171,7 @@ function Navbar({ t }) {
             <div></div>
           </div>
 
-          <div className="navlinks-wrapper hidden h-full sm:flex">
+          <div className="navlinks-wrapper hidden h-full lg:flex">
             <motion.div
               whileHover="hover"
               animate="animate"

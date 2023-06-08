@@ -57,7 +57,7 @@ function Footer({ t }) {
             <Image width={18} height={18} src={"/images/icons/twitter.svg"} />
           </div>
         </div>
-        <div className="right-side hidden gap-20 sm:flex">
+        <div className="right-side hidden gap-20 lg:flex">
           <div className="flex flex-col gap-5">
             <h2 className="text-[18px] uppercase leading-6">
               {t("common:footer_services")}

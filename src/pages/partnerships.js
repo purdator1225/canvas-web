@@ -180,7 +180,7 @@ function Partner(props) {
         <div id="asia-log" className="min-h-screen">
           <div className="m-auto flex-col justify-between  py-[60px] lg:py-[160px] xl:w-[1280px]">
             <div className="flex flex-col items-center justify-between lg:flex-row">
-              <div className="py-10">
+              <div className="px-[30px] py-10">
                 <h1
                   className={`${national.variable} font-national text-[26px] font-medium uppercase leading-[28px] text-canvasblue lg:text-[32px] lg:font-bold lg:leading-[32px]`}
                 >
@@ -271,7 +271,7 @@ function Partner(props) {
                   <Image
                     fill
                     style={{ objectFit: "contain" }}
-                    src={"/images/icons/pss-logo.png"}
+                    src={"/images/icons/pss_logo.png"}
                   />
                 </div>
 

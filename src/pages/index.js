@@ -35,7 +35,7 @@ const HeroCard = ({ text, logo, url, scrollTo }) => {
   return (
     <div
       onClick={() => scrollTo(url)}
-      className="flex aspect-square min-h-[180px] min-w-[160px]  flex-col gap-[28px] transition-colors hover:cursor-pointer hover:bg-[#0057C180]"
+      className="flex aspect-square min-h-[180px] min-w-[160px] p-4  flex-col gap-[28px] transition-colors hover:cursor-pointer hover:bg-[rgba(44,182,108,0.7)]"
     >
       <hr className="h-[4px] w-full bg-white"></hr>
       <h3
@@ -170,6 +170,7 @@ export default function Home(props) {
             start: "50% 10%",
             end: "150% 50%",
           },
+          
         }
       );
       // ).from("#achievement-card", {
@@ -642,7 +643,7 @@ export default function Home(props) {
 
             {/* services card */}
 
-            <div className=" flex gap-x-10 gap-y-10 overflow-x-scroll whitespace-nowrap px-10 lg:grid lg:grid-cols-2">
+            <div className=" flex gap-x-10 gap-y-10 overflow-x-auto whitespace-nowrap px-10 lg:grid lg:grid-cols-2">
               <ServicesCard
                 order={1}
                 title={t("home:home_services_card_1")}

@@ -24,7 +24,7 @@ function ContactUs(props) {
 
   return (
     <div className="bg-cover bg-[url('/images/contact-us.png')] flex text-white p-10">
-      <div className="xl:w-[1280px] w-full m-auto flex flex-col sm:flex-row justify-between">
+      <div className="xl:w-[1280px] w-full m-auto flex flex-col sm:flex-row sm:gap-[100px] justify-between">
         <div className="left-side mt-[150px] flex flex-col justify-between gap-10">
           <h3
             className={`${national.variable} font-national text-[60px] font-medium lg:font-bold uppercase`}
@@ -32,7 +32,7 @@ function ContactUs(props) {
            {t("contact:contact_hero_h1")}
           </h3>
 
-          <div className="flex flex-col sm:flex-row gap-12">
+          <div className="flex flex-col lg:flex-row gap-12">
             <div className="flex flex-col gap-4">
               <h3
                 className={`${roboto.variable} font-robo text-[18px] leading-6`}
