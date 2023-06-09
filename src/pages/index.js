@@ -406,7 +406,7 @@ export default function Home(props) {
         <div
           id="strengths-mobile"
           ref={horizontalRef}
-          className="achievement-section-mobile flex flex-col overflow-x-scroll bg-white sm:hidden"
+          className="achievement-section-mobile flex flex-col overflow-x-scroll scroll-smooth bg-white sm:hidden"
         >
           <div
       

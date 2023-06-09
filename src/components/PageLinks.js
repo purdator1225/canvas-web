@@ -25,11 +25,12 @@ function PageLinks({ logo, text, order, route, color, noclick }) {
     <div
       data-lag="0.1"
       ref={button}
-      
       onClick={handleClick}
-      className={`${noclick && 'pointer-events-none' } relative w-full h-[100px] flex flex-row items-center px-[30px] gap-10 justify-between hover:cursor-pointer`}
+      className={`${
+        noclick && "pointer-events-none"
+      } relative flex h-[100px] w-full flex-row items-center justify-between gap-10 px-[30px] hover:cursor-pointer`}
     >
-      <div className="relative flex items-center h-full">
+      <div className="relative flex h-full items-center">
         <BoxSvg hexcode={color} />
         <div className="absolute ml-[20px] aspect-square w-[62px] transition-transform duration-[0.5s] hover:rotate-[360deg]">
           <Image fill style={{ objectFit: "cover" }} src={logo} />
@@ -68,12 +69,11 @@ function BoxSvg({ hexcode }) {
       <polyline
         style={{
           strokeDasharray: "2px",
-          fill: "none", 
-          stroke: `${hexcode==="canvasblue" ? "#0057C1" : "#FFFFFF" }`,
+          fill: "none",
+          stroke: `${hexcode === "canvasblue" ? "#0057C1" : "#FFFFFF"}`,
           mask: "url(#mask-0)",
         }}
         points="94.07 45.682 94.091 3.43 3.782 3.43 3.782 93.796 94.321 93.73 94.055 61.703 211.883 61.686"
-      
       ></polyline>
     </svg>
   );
