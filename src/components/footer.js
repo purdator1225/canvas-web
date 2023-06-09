@@ -133,8 +133,8 @@ function Footer({ t }) {
         <div className="text-white">{t("common:footer_disclaimer")}</div>
 
         <div className="flex gap-5 text-white">
-          <Link href={"/"}> {t("common:footer_privacy")}</Link>
-          <Link href={"/"}>{t("common:footer_tnc")}</Link>
+          <Link href={"/privacy-policy"}> {t("common:footer_privacy")}</Link>
+          <Link href={"/tnc"}>{t("common:footer_tnc")}</Link>
         </div>
       </div>
     </div>
