@@ -1,6 +1,8 @@
 import React from "react";
 import { national } from "../../utils/font";
 import { UseTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 
 
 export async function getStaticProps({ locale }) {

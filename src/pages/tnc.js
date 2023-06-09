@@ -1,22 +1,21 @@
 import React from "react";
 import { national } from "../../utils/font";
 
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export async function getStaticProps({ locale }) {
-    return {
-      props: {
-        ...(await serverSideTranslations(locale, ["partnership", "common"])),
-      },
-    };
-  }
-  
-  
-  
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["partnership", "common"])),
+    },
+  };
+}
+
 
 function Tnc(props) {
   return (
     <div
-        id="tnc"
+      id="tnc"
       className={`${national.variable} flex flex-col gap-4 bg-canvasblue p-7 pt-[100px] font-national text-white`}
     >
       <h1>Terms and Conditions</h1>
