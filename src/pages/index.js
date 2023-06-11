@@ -36,7 +36,7 @@ const HeroCard = ({ text, logo, url, scrollTo }) => {
   return (
     <div
       onClick={() => scrollTo(url)}
-      className="flex aspect-square min-h-[180px] min-w-[160px] flex-col  gap-[28px] p-4 transition-colors hover:cursor-pointer hover:bg-[rgba(44,182,108,0.7)]"
+      className="flex aspect-square min-h-[180px]  flex-col  gap-[28px] p-4 transition-colors hover:cursor-pointer hover:bg-[rgba(44,182,108,0.7)]"
     >
       <hr className="h-[4px] w-full bg-white"></hr>
       <h3
@@ -127,7 +127,7 @@ export default function Home(props) {
           duration: 10,
           scrollTrigger: {
             trigger: "#strengths-large",
-            markers: true,
+            // markers: true,
             scrub: 2,
             start: "100% 50%",
             end: "200% 50%",
@@ -142,7 +142,7 @@ export default function Home(props) {
         ease: "back(5)",
         scrollTrigger: {
           trigger: "#strengths-large",
-          markers: true,
+          // markers: true,
           scrub: 2,
           start: "105% 50%",
           end: "150% 50%",
@@ -157,7 +157,7 @@ export default function Home(props) {
         ease: "back(4)",
         scrollTrigger: {
           trigger: "#strengths-large",
-          markers: true,
+          // markers: true,
           scrub: 2,
           start: "105% 50%",
           end: "150% 50%",
@@ -175,7 +175,7 @@ export default function Home(props) {
           ease: "easeIn",
           scrollTrigger: {
             trigger: "#hero",
-            markers: true,
+            // markers: true,
             scrub: 4,
             start: "50% 10%",
             end: "150% 50%",
@@ -399,8 +399,8 @@ export default function Home(props) {
             color={"canvasblue"}
             route={"/services"}
             text="Our Values"
-            width={'w-[300px]'}
-            hoverWidth={'350px'}
+            width={"w-[300px]"}
+            hoverWidth={"350px"}
             logo={"/images/icons/our-values.png"}
           />
         </div>
@@ -475,11 +475,12 @@ export default function Home(props) {
 
         <div id="mobile-values-button" className="flex sm:hidden ">
           <PageLinks
-     
             mask_id={"values-button-mobile-mask"}
             id="values-button-mobile"
             color={"canvasblue"}
             route={"/services"}
+            width={"w-[300px]"}
+            hoverWidth={"400px"}
             text="Our Values"
             logo={"/images/icons/our-values.png"}
           />
@@ -695,8 +696,8 @@ export default function Home(props) {
 
               <div className="hidden w-full self-end lg:block">
                 <PageLinks
-                      width={'w-[450px]'}
-           hoverWidth={'500px'}
+                  width={"w-[450px]"}
+                  hoverWidth={"500px"}
                   mask_id={"values-button-services-large-mask"}
                   id="values-button-services-large"
                   color={"white"}
@@ -706,11 +707,13 @@ export default function Home(props) {
                 />
               </div>
             </div>
-            <div className="mt-10 w-[400px] lg:hidden">
+            <div className="mt-10  lg:hidden">
               <PageLinks
                 mask_id={"values-button-services-mobile-mask"}
                 id="values-button-services-mobile"
                 color={"white"}
+                width={"w-[300px]"}
+                hoverWidth={"400px"}
                 route={"/services"}
                 text="Our Values"
                 logo={"/images/icons/our-values.svg"}
@@ -874,8 +877,8 @@ export default function Home(props) {
               >
                 <PageLinks
                   mask_id={'"contact-button-mobile-mask"'}
-                  width={'w-[450px]'}
-           hoverWidth={'500px'}
+                  width={"w-[300px]"}
+                  hoverWidth={"400px"}
                   id="contact-button-mobile"
                   color="canvasblue"
                   route={"/contact"}
@@ -886,8 +889,8 @@ export default function Home(props) {
 
               <div className="hidden min-w-[330px] max-w-[400px] sm:self-center lg:block">
                 <PageLinks
-                width={'w-[300px]'}
-           hoverWidth={'400px'}
+                  width={"w-[300px]"}
+                  hoverWidth={"400px"}
                   mask_id={"contact-button-large-mask"}
                   id="contact-button-large"
                   color="white"
