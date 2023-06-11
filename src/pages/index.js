@@ -76,19 +76,39 @@ export default function Home(props) {
 
   let shipMovement = useTransform(scrollXProgress, [0, 1], ["35%", "100%"]);
 
-  useEffect(() => {
-    let context = gsap.context(() => {
-      gsap.fromTo(
-        "#wm-us-path",
-        { drawSVG: "100% 100%" },
-        { drawSVG: "0% 100%", duration: 5, repeat: -1 }
-      );
-    }, index);
+  // useEffect(() => {
+  //   let context = gsap.context(() => {
+  //     gsap.fromTo(
+  //       "#wm-us-path",
+  //       { drawSVG: "100% 100%" },
+  //       { drawSVG: "0% 100%", duration: 5, repeat: -1 }
+  //     );
 
-    return context.revert();
-  }, []);
+  //   }, index);
+
+  //   return context.revert();
+  // }, []);
 
   useEffect(() => {
+    gsap.fromTo(
+      "#client-card",
+      { y: 200, opacity: 0 },
+
+      {
+        y: 0,
+        autoAlpha: 1,
+        duration: 1.5,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: "#sectors",
+          markers: true,
+
+          start: "50% 50%",
+          end: "100% 50%",
+        },
+      }
+    );
+
     let context = gsap.context(() => {
       let headingSplit = new SplitText(".headings", { type: "words" });
 
@@ -175,7 +195,7 @@ export default function Home(props) {
           ease: "easeIn",
           scrollTrigger: {
             trigger: "#hero",
-            // markers: true,
+            markers: true,
             scrub: 4,
             start: "50% 10%",
             end: "150% 50%",
@@ -486,10 +506,10 @@ export default function Home(props) {
           />
         </div>
 
-        <div className="relative h-[600px] w-full bg-white sm:hidden">
+        <div className="relative aspect-[9/16] w-full bg-white sm:hidden">
           <Image
             fill
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "contain" }}
             src="/images/mobile-map.png"
           />
         </div>
@@ -789,69 +809,93 @@ export default function Home(props) {
 
           <div
             id="clients"
-            className="client-testimonials m-auto grid grid-cols-2 gap-3 px-[30px] py-10 lg:grid-cols-4 xl:w-[1280px]"
+            className="client-testimonials m-auto grid grid-cols-2 gap-3 overflow-hidden px-[30px] py-10 lg:grid-cols-4 xl:w-[1280px]"
           >
-            <div className="flex justify-center bg-canvaslightgrey py-9">
+            <div
+              id="client-card"
+              className="flex justify-center bg-canvaslightgrey py-9"
+            >
               <Image
                 width={125}
                 height={100}
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "contain" }}
                 src={"/images/clients/aji_no_kiri.png"}
               />
             </div>
-            <div className="flex justify-center bg-canvaslightgrey py-9">
+            <div
+              id="client-card"
+              className="flex justify-center bg-canvaslightgrey py-9"
+            >
               <Image
                 width={125}
                 height={100}
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "contain" }}
                 src={"/images/clients/ntpm.png"}
               />
             </div>
-            <div className="flex justify-center bg-canvaslightgrey py-9">
+            <div
+              id="client-card"
+              className="flex justify-center bg-canvaslightgrey py-9"
+            >
               <Image
                 width={125}
                 height={100}
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "contain" }}
                 src={"/images/clients/premier.png"}
               />
             </div>
-            <div className="flex justify-center bg-canvaslightgrey py-9">
+            <div
+              id="client-card"
+              className="flex justify-center bg-canvaslightgrey py-9"
+            >
               <Image
                 width={125}
                 height={100}
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "contain" }}
                 src={"/images/clients/captain_oats.png"}
               />
             </div>
-            <div className="flex justify-center bg-canvaslightgrey py-9">
+            <div
+              id="client-card"
+              className="flex justify-center bg-canvaslightgrey py-9"
+            >
               <Image
                 width={125}
                 height={100}
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "contain" }}
                 src={"/images/clients/hzpg.png"}
               />
             </div>
-            <div className="flex justify-center bg-canvaslightgrey py-9">
+            <div
+              id="client-card"
+              className="flex justify-center bg-canvaslightgrey py-9"
+            >
               <Image
                 width={125}
                 height={100}
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "contain" }}
                 src={"/images/clients/intimate.png"}
               />
             </div>
-            <div className="flex justify-center bg-canvaslightgrey py-9">
+            <div
+              id="client-card"
+              className="flex justify-center bg-canvaslightgrey py-9"
+            >
               <Image
                 width={125}
                 height={100}
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "contain" }}
                 src={"/images/clients/royalgold.png"}
               />
             </div>
-            <div className="flex justify-center bg-canvaslightgrey py-9">
+            <div
+              id="client-card"
+              className="flex justify-center bg-canvaslightgrey py-9"
+            >
               <Image
                 width={125}
                 height={100}
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "contain" }}
                 src={"/images/clients/federal-oats.png"}
               />
             </div>
