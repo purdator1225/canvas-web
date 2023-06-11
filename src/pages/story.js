@@ -83,12 +83,8 @@ function Story(props) {
   // let picMovement = useTransform(scrollYProgress, [0, 1], ["10%", "100%"]);
 
   return (
-    <div  className="flex flex-col bg-white">
-      <div
-    
-        id="top-wrapper"
-        className=" relative max-w-[850px] self-end"
-      >
+    <div className="flex flex-col bg-white">
+      <div id="top-wrapper" className=" relative max-w-[850px] self-end">
         <div className="flex w-full flex-col bg-white px-[30px]">
           <div className="mb-10 mt-24 flex flex-col gap-4">
             <h2
@@ -105,7 +101,7 @@ function Story(props) {
         </div>
 
         <div
-         data-lag='0.2'
+          data-lag="0.2"
           className="story-img-wrapper relative aspect-[16/9] w-full"
         >
           <Image
@@ -207,13 +203,21 @@ function Story(props) {
               {t("story:team_h2")}
             </h2>
           </div>
-          <div className="team-image-wrapper ml-[30px] flex gap-4 overflow-x-scroll whitespace-nowrap">
+          <div className="team-image-wrapper px-[30px] flex w-screen max-w-[1280px] gap-4 overflow-x-scroll whitespace-nowrap">
             {teamImageList.map((teamImage, index) => (
-              <div key={index} className="flex flex-col gap-3">
-                <div className="relative h-[500px] w-[260px]" key={index}>
+              <div key={index} className="flex w-full flex-col gap-3">
+                <div
+                  className="relative odd:aspect-square even:aspect-auto"
+                  key={index}
+                >
                   <Image
-                    fill
-                    style={{ objectFit: "cover" }}
+                    width={200}
+                    height={200}
+                    style={{
+                      objectFit: "cover",
+                      width: "100%",
+                      height: "100%",
+                    }}
                     src={teamImage.url}
                   />
                 </div>

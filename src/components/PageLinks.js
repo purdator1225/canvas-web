@@ -21,7 +21,7 @@ function PageLinks({ logo, text, order, route, color, noclick, id, mask_id, widt
         duration: 10,
         scrollTrigger: {
           trigger: `#${id}`,
-          markers: true,
+          // markers: true,
           start: "-300% 50%",
           end: "100% 50%",
         },
