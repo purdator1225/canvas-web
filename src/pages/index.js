@@ -20,8 +20,6 @@ import { DrawSVGPlugin } from "gsap/dist/DrawSVGPlugin";
 import { SplitText } from "gsap/dist/SplitText";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-
-
 import { useEffect, useRef } from "react";
 import MapRoutes from "@/components/maproutes";
 
@@ -76,7 +74,7 @@ export default function Home(props) {
     container: horizontalRef,
   });
 
-  let shipMovement = useTransform(scrollXProgress, [0,1], ['35%', '100%']);
+  let shipMovement = useTransform(scrollXProgress, [0, 1], ["35%", "100%"]);
 
   useEffect(() => {
     let context = gsap.context(() => {
@@ -275,7 +273,7 @@ export default function Home(props) {
         >
           <div
             id="hero-text-wrapper"
-            className="z-[10] self-end mb-[5vh] flex w-full flex-col gap-[50px] pl-[30px] lg:pl-0 lg:w-[1280px] lg:bg-none"
+            className="z-[10] mb-[5vh] flex w-full flex-col gap-[50px] self-end pl-[30px] lg:w-[1280px] lg:bg-none xl:pl-0"
           >
             <div className="flex w-[400px] flex-col justify-center gap-6 text-white">
               <h1
@@ -348,7 +346,7 @@ export default function Home(props) {
 
           <div
             id="achievement-section"
-            className="grid w-full grid-cols-[330px_330px] justify-between gap-6 px-[30px] py-[30px] text-canvasblue xl:max-w-[1280px]"
+            className="grid w-full grid-cols-[330px_330px] justify-between gap-y-[120px] px-[30px] py-[30px] text-canvasblue xl:max-w-[1280px]"
           >
             <StatsCard
               id="achievement-card"
@@ -394,11 +392,15 @@ export default function Home(props) {
             />
           </div>
         </div>
-        <div className="hidden w-[400px] lg:block">
+        <div id="values-button-large" className="hidden w-[400px] sm:flex ">
           <PageLinks
+            mask_id={"values-large-mask"}
+            id="values-large"
             color={"canvasblue"}
             route={"/services"}
             text="Our Values"
+            width={'w-[300px]'}
+            hoverWidth={'350px'}
             logo={"/images/icons/our-values.png"}
           />
         </div>
@@ -408,12 +410,9 @@ export default function Home(props) {
           ref={horizontalRef}
           className="achievement-section-mobile flex flex-col overflow-x-scroll scroll-smooth bg-white sm:hidden"
         >
-          <div
-      
-            className="ship-wrapper"
-          >
+          <div className="ship-wrapper">
             <motion.div
-                    style={{ translateX: shipMovement }}
+              style={{ translateX: shipMovement }}
               id="ship-small"
               className="relative my-[70px] h-[100px] w-[600px] sm:hidden"
             >
@@ -474,8 +473,11 @@ export default function Home(props) {
           </div>
         </div>
 
-        <div className="hidden">
+        <div id="mobile-values-button" className="flex sm:hidden ">
           <PageLinks
+     
+            mask_id={"values-button-mobile-mask"}
+            id="values-button-mobile"
             color={"canvasblue"}
             route={"/services"}
             text="Our Values"
@@ -693,6 +695,10 @@ export default function Home(props) {
 
               <div className="hidden w-full self-end lg:block">
                 <PageLinks
+                      width={'w-[450px]'}
+           hoverWidth={'500px'}
+                  mask_id={"values-button-services-large-mask"}
+                  id="values-button-services-large"
                   color={"white"}
                   route={"/services"}
                   text="Services from our partner"
@@ -702,6 +708,8 @@ export default function Home(props) {
             </div>
             <div className="mt-10 w-[400px] lg:hidden">
               <PageLinks
+                mask_id={"values-button-services-mobile-mask"}
+                id="values-button-services-mobile"
                 color={"white"}
                 route={"/services"}
                 text="Our Values"
@@ -865,6 +873,10 @@ export default function Home(props) {
                 className="min-w-[330px] max-w-[400px] flex-grow sm:self-center lg:hidden"
               >
                 <PageLinks
+                  mask_id={'"contact-button-mobile-mask"'}
+                  width={'w-[450px]'}
+           hoverWidth={'500px'}
+                  id="contact-button-mobile"
                   color="canvasblue"
                   route={"/contact"}
                   text="Contact Us"
@@ -874,6 +886,10 @@ export default function Home(props) {
 
               <div className="hidden min-w-[330px] max-w-[400px] sm:self-center lg:block">
                 <PageLinks
+                width={'w-[300px]'}
+           hoverWidth={'400px'}
+                  mask_id={"contact-button-large-mask"}
+                  id="contact-button-large"
                   color="white"
                   route={"/contact"}
                   text="Contact Us"

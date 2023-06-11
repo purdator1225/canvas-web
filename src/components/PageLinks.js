@@ -5,12 +5,28 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Router, { useRouter } from "next/router";
 import { useRef } from "react";
 import { gsap } from "gsap";
+import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 
-function PageLinks({ logo, text, order, route, color, noclick }) {
+function PageLinks({ logo, text, order, route, color, noclick, id, mask_id, width, hoverWidth }) {
   useEffect(() => {
-    gsap.fromTo("#mask-path", { drawSVG: 0 }, { drawSVG: true, duration: 5 });
+
+    //first-trigger
+    gsap.fromTo(
+      `#${id}`,
+      { drawSVG: 0 },
+      {
+        drawSVG: true,
+        duration: 10,
+        scrollTrigger: {
+          trigger: `#${id}`,
+          markers: true,
+          start: "-300% 50%",
+          end: "100% 50%",
+        },
+      }
+    );
   }, []);
 
   const router = useRouter();
@@ -22,29 +38,31 @@ function PageLinks({ logo, text, order, route, color, noclick }) {
   };
 
   return (
-    <div
+    <motion.div
+    whileHover={{width:hoverWidth}}
+    layout
       data-lag="0.1"
       ref={button}
       onClick={handleClick}
       className={`${
         noclick && "pointer-events-none"
-      } relative flex h-[100px] w-full flex-row items-center justify-between gap-10 px-[30px] hover:cursor-pointer`}
+      } relative flex h-[100px] ${width} flex-row items-center justify-between gap-10 px-[30px] hover:cursor-pointer`}
     >
       <div className="relative flex h-full items-center">
-        <BoxSvg hexcode={color} />
+        <BoxSvg hexcode={color} id={id} mask_id={mask_id} />
         <div className="absolute ml-[20px] aspect-square w-[62px] transition-transform duration-[0.5s] hover:rotate-[360deg]">
           <Image fill style={{ objectFit: "cover" }} src={logo} />
         </div>
       </div>
 
       <h3 className={`text-${color} text-[24px]`}>{text}</h3>
-    </div>
+    </motion.div>
   );
 }
 
 export default PageLinks;
 
-function BoxSvg({ hexcode }) {
+function BoxSvg({ hexcode, id, mask_id }) {
   return (
     <svg
       className="button-svg absolute h-full"
@@ -62,7 +80,7 @@ function BoxSvg({ hexcode }) {
               paintOrder: "fill",
             }}
             points="94.07 45.677 94.091 3.425 3.782 3.425 3.782 93.791 94.321 93.725 94.055 61.698 211.883 61.681"
-            id="mask-path"
+            id={id}
           ></polyline>
         </mask>
       </defs>

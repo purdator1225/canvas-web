@@ -4,6 +4,8 @@ import Image from "next/image";
 import ValuesGrid from "@/components/ValuesGrid";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { UseTranslation, useTranslation } from "next-i18next";
+import { motion, useTransform, useScroll } from "framer-motion";
+import { useRef } from "react";
 
 import ValuesGridMobile from "@/components/ValuesGridMobile";
 
@@ -73,9 +75,20 @@ export async function getStaticProps({ locale }) {
 function Story(props) {
   const { t } = useTranslation();
 
+  //mobile horizontal scroll values section
+  // const storyRef = useRef(null);
+
+  // const { scrollYProgress } = useScroll();
+
+  // let picMovement = useTransform(scrollYProgress, [0, 1], ["10%", "100%"]);
+
   return (
-    <div className="bg-white flex flex-col">
-      <div id='top-wrapper' className=" self-end relative max-w-[850px]">
+    <div  className="flex flex-col bg-white">
+      <div
+    
+        id="top-wrapper"
+        className=" relative max-w-[850px] self-end"
+      >
         <div className="flex w-full flex-col bg-white px-[30px]">
           <div className="mb-10 mt-24 flex flex-col gap-4">
             <h2
@@ -92,7 +105,7 @@ function Story(props) {
         </div>
 
         <div
-          data-lag="0.8"
+         data-lag='0.2'
           className="story-img-wrapper relative aspect-[16/9] w-full"
         >
           <Image
@@ -107,7 +120,7 @@ function Story(props) {
         id="our-journey"
         className="story-para flex w-screen bg-[url('/images/story-container-bg.png')] bg-cover"
       >
-        <div className="flex min-h-[50%] m-auto flex-col gap-8 px-[30px] py-[78px] w-[90vw] max-w-[1280px]">
+        <div className="m-auto flex min-h-[50%] w-[90vw] max-w-[1280px] flex-col gap-8 px-[30px] py-[78px]">
           <div className="max-w-[507px]">
             <p
               className={`${roboto.variable} font-robo text-[18px] leading-[24px] text-white`}
