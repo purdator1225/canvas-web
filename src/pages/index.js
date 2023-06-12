@@ -101,7 +101,7 @@ export default function Home(props) {
         stagger: 0.2,
         scrollTrigger: {
           trigger: "#sectors",
-          markers: true,
+          // markers: true,
 
           start: "50% 50%",
           end: "100% 50%",
