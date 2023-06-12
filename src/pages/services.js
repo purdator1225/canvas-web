@@ -48,9 +48,9 @@ function Services(props) {
 
   return (
     <div className="text-white">
-      <div className="flex h-screen w-screen bg-[url('/images/services-hero.png')] bg-cover ">
-        <div className="m-auto xl:w-[1280px] ">
-          <div className="ml-5 flex flex-col gap-4">
+      <div className="flex h-screen w-screen bg-[url('/images/services-hero.png')] bg-cover items-center ">
+        <div className="xl:w-[1280px] xl:m-auto">
+          <div className=" flex flex-col gap-4 max-w-[375px] px-[30px]">
             <h1
               className={`${national.variable} font-national text-[26px] font-medium uppercase leading-[28px] sm:text-[32px] sm:font-bold`}
             >

@@ -6,9 +6,11 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { appWithTranslation } from "next-i18next";
 import Footer from "@/components/footer";
 import { useEffect, useRef } from "react";
+import { DefaultSeo } from "next-seo";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { UseTranslation, useTranslation } from "next-i18next";
+import SEO from "../../next-seo.config";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -48,11 +50,8 @@ function App({ Component, pageProps }) {
   return (
     <>
       <div ref={root} id="wrapper" className=" overflow-x-hidden">
-        <div
-          id="content"
-          className="
-        "
-        >
+        <div id="content">
+          <DefaultSeo {...SEO} />
           <Navbar t={t} />
 
           <Component {...pageProps} scrollTo={scrollTo} />

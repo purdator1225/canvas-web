@@ -155,7 +155,7 @@ function ContactUs(props) {
             <motion.button layout initial={{width:'300px'}} whileHover={{width: '400px'}}typeof="submit" className="" >
               <PageLinks
                 id={"contact-id-button"}
-                text={"Submit"}
+                text={t("common:button_submit")}
                 logo={"/images/icons/submit-button.png"}
                 noclick={true}
               />

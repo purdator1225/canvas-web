@@ -195,7 +195,7 @@ export default function Home(props) {
           ease: "easeIn",
           scrollTrigger: {
             trigger: "#hero",
-            markers: true,
+            // markers: true,
             scrub: 4,
             start: "50% 10%",
             end: "150% 50%",
@@ -418,7 +418,7 @@ export default function Home(props) {
             id="values-large"
             color={"canvasblue"}
             route={"/services"}
-            text="Our Values"
+            text={t("common:button_values")}
             width={"w-[300px]"}
             hoverWidth={"350px"}
             logo={"/images/icons/our-values.png"}
@@ -493,7 +493,10 @@ export default function Home(props) {
           </div>
         </div>
 
-        <div id="mobile-values-button" className="flex sm:hidden ">
+        <div
+          id="mobile-values-button"
+          className="flex justify-center sm:hidden "
+        >
           <PageLinks
             mask_id={"values-button-mobile-mask"}
             id="values-button-mobile"
@@ -501,7 +504,7 @@ export default function Home(props) {
             route={"/services"}
             width={"w-[300px]"}
             hoverWidth={"400px"}
-            text="Our Values"
+            text={t("common:button_values")}
             logo={"/images/icons/our-values.png"}
           />
         </div>
@@ -722,20 +725,20 @@ export default function Home(props) {
                   id="values-button-services-large"
                   color={"white"}
                   route={"/services"}
-                  text="Services from our partner"
+                  text={t("common:button_services")}
                   logo={"/images/icons/core-logistics.png"}
                 />
               </div>
             </div>
-            <div className="mt-10  lg:hidden">
+            <div className="mt-10 flex justify-center lg:hidden">
               <PageLinks
                 mask_id={"values-button-services-mobile-mask"}
                 id="values-button-services-mobile"
                 color={"white"}
-                width={"w-[300px]"}
+                width={"w-[350px]"}
                 hoverWidth={"400px"}
                 route={"/services"}
-                text="Our Values"
+                text={t("common:button_services")}
                 logo={"/images/icons/our-values.svg"}
               />
             </div>
@@ -917,7 +920,7 @@ export default function Home(props) {
             <div className="m-auto flex flex-col-reverse items-stretch gap-8 lg:flex-row xl:w-[1280px]">
               <div
                 id="mobile-link"
-                className="min-w-[330px] max-w-[400px] flex-grow sm:self-center lg:hidden"
+                className="flex justify-center sm:self-center lg:hidden"
               >
                 <PageLinks
                   mask_id={'"contact-button-mobile-mask"'}
@@ -926,12 +929,12 @@ export default function Home(props) {
                   id="contact-button-mobile"
                   color="canvasblue"
                   route={"/contact"}
-                  text="Contact Us"
+                  text={t("common:button_contact")}
                   logo="/images/icons/contact-logo.png"
                 />
               </div>
 
-              <div className="hidden min-w-[330px] max-w-[400px] sm:self-center lg:block">
+              <div className="hidden w-[330px] max-w-[400px] sm:self-center lg:block">
                 <PageLinks
                   width={"w-[300px]"}
                   hoverWidth={"400px"}
@@ -939,7 +942,7 @@ export default function Home(props) {
                   id="contact-button-large"
                   color="white"
                   route={"/contact"}
-                  text="Contact Us"
+                  text={t("common:button_contact")}
                   logo="/images/icons/contact-logo.png"
                 />
               </div>
