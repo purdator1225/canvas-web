@@ -122,7 +122,14 @@ function Partner(props) {
     <div>
       <main className={`${national.variable} font-nation bg-white text-white`}>
         {/* <div>{props.locale}</div> */}
-        <div className=" flex h-screen w-screen bg-[url('/images/partnerships.png')] bg-cover ">
+        <div className=" relative flex h-screen w-screen bg-[url('/images/partnerships.png')] bg-cover ">
+
+          <div className="absolute flex justify-evenly h-full w-full">
+            <div className="h-full bg-white w-[1px]"></div>
+            <div className="h-full bg-white w-[1px]"></div>
+            <div className="h-full bg-white w-[1px]"></div>
+
+          </div>
           <div className="m-auto grid gap-6 lg:grid-cols-3 xl:w-[1280px]">
             <div className="ml-5 flex h-[430px] flex-col gap-6 self-center">
               <h1
@@ -143,7 +150,7 @@ function Partner(props) {
               </h3>
             </div>
 
-            <div className="hidden max-w-[400px] flex-col gap-4 self-end lg:flex">
+            {/* <div className="hidden max-w-[400px] flex-col gap-4 self-end lg:flex">
               <hr className="h-[4px]"></hr>
               <h1
                 className={`${roboto.variable} font-robo text-[24px] uppercase`}
@@ -157,8 +164,8 @@ function Partner(props) {
                 explore more possibilities that are better suited for your
                 business.
               </p>
-            </div>
-
+            </div> */}
+            {/* 
             <div className="hidden max-w-[400px] flex-col gap-4 self-end lg:flex">
               <hr className="h-[4px]"></hr>
               <h1
@@ -173,7 +180,7 @@ function Partner(props) {
                 management, our extensive network will speed up the process of
                 finding the right partner.
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -216,7 +223,11 @@ function Partner(props) {
                     </p>
                   </div>
                   <div className="flex flex-col items-center ">
-                    <Image src="/images/icons/sea-ship-round.png" width={50} height={50} />
+                    <Image
+                      src="/images/icons/sea-ship-round.png"
+                      width={50}
+                      height={50}
+                    />
                     <p
                       className={`${roboto.variable} font-robo text-canvasblue`}
                     >

@@ -36,7 +36,7 @@ const HeroCard = ({ text, logo, url, scrollTo }) => {
   return (
     <div
       onClick={() => scrollTo(url)}
-      className="flex aspect-square min-h-[180px]  flex-col  gap-[28px] p-4 transition-colors hover:cursor-pointer hover:bg-[rgba(44,182,108,0.7)]"
+      className="flex aspect-square min-h-[180px] flex-col  gap-[28px]  p-4 transition-colors hover:cursor-pointer hover:bg-[rgba(44,182,108,0.7)] lg:max-w-[200px]"
     >
       <hr className="h-[4px] w-full bg-white"></hr>
       <h3
@@ -55,6 +55,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText, DrawSVGPlugin);
 
 export default function Home(props) {
   //translation
+  const { t } = useTranslation();
 
   const scrollTo = props.scrollTo;
 
@@ -62,7 +63,23 @@ export default function Home(props) {
 
   // console.log(props.locale);
 
-  const { t } = useTranslation();
+  //hero line variants
+  const lineParentVariants = {
+    hidden: { opacity: 1 },
+    show: { opacity: 1 },
+    transition: {
+      delay: 0.5,
+      staggerChildren: 5,
+    },
+  };
+
+  const lineVariants = {
+    hidden: { opacity: 1 },
+    show: { scaleY: 2000 },
+    transition:{
+      duration: 2
+    }
+  };
 
   // animate banner
   const index = useRef();
@@ -291,6 +308,36 @@ export default function Home(props) {
           id="hero"
           className="relative hidden h-screen w-screen justify-center bg-[url('/images/home-hero-pattern.png')] bg-cover sm:flex"
         >
+          <div className="absolute flex h-full w-[1280px] justify-end">
+            <motion.div
+              initial="hidden"
+              animate="show"
+              variants={lineParentVariants}
+              className="absolute flex h-full w-[full-400px] gap-[195px] self-end"
+            >
+              <motion.div
+                variants={lineVariants}
+                className="h-[1px] w-[1px] bg-white"
+              ></motion.div>
+              <motion.div
+                variants={lineVariants}
+                className="h-[1px] w-[1px] bg-white"
+              ></motion.div>
+              <motion.div
+                variants={lineVariants}
+                className="h-[1px] w-[1px] bg-white"
+              ></motion.div>
+              <motion.div
+                variants={lineVariants}
+                className="h-[1px] w-[1px] bg-white"
+              ></motion.div>
+              <motion.div
+                variants={lineVariants}
+                className="h-[1px] w-[1px] bg-white"
+              ></motion.div>
+            </motion.div>
+          </div>
+
           <div
             id="hero-text-wrapper"
             className="z-[10] mb-[5vh] flex w-full flex-col gap-[50px] self-end pl-[30px] lg:w-[1280px] lg:bg-none xl:pl-0"
