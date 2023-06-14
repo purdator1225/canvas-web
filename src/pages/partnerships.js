@@ -250,10 +250,12 @@ function Partner(props) {
               </div>
             </div>
             <ValuesGridMobile
+              bg="canvasblue"
               valuesList={asiaLogFeatures}
               namespace={"partnership"}
             />
             <ValuesGrid
+              bg="canvasblue"
               namespace="partnership"
               valuesList={asiaLogFeatures}
               imageList={asiaLogFeaturesImg}
@@ -347,10 +349,12 @@ function Partner(props) {
               </div>
             </div>
             <ValuesGridMobile
+              bg="canvasblue"
               namespace="partnership"
               valuesList={pssContainerFeatures}
             />
             <ValuesGrid
+            bg="canvasblue"
               namespace="partnership"
               valuesList={pssContainerFeatures}
               imageList={pssFeaturesImg}

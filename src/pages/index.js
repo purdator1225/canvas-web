@@ -76,9 +76,9 @@ export default function Home(props) {
   const lineVariants = {
     hidden: { opacity: 1 },
     show: { scaleY: 2000 },
-    transition:{
-      duration: 2
-    }
+    transition: {
+      duration: 2,
+    },
   };
 
   // animate banner

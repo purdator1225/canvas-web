@@ -41,7 +41,7 @@ function ContactUs(props) {
                 Gary Khoo
               </h3>
 
-              <Link href="/">+6011-1116 1106</Link>
+              <Link rel="noopener noreferrer" href="tel:+6011-1116 1106">+6011-1116 1106</Link>
 
               <Image
                 className="aspect-square w-[180px]"
@@ -58,8 +58,11 @@ function ContactUs(props) {
                 Jackson Lim
               </h3>
 
-              <Link href="/">+6011-1662 6228</Link>
+              <Link rel="noopener noreferrer" href="tel:+6011-1662 6228">+6011-1662 6228</Link>
 
+
+
+              
               <Image
                 className="aspect-square w-[180px]"
                 width={250}
@@ -76,7 +79,12 @@ function ContactUs(props) {
                 {t("contact:contact_email")}
               </p>
             </div>
-            <Link href={"/"}>cs@canvasglobal-log.com</Link>
+            <Link rel="noopener noreferrer" href="mailto:cglbiz@canvasglobal-log.com">
+              <p>cglbiz@canvasglobal-log.com</p>
+            </Link>
+            <Link rel="noopener noreferrer" href="cs@canvasglobal-log.com">
+              <p>cs@canvasglobal-log.com</p>
+            </Link>
           </div>
 
           <div>

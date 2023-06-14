@@ -46,8 +46,11 @@ function Footer({ t }) {
             <Link rel="noopener noreferrer" href="tel:+604 2870130">
               <p className="text-[14px] leading-6"> +604 2870130</p>
             </Link>
-            <Link rel="noopener noreferrer" href="mailto:abc@example.com">
+            <Link rel="noopener noreferrer" href="mailto:cglbiz@canvasglobal-log.com">
               <p>cglbiz@canvasglobal-log.com</p>
+            </Link>
+            <Link rel="noopener noreferrer" href="cs@canvasglobal-log.com">
+              <p>cs@canvasglobal-log.com</p>
             </Link>
           </div>
 
