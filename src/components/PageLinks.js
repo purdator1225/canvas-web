@@ -18,7 +18,7 @@ function PageLinks({ logo, text, order, route, color, noclick, id, mask_id, widt
       { drawSVG: 0 },
       {
         drawSVG: true,
-        duration: 10,
+        duration: 2,
         scrollTrigger: {
           trigger: `#${id}`,
           // markers: true,
