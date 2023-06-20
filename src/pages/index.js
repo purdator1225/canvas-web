@@ -279,7 +279,7 @@ export default function Home(props) {
               <HeroCard
                 text={t("home:home_hero_strength")}
                 logo="/images/icons/strength.png"
-                url="#strengths"
+                url="#strengths-mobile"
                 scrollTo={scrollTo}
               />
               <HeroCard
@@ -368,7 +368,7 @@ export default function Home(props) {
               <HeroCard
                 text={t("home:home_hero_strength")}
                 logo="/images/icons/strength.png"
-                url="#strengths"
+                url="#strengths-large"
                 scrollTo={scrollTo}
               />
               <HeroCard
@@ -396,7 +396,7 @@ export default function Home(props) {
         {/* //Achievement Section */}
         <div
           id="strengths-large"
-          className="relative hidden justify-center pb-[60px] pt-[200px] sm:flex"
+          className="strengths relative hidden justify-center pb-[60px] pt-[200px] sm:flex"
         >
           <div className="absolute z-[-1] h-[1214px] w-[400px] xl:z-0">
             <div
@@ -475,7 +475,7 @@ export default function Home(props) {
         <div
           id="strengths-mobile"
           ref={horizontalRef}
-          className="achievement-section-mobile flex flex-col overflow-x-scroll scroll-smooth bg-white sm:hidden"
+          className="strengths achievement-section-mobile flex flex-col overflow-x-scroll scroll-smooth bg-white sm:hidden"
         >
           <div className="ship-wrapper">
             <motion.div
