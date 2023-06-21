@@ -22,42 +22,42 @@ function Partner(props) {
 
   let asiaLogFeatures = [
     {
-      logo: "/images/icons/asia-log-feature-icons/asia-log-1.png",
+      logo: "/images/icons/asia-log-feature-icons/asialog-1.png",
       valueText: "asia_log_val_1",
       index: 1,
     },
     {
-      logo: "/images/icons/asia-log-feature-icons/asia-log-2.png",
+      logo: "/images/icons/asia-log-feature-icons/asialog-2.png",
       valueText: "asia_log_val_2",
       index: 2,
     },
     {
-      logo: "/images/icons/asia-log-feature-icons/asia-log-3.png",
+      logo: "/images/icons/asia-log-feature-icons/asialog-3.png",
       valueText: "asia_log_val_3",
       index: 3,
     },
     {
-      logo: "/images/icons/asia-log-feature-icons/asia-log-4.png",
+      logo: "/images/icons/asia-log-feature-icons/asialog-4.png",
       valueText: "asia_log_val_4",
       index: 4,
     },
     {
-      logo: "/images/icons/asia-log-feature-icons/asia-log-5.png",
+      logo: "/images/icons/asia-log-feature-icons/asialog-5.png",
       valueText: "asia_log_val_5",
       index: 5,
     },
     {
-      logo: "/images/icons/asia-log-feature-icons/asia-log-6.png",
+      logo: "/images/icons/asia-log-feature-icons/asialog-6.png",
       valueText: "asia_log_val_6",
       index: 6,
     },
     {
-      logo: "/images/icons/asia-log-feature-icons/asia-log-7.png",
+      logo: "/images/icons/asia-log-feature-icons/asialog-7.png",
       valueText: "asia_log_val_7",
       index: 7,
     },
     {
-      logo: "/images/icons/asia-log-feature-icons/asia-log-8.png",
+      logo: "/images/icons/asia-log-feature-icons/asialog-8.png",
       valueText: "asia_log_val_8",
       index: 8,
     },
@@ -77,42 +77,42 @@ function Partner(props) {
 
   let pssContainerFeatures = [
     {
-      logo: "/images/icons/pss-container-values-icons/pss-1.png",
+      logo: "/images/icons/pss-container-values-icons/pss_1.png",
       valueText: "pss_val_1",
       index: 1,
     },
     {
-      logo: "/images/icons/pss-container-values-icons/pss-2.png",
+      logo: "/images/icons/pss-container-values-icons/pss_2.png",
       valueText: "pss_val_2",
       index: 2,
     },
     {
-      logo: "/images/icons/pss-container-values-icons/pss-3.png",
+      logo: "/images/icons/pss-container-values-icons/pss_3.png",
       valueText: "pss_val_3",
       index: 3,
     },
     {
-      logo: "/images/icons/pss-container-values-icons/pss-4.png",
+      logo: "/images/icons/pss-container-values-icons/pss_4.png",
       valueText: "pss_val_4",
       index: 4,
     },
     {
-      logo: "/images/icons/pss-container-values-icons/pss-5.png",
+      logo: "/images/icons/pss-container-values-icons/pss_5.png",
       valueText: "pss_val_5",
       index: 5,
     },
     {
-      logo: "/images/icons/pss-container-values-icons/pss-6.png",
+      logo: "/images/icons/pss-container-values-icons/pss_6.png",
       valueText: "pss_val_6",
       index: 6,
     },
     {
-      logo: "/images/icons/pss-container-values-icons/pss-7.png",
+      logo: "/images/icons/pss-container-values-icons/pss_7.png",
       valueText: "pss_val_7",
       index: 7,
     },
     {
-      logo: "/images/icons/pss-container-values-icons/pss-8.png",
+      logo: "/images/icons/pss-container-values-icons/pss_8.png",
       valueText: "pss_val_8",
       index: 8,
     },
@@ -252,6 +252,7 @@ function Partner(props) {
             <ValuesGridMobile
               bg="canvasblue"
               valuesList={asiaLogFeatures}
+              imageList={asiaLogFeaturesImg}
               namespace={"partnership"}
             />
             <ValuesGrid
@@ -352,6 +353,7 @@ function Partner(props) {
               bg="canvasblue"
               namespace="partnership"
               valuesList={pssContainerFeatures}
+              imageList={pssFeaturesImg}
             />
             <ValuesGrid
             bg="canvasblue"

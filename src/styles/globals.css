@@ -51,59 +51,73 @@ body {
   grid-area: area-8;
 }
 
-
-.services-grid {
-  grid-template-areas: 
-  "area-1 area-2"
-  "area-3 area-4"
-  "area-5 area-6"
-  ;
+.eight-grid-mobile {
+  grid-template-areas:
+    "area-1 area-2 "
+    "area-3 area-3"
+    "area-4 area-5"
+    "area-6 area-6"
+    "area-7 area-8"
+    "area-9 area-9"
+    "area-10 area-11";
 }
 
-input , textarea{
+.eight-grid-mob-first {
+  grid-area: area-3;
+}
+
+.eight-grid-mob-second {
+  grid-area: area-6;
+}
+
+.eight-grid-mob-third {
+  grid-area: area-9;
+}
+
+.services-grid {
+  grid-template-areas:
+    "area-1 area-2"
+    "area-3 area-4"
+    "area-5 area-6";
+}
+
+input,
+textarea {
   background: transparent;
   border-bottom: 1px solid white;
   -webkit-appearance: none;
   -webkit-border-radius: 0;
-
-  
-  
 }
 
-input, textarea:focus{
-outline: none;
-color: white;
-  
-  
+input,
+textarea:focus {
+  outline: none;
+  color: white;
 }
 
 label {
   line-height: 20px;
 }
 
-.mask-path-class{
-  stroke: #0057C1;
-  stroke-width:1.46498;
+.mask-path-class {
+  stroke: #0057c1;
+  stroke-width: 1.46498;
   stroke-dasharray: 5.33 5.33;
   fill: none;
-  mask: url(#mask-0)
-  
+  mask: url(#mask-0);
 }
 
-#wm-us-path{
+#wm-us-path {
   fill: none;
   stroke-width: 23;
-  stroke: rgb(255,255,255);
-  
-  
+  stroke: rgb(255, 255, 255);
 }
 
-
-#tnc  h1 {
+#tnc h1 {
   font-size: xx-large;
 }
 
-#tnc  h2 {
+#tnc h2 {
   font-size: x-large;
 }
 
