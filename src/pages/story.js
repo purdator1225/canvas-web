@@ -6,6 +6,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { UseTranslation, useTranslation } from "next-i18next";
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 
 import ValuesGridMobile from "@/components/ValuesGridMobile";
 
@@ -64,6 +65,11 @@ let teamImageList = [
   { url: "/images/story-values-pic3.png", caption: "This is the team name" },
 ];
 
+let careerList = [
+  { title: "Logistics Executive", role: "Internship" },
+  { title: "Accounts Executive", role: "Internship" },
+];
+
 export async function getStaticProps({ locale }) {
   return {
     props: {
@@ -71,6 +77,31 @@ export async function getStaticProps({ locale }) {
     },
   };
 }
+
+export const CareerListing = ({ title, role }) => {
+  return (
+    <div className="flex flex-col lg:flex-row lg:min-w-[800px] lg:h-[60px] justify-between gap-4 border-b-[1px] border-b-black pb-4">
+      <p
+        className={`${roboto.variable} font-robo text-[18px] font-medium uppercase leading-6`}
+      >
+        {title}
+      </p>
+      <div className="flex justify-between lg:w-[50%]">
+        <p className={`${roboto.variable} font-robo text-[18px] leading-6`}>
+          {role}
+        </p>
+        <Link rel="noopener noreferrer" href={`mailto:cglbiz@canvasglobal-log.com?subject=Application for ${role}-${title}`}>
+          <div className="flex gap-2">
+            <p className={`${roboto.variable} font-robo text-[18px] leading-6`}>
+              Apply
+            </p>
+            <p>&#x2192;</p>
+          </div>
+        </Link>
+      </div>
+    </div>
+  );
+};
 
 function Story(props) {
   const { t } = useTranslation();
@@ -190,7 +221,7 @@ function Story(props) {
 
       <div id="our-team" className="team-culture bg-white py-20">
         <div className="m-auto max-w-screen-xl">
-          <div className="px-[30px] py-10">
+          <div className="flex flex-col gap-4 px-[30px] py-10">
             <h1
               className={`${national.variable} font-national text-[26px] font-medium uppercase leading-[28px] text-canvasblue lg:text-[32px] lg:font-bold`}
             >
@@ -203,7 +234,7 @@ function Story(props) {
               {t("story:team_h2")}
             </h2>
           </div>
-          <div className="team-image-wrapper px-[30px] flex w-screen max-w-[1280px] gap-4 overflow-x-scroll whitespace-nowrap">
+          <div className="team-image-wrapper flex max-w-[1280px] gap-4 whitespace-nowrap px-[30px]">
             {teamImageList.map((teamImage, index) => (
               <div key={index} className="flex w-full flex-col gap-3">
                 <div
@@ -222,13 +253,30 @@ function Story(props) {
                   />
                 </div>
 
-                <p
+                {/* <p
                   className={`${roboto.variable} self-end font-robo text-[16px] leading-[20px] text-canvasblue`}
                 >
                   {teamImage.caption}
-                </p>
+                </p> */}
               </div>
             ))}
+          </div>
+
+          <div className="m-[30px] flex flex-col justify-between gap-6 py-10 sm:flex-row lg:py-[100px]">
+            <h1
+              className={`${national.variable} font-national text-[38px] leading-[42px] sm:text-[60px] font-medium sm:leading-[60px] tracking-wide text-canvasblue`}
+            >
+              Our Careers
+            </h1>
+            <div className="flex flex-col  gap-7">
+              {careerList.map((career, idx) => (
+                <CareerListing key={idx} title={career.title} role={career.role} />
+              ))}
+
+              <p className="titlecase my-5 text-canvasblue">
+                Or Email Resume to <strong>hradmin@canvasglobal-log.com</strong>{" "}
+              </p>
+            </div>
           </div>
         </div>
       </div>

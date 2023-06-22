@@ -7,7 +7,6 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { UseTranslation, useTranslation } from "next-i18next";
 import { motion } from "framer-motion";
 
-
 export async function getStaticProps({ locale }) {
   return {
     props: {
@@ -41,7 +40,13 @@ function ContactUs(props) {
                 Gary Khoo
               </h3>
 
-              <Link rel="noopener noreferrer" href="tel:+6011-1116 1106">+6011-1116 1106</Link>
+              <Link rel="noopener noreferrer" href="tel:+6011-1116 1106">
+                +6011-1116 1106
+              </Link>
+
+              <Link rel="noopener noreferrer" href="mailto:gary@canvasglobal-log.com">
+              <p> gary@canvasglobal-log.com</p>
+            </Link>
 
               <Image
                 className="aspect-square w-[180px]"
@@ -58,11 +63,14 @@ function ContactUs(props) {
                 Jackson Lim
               </h3>
 
-              <Link rel="noopener noreferrer" href="tel:+6011-1662 6228">+6011-1662 6228</Link>
+              <Link rel="noopener noreferrer" href="tel:+6011-1662 6228">
+                +6011-1662 6228
+              </Link>
 
+              <Link rel="noopener noreferrer" href="mailto:cglbiz@canvasglobal-log.com">
+              <p>cglbiz@canvasglobal-log.com</p>
+            </Link>
 
-
-              
               <Image
                 className="aspect-square w-[180px]"
                 width={250}
@@ -79,9 +87,9 @@ function ContactUs(props) {
                 {t("contact:contact_email")}
               </p>
             </div>
-            <Link rel="noopener noreferrer" href="mailto:cglbiz@canvasglobal-log.com">
+            {/* <Link rel="noopener noreferrer" href="mailto:cglbiz@canvasglobal-log.com">
               <p>cglbiz@canvasglobal-log.com</p>
-            </Link>
+            </Link> */}
             <Link rel="noopener noreferrer" href="cs@canvasglobal-log.com">
               <p>cs@canvasglobal-log.com</p>
             </Link>
@@ -160,7 +168,13 @@ function ContactUs(props) {
             {/* <button className="p-6 bg-gray-100 text-black self-start" typeof="submit">
             Submit
           </button> */}
-            <motion.button layout initial={{width:'300px'}} whileHover={{width: '400px'}}typeof="submit" className="" >
+            <motion.button
+              layout
+              initial={{ width: "300px" }}
+              whileHover={{ width: "400px" }}
+              typeof="submit"
+              className=""
+            >
               <PageLinks
                 id={"contact-id-button"}
                 text={t("common:button_submit")}

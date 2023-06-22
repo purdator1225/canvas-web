@@ -106,6 +106,9 @@ function Navbar({ t }) {
               <Link href="/contact">
                 <h3>{t("common:nav_contact")}</h3>
               </Link>
+              <Link href="/story">
+                <h3>{t("common:nav_careers")}</h3>
+              </Link>
             </div>
 
             <div className="absolute h-full w-full">
@@ -179,8 +182,8 @@ function Navbar({ t }) {
                 } else
                   router.push(router.asPath, router.asPath, { locale: "en" });
               }}
-              className={`h-full w-full p-[24px] hover:bg-canvasgreen 
-              }`}
+              className={`} h-full w-full p-[24px] 
+              hover:bg-canvasgreen`}
             >
               <h3
                 className={`${roboto.variable} font-robo text-[18px] leading-6`}
@@ -226,6 +229,15 @@ function Navbar({ t }) {
                 }  hover:text-white"`}
               >
                 {t("common:nav_contact")}
+              </div>
+            </Link>
+
+
+            <Link href={"/story"}>
+              <div
+                className={`w-[200px] py-[24px] text-center uppercase transition-colors hover:bg-canvasgreen hover:text-white"`}
+              >
+                {t("common:nav_careers")}
               </div>
             </Link>
           </div>

@@ -46,15 +46,15 @@ function Footer({ t }) {
             <Link rel="noopener noreferrer" href="tel:+604 2870130">
               <p className="text-[14px] leading-6"> +604 2870130</p>
             </Link>
-            <Link rel="noopener noreferrer" href="mailto:cglbiz@canvasglobal-log.com">
+            {/* <Link rel="noopener noreferrer" href="mailto:cglbiz@canvasglobal-log.com">
               <p>cglbiz@canvasglobal-log.com</p>
-            </Link>
+            </Link> */}
             <Link rel="noopener noreferrer" href="cs@canvasglobal-log.com">
               <p>cs@canvasglobal-log.com</p>
             </Link>
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex gap-3 hidden">
             <Image width={18} height={18} src={"/images/icons/fb_2.svg"} />
             <Image width={18} height={18} src={"/images/icons/insta.svg"} />
             <Image width={18} height={18} src={"/images/icons/twitter.svg"} />
@@ -67,16 +67,16 @@ function Footer({ t }) {
             </h2>
 
             <div>
-              <Link href={"/"}>
+              <Link href={"/services"}>
                 <p>Worldwide Import/Export</p>
               </Link>
-              <Link href={"/"}>
+              <Link href={"/services"}>
                 <p>Trucking & Hauling</p>
               </Link>
-              <Link href={"/"}>
+              <Link href={"/services"}>
                 <p>Storage Solutions</p>
               </Link>
-              <Link href={"/"}>
+              <Link href={"/services"}>
                 <p>Transloading</p>
               </Link>
             </div>
@@ -95,10 +95,10 @@ function Footer({ t }) {
                     : "partnerships/#asia-log"
                 }`}
               >
-                <p>Asia Log</p>
+                <p>Asia Logistics Co. Ltd</p>
               </Link>
               <Link href={"/partnerships/#pss-depot"}>
-                <p>PSS Depot</p>
+                <p>PSS Depot & Container Trading</p>
               </Link>
             </div>
           </div>
