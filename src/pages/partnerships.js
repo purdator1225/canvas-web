@@ -124,7 +124,7 @@ function Partner(props) {
         {/* <div>{props.locale}</div> */}
         <div className=" relative flex h-screen w-screen bg-[url('/images/partnerships.png')] bg-cover ">
 
-          <div className="absolute flex justify-evenly h-full w-full">
+          <div className="hidden absolute lg:flex justify-evenly h-full w-full">
             <div className="h-full bg-white w-[1px]"></div>
             <div className="h-full bg-white w-[1px]"></div>
             <div className="h-full bg-white w-[1px]"></div>
