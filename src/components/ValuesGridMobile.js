@@ -21,7 +21,7 @@ function ValuesGridMobile({ valuesList, imageList, bg, namespace }) {
       {imageList.map((image, index) => (
         <div
           key={index}
-          className={`relative col-span-2 w-full h-[250px]  ${
+          className={`relative col-span-2 h-[250px] w-full  ${
             index === 0
               ? "eight-grid-mob-first"
               : index === 1
