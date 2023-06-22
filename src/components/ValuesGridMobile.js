@@ -18,7 +18,7 @@ function ValuesGridMobile({ valuesList, imageList, bg, namespace }) {
         />
       ))}
 
-      {imageList.map((image, index) => (
+      {imageList ? imageList.map((image, index) => (
         <div
           key={index}
           className={`relative col-span-2 h-[250px] w-full  ${
@@ -33,7 +33,7 @@ function ValuesGridMobile({ valuesList, imageList, bg, namespace }) {
         >
           <Image fill style={{ objectFit: "cover" }} src={image.url} />
         </div>
-      ))}
+      )): null }
     </div>
   );
 }

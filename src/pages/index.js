@@ -732,7 +732,7 @@ export default function Home(props) {
 
             {/* services card */}
 
-            <div className=" flex gap-x-10 gap-y-10 overflow-x-auto whitespace-nowrap px-10 lg:grid lg:grid-cols-2">
+            <div className=" flex gap-x-10 gap-y-10 overflow-x-auto whitespace-nowrap px-10 lg:grid lg:grid-cols-2 overflow-y-hidden">
               <ServicesCard
                 order={1}
                 title={t("home:home_services_card_1")}
