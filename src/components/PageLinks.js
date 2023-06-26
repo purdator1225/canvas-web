@@ -9,9 +9,19 @@ import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 
-function PageLinks({ logo, text, order, route, color, noclick, id, mask_id, width, hoverWidth }) {
+function PageLinks({
+  logo,
+  text,
+  order,
+  route,
+  color,
+  noclick,
+  id,
+  mask_id,
+  width,
+  hoverWidth,
+}) {
   useEffect(() => {
-
     //first-trigger
     gsap.fromTo(
       `#${id}`,
@@ -39,8 +49,8 @@ function PageLinks({ logo, text, order, route, color, noclick, id, mask_id, widt
 
   return (
     <motion.div
-    whileHover={{width:hoverWidth}}
-    layout
+      whileHover={{ width: hoverWidth }}
+      layout
       data-lag="0.1"
       ref={button}
       onClick={handleClick}
@@ -50,7 +60,7 @@ function PageLinks({ logo, text, order, route, color, noclick, id, mask_id, widt
     >
       <div className="relative flex h-full items-center">
         <BoxSvg hexcode={color} id={id} mask_id={mask_id} />
-        <div className="absolute ml-[20px] aspect-square w-[62px] transition-transform duration-[0.5s] hover:rotate-[360deg]">
+        <div className="absolute ml-[20px] aspect-square w-[62px] transition-transform duration-[0.5s]">
           <Image fill style={{ objectFit: "cover" }} src={logo} />
         </div>
       </div>

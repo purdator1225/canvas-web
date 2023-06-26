@@ -264,7 +264,7 @@ function Story(props) {
 
           <div className="m-[30px] flex flex-col justify-between gap-6 py-10 sm:flex-row lg:py-[100px]">
             <h1
-              className={`${national.variable} font-national text-[38px] leading-[42px] sm:text-[60px] font-medium sm:leading-[60px] tracking-wide text-canvasblue`}
+              className={`${national.variable} font-national text-[38px] leading-[42px] sm:text-[60px] font-medium sm:leading-[60px] tracking-wide text-canvasblue uppercase`}
             >
               Our Careers
             </h1>

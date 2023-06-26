@@ -123,12 +123,10 @@ function Partner(props) {
       <main className={`${national.variable} font-nation bg-white text-white`}>
         {/* <div>{props.locale}</div> */}
         <div className=" relative flex h-screen w-screen bg-[url('/images/partnerships.png')] bg-cover ">
-
-          <div className="hidden absolute lg:flex justify-evenly h-full w-full">
-            <div className="h-full bg-white w-[1px]"></div>
-            <div className="h-full bg-white w-[1px]"></div>
-            <div className="h-full bg-white w-[1px]"></div>
-
+          <div className="absolute hidden h-full w-full justify-evenly lg:flex">
+            <div className="h-full w-[1px] bg-white"></div>
+            <div className="h-full w-[1px] bg-white"></div>
+            <div className="h-full w-[1px] bg-white"></div>
           </div>
           <div className="m-auto grid gap-6 lg:grid-cols-3 xl:w-[1280px]">
             <div className="ml-5 flex h-[430px] flex-col gap-6 self-center">
@@ -356,7 +354,7 @@ function Partner(props) {
               imageList={pssFeaturesImg}
             />
             <ValuesGrid
-            bg="canvasblue"
+              bg="canvasblue"
               namespace="partnership"
               valuesList={pssContainerFeatures}
               imageList={pssFeaturesImg}
