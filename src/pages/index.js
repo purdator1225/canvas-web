@@ -36,7 +36,7 @@ const HeroCard = ({ text, logo, url, scrollTo }) => {
   return (
     <div
       onClick={() => scrollTo(url)}
-      className=" transition-colors box-border flex aspect-square h-[180px] flex-col justify-between p-2 hover:cursor-pointer hover:bg-[rgba(44,182,108,0.7)]"
+      className=" box-border flex aspect-square h-[180px] flex-col justify-between p-2 transition-colors hover:cursor-pointer hover:bg-[rgba(44,182,108,0.7)]"
     >
       <hr className="h-[4px] w-full bg-white"></hr>
       <h3
@@ -70,14 +70,13 @@ export default function Home(props) {
     transition: {
       when: "beforeChildren",
       staggerChildren: 0.5,
-    
     },
   };
 
   const lineVariants = {
     hidden: { scaleY: 1 },
     show: { scaleY: 3000 },
-    transition :{ duration: 3}
+    transition: { duration: 3 },
   };
 
   // animate banner
@@ -305,7 +304,7 @@ export default function Home(props) {
 
         <div
           id="hero"
-          className="relative hidden h-screen w-screen justify-center bg-[url('/images/home-hero-pattern.png')] bg-cover sm:flex"
+          className="relative hidden h-screen max-h-[920px] w-screen justify-center bg-[url('/images/home-hero-pattern.png')] bg-cover sm:flex"
         >
           <div className="absolute hidden h-full w-[1280px] justify-end xl:flex">
             <motion.div
@@ -317,36 +316,32 @@ export default function Home(props) {
               <motion.div
                 initial={{ scaleY: 1 }}
                 animate={{ scaleY: 3000 }}
-                transition={{ duration: 3, delay: 3 }}
-                
+                transition={{ duration: 3, delay: 1 }}
+                className="h-[1px] w-[1px] bg-white"
+              ></motion.div>
+
+              <motion.div
+                initial={{ scaleY: 1 }}
+                animate={{ scaleY: 3000 }}
+                transition={{ duration: 3, delay: 1.5 }}
                 className="h-[1px] w-[1px] bg-white"
               ></motion.div>
               <motion.div
                 initial={{ scaleY: 1 }}
                 animate={{ scaleY: 3000 }}
-                transition={{ duration: 3,delay: 3.5  }}
-                
+                transition={{ duration: 3, delay: 2 }}
                 className="h-[1px] w-[1px] bg-white"
               ></motion.div>
               <motion.div
                 initial={{ scaleY: 1 }}
                 animate={{ scaleY: 3000 }}
-                transition={{ duration: 3, delay: 4  }}
-                
+                transition={{ duration: 3, delay: 2.5 }}
                 className="h-[1px] w-[1px] bg-white"
               ></motion.div>
               <motion.div
                 initial={{ scaleY: 1 }}
                 animate={{ scaleY: 3000 }}
-                transition={{ duration: 3, delay: 4.5  }}
-                
-                className="h-[1px] w-[1px] bg-white"
-              ></motion.div>
-              <motion.div
-                initial={{ scaleY: 1 }}
-                animate={{ scaleY: 3000 }}
-                transition={{ duration: 3, delay: 5  }}
-                
+                transition={{ duration: 3, delay: 3.0 }}
                 className="h-[1px] w-[1px] bg-white"
               ></motion.div>
             </motion.div>
@@ -356,9 +351,9 @@ export default function Home(props) {
             id="hero-text-wrapper"
             className="z-[10] mb-[5vh] flex w-full flex-col gap-[50px] self-end pl-[30px] lg:w-[1280px] lg:bg-none xl:pl-0"
           >
-            <div className="flex w-[400px] flex-col justify-center gap-6 text-white">
+            <div className="flex w-[400px] flex-col justify-center gap-4 text-white">
               <h1
-                className={`${national.variable} font-national text-[28px] font-medium uppercase lg:text-[32px] lg:font-bold`}
+                className={`${national.variable} font-national text-[28px] leading-[32px] font-medium uppercase lg:text-[32px] lg:font-bold`}
               >
                 {t("home:home_hero_h2")}
               </h1>
