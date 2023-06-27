@@ -304,7 +304,7 @@ export default function Home(props) {
 
         <div
           id="hero"
-          className="relative hidden h-screen max-h-[920px] w-screen justify-center bg-[url('/images/home-hero-pattern.png')] bg-cover sm:flex"
+          className="relative hidden h-screen max-h-[1200px] w-screen justify-center bg-[url('/images/home-hero-pattern.png')] bg-cover sm:flex"
         >
           <div className="absolute hidden h-full w-[1280px] justify-end xl:flex">
             <motion.div
