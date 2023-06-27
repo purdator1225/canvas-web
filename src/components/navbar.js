@@ -134,13 +134,13 @@ function Navbar({ t }) {
       <div
         className={`${
           roboto.variable
-        } text-[18px]leading-[24px] m-auto w-full font-robo tracking-tight ${
+        } text-[18px]leading-[24px] w-full font-robo tracking-tight ${
           router.pathname === "/story" ? "text-black" : "text-white"
         } absolute z-10  flex flex-row bg-[#ffffff20]`}
       >
-        <div className="m-auto flex h-[72px] w-[90%] items-center justify-between">
+        <div className="flex h-[72px] gap-[110px] px-[30px] xl:m-auto xl:px-0 w-screen max-w-[1280px] justify-between items-center">
           <Link href="/">
-            <div className="relative h-[40px] w-[126px] hover:animate-pulse">
+            <div className="relative h-[40px] p-5 box-border w-[200px] hover:animate-pulse">
               <Image
                 fill
                 style={{ objectFit: "contain" }}
@@ -174,7 +174,7 @@ function Navbar({ t }) {
             <div></div>
           </div>
 
-          <div className="navlinks-wrapper hidden h-full lg:flex">
+          <div className="navlinks-wrapper hidden h-full lg:flex w-[1080px] justify-evenly">
             <div
               onClick={() => {
                 if (router.locale === "en") {
@@ -182,7 +182,7 @@ function Navbar({ t }) {
                 } else
                   router.push(router.asPath, router.asPath, { locale: "en" });
               }}
-              className={`} h-full w-full p-[24px] 
+              className={`h-full w-auto p-[24px] 
               hover:bg-canvasgreen`}
             >
               <h3
@@ -194,7 +194,7 @@ function Navbar({ t }) {
 
             <Link href={"/partnerships"}>
               <div
-                className={`w-[200px] py-[24px] text-center uppercase transition-colors hover:bg-canvasgreen ${
+                className={`w-[180px] py-[24px] text-center uppercase transition-colors hover:bg-canvasgreen ${
                   router.asPath === "/partnerships" ? "bg-canvasgreen" : null
                 }  hover:text-white"`}
               >
@@ -204,7 +204,7 @@ function Navbar({ t }) {
 
             <Link href={"/story"}>
               <div
-                className={`w-[200px] py-[24px] text-center uppercase transition-colors hover:bg-canvasgreen ${
+                className={`w-[180px] py-[24px] text-center uppercase transition-colors hover:bg-canvasgreen ${
                   router.asPath === "/story" ? "bg-canvasgreen" : null
                 }  hover:text-white"`}
               >
@@ -214,7 +214,7 @@ function Navbar({ t }) {
 
             <Link href={"/services"}>
               <div
-                className={`w-[200px] py-[24px] text-center uppercase transition-colors hover:bg-canvasgreen ${
+                className={`w-[180px] py-[24px] text-center uppercase transition-colors hover:bg-canvasgreen ${
                   router.asPath === "/services" ? "bg-canvasgreen" : null
                 }  hover:text-white"`}
               >
@@ -224,7 +224,7 @@ function Navbar({ t }) {
 
             <Link href={"/contact"}>
               <div
-                className={`w-[200px] py-[24px] text-center uppercase transition-colors hover:bg-canvasgreen ${
+                className={`w-[180px] py-[24px] text-center uppercase transition-colors hover:bg-canvasgreen ${
                   router.asPath === "/contact" ? "bg-canvasgreen" : null
                 }  hover:text-white"`}
               >
@@ -232,10 +232,9 @@ function Navbar({ t }) {
               </div>
             </Link>
 
-
             <Link href={"/story"}>
               <div
-                className={`w-[200px] py-[24px] text-center uppercase transition-colors hover:bg-canvasgreen hover:text-white"`}
+                className={`hover:text-white" w-[180px] py-[24px] text-center uppercase transition-colors hover:bg-canvasgreen`}
               >
                 {t("common:nav_careers")}
               </div>

@@ -18,7 +18,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/dist/DrawSVGPlugin";
 import { SplitText } from "gsap/dist/SplitText";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { easeIn, motion, useScroll, useTransform } from "framer-motion";
 
 import { useEffect, useRef } from "react";
 import MapRoutes from "@/components/maproutes";
@@ -36,7 +36,7 @@ const HeroCard = ({ text, logo, url, scrollTo }) => {
   return (
     <div
       onClick={() => scrollTo(url)}
-      className="flex aspect-square min-h-[180px] flex-col  gap-[28px]  p-4 transition-colors hover:cursor-pointer hover:bg-[rgba(44,182,108,0.7)] lg:max-w-[200px]"
+      className=" transition-colors box-border flex aspect-square h-[180px] flex-col justify-between p-2 hover:cursor-pointer hover:bg-[rgba(44,182,108,0.7)]"
     >
       <hr className="h-[4px] w-full bg-white"></hr>
       <h3
@@ -68,17 +68,16 @@ export default function Home(props) {
     hidden: { opacity: 1 },
     show: { opacity: 1 },
     transition: {
-      delay: 0.5,
-      staggerChildren: 5,
+      when: "beforeChildren",
+      staggerChildren: 0.5,
+    
     },
   };
 
   const lineVariants = {
-    hidden: { opacity: 1 },
-    show: { scaleY: 2000 },
-    transition: {
-      duration: 2,
-    },
+    hidden: { scaleY: 1 },
+    show: { scaleY: 3000 },
+    transition :{ duration: 3}
   };
 
   // animate banner
@@ -308,30 +307,45 @@ export default function Home(props) {
           id="hero"
           className="relative hidden h-screen w-screen justify-center bg-[url('/images/home-hero-pattern.png')] bg-cover sm:flex"
         >
-          <div className="absolute flex h-full w-[1280px] justify-end">
+          <div className="absolute hidden h-full w-[1280px] justify-end xl:flex">
             <motion.div
+              variants={lineParentVariants}
               initial="hidden"
               animate="show"
-              variants={lineParentVariants}
-              className="absolute flex h-full w-[full-400px] gap-[195px] self-end"
+              className="absolute flex h-full w-[full-400px] gap-[180px] self-end"
             >
               <motion.div
+                // initial={{ scaleY: 1 }}
+                // animate={{ scaleY: 3000 }}
+                // transition={{ duration: 3, delay: 3 }}
                 variants={lineVariants}
                 className="h-[1px] w-[1px] bg-white"
               ></motion.div>
               <motion.div
+                // initial={{ scaleY: 1 }}
+                // animate={{ scaleY: 3000 }}
+                // transition={{ duration: 3,delay: 3.5  }}
                 variants={lineVariants}
                 className="h-[1px] w-[1px] bg-white"
               ></motion.div>
               <motion.div
+                // initial={{ scaleY: 1 }}
+                // animate={{ scaleY: 3000 }}
+                // transition={{ duration: 3, delay: 4  }}
                 variants={lineVariants}
                 className="h-[1px] w-[1px] bg-white"
               ></motion.div>
               <motion.div
+                // initial={{ scaleY: 1 }}
+                // animate={{ scaleY: 3000 }}
+                // transition={{ duration: 3, delay: 4.5  }}
                 variants={lineVariants}
                 className="h-[1px] w-[1px] bg-white"
               ></motion.div>
               <motion.div
+                // initial={{ scaleY: 1 }}
+                // animate={{ scaleY: 3000 }}
+                // transition={{ duration: 3, delay: 5  }}
                 variants={lineVariants}
                 className="h-[1px] w-[1px] bg-white"
               ></motion.div>
@@ -363,7 +377,7 @@ export default function Home(props) {
 
             <div
               id="hero-flex-tab-above"
-              className=" hidden flex-wrap gap-5  self-end text-white sm:flex"
+              className=" hidden flex-wrap  self-end text-white sm:flex"
             >
               <HeroCard
                 text={t("home:home_hero_strength")}
