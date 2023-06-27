@@ -315,38 +315,38 @@ export default function Home(props) {
               className="absolute flex h-full w-[full-400px] gap-[180px] self-end"
             >
               <motion.div
-                // initial={{ scaleY: 1 }}
-                // animate={{ scaleY: 3000 }}
-                // transition={{ duration: 3, delay: 3 }}
-                variants={lineVariants}
+                initial={{ scaleY: 1 }}
+                animate={{ scaleY: 3000 }}
+                transition={{ duration: 3, delay: 3 }}
+                
                 className="h-[1px] w-[1px] bg-white"
               ></motion.div>
               <motion.div
-                // initial={{ scaleY: 1 }}
-                // animate={{ scaleY: 3000 }}
-                // transition={{ duration: 3,delay: 3.5  }}
-                variants={lineVariants}
+                initial={{ scaleY: 1 }}
+                animate={{ scaleY: 3000 }}
+                transition={{ duration: 3,delay: 3.5  }}
+                
                 className="h-[1px] w-[1px] bg-white"
               ></motion.div>
               <motion.div
-                // initial={{ scaleY: 1 }}
-                // animate={{ scaleY: 3000 }}
-                // transition={{ duration: 3, delay: 4  }}
-                variants={lineVariants}
+                initial={{ scaleY: 1 }}
+                animate={{ scaleY: 3000 }}
+                transition={{ duration: 3, delay: 4  }}
+                
                 className="h-[1px] w-[1px] bg-white"
               ></motion.div>
               <motion.div
-                // initial={{ scaleY: 1 }}
-                // animate={{ scaleY: 3000 }}
-                // transition={{ duration: 3, delay: 4.5  }}
-                variants={lineVariants}
+                initial={{ scaleY: 1 }}
+                animate={{ scaleY: 3000 }}
+                transition={{ duration: 3, delay: 4.5  }}
+                
                 className="h-[1px] w-[1px] bg-white"
               ></motion.div>
               <motion.div
-                // initial={{ scaleY: 1 }}
-                // animate={{ scaleY: 3000 }}
-                // transition={{ duration: 3, delay: 5  }}
-                variants={lineVariants}
+                initial={{ scaleY: 1 }}
+                animate={{ scaleY: 3000 }}
+                transition={{ duration: 3, delay: 5  }}
+                
                 className="h-[1px] w-[1px] bg-white"
               ></motion.div>
             </motion.div>
