@@ -3,36 +3,11 @@ import { national, roboto } from "../../utils/font";
 import Swiper from "@/components/Swiper";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { UseTranslation, useTranslation } from "next-i18next";
+import GsapSplitTextWord from "@/components/animations/GsapSplitTextWord";
+import { servicesSliderData } from "../../utils/data";
 
 // import "/swiper/css";
 
-let servicesSliderData = [
-  {
-    title: "service_1_title",
-    url: "/images/services-imgs/services-sea-freight.png",
-    para: "service_1_para",
-  },
-  {
-    title: "service_2_title",
-    url: "/images/services-imgs/services-trucking.png",
-    para: "service_2_para",
-  },
-  {
-    title: "service_3_title",
-    url: "/images/services-imgs/services-warehousing.png",
-    para: "service_3_para",
-  },
-  {
-    title: "service_4_title",
-    url: "/images/services-imgs/services-transloading.png",
-    para: "service_4_para",
-  },
-  {
-    title: "service_5_title",
-    url: "/images/services-imgs/services-fumigation.png",
-    para: "service_5_para",
-  },
-];
 
 export async function getStaticProps({ locale }) {
   return {
@@ -55,11 +30,12 @@ function Services(props) {
             >
               {t("common:canvas_global")}
             </h1>
-            <h2
+            <GsapSplitTextWord>     <h2
               className={`${national.variable} font-national text-[48px] font-medium uppercase leading-[54px] lg:text-[60px] lg:font-bold`}
             >
               {t("services:services_hero_h1")}
-            </h2>
+            </h2></GsapSplitTextWord>
+       
             <h3
               className={`${roboto.variable} max-w-[350px] font-robo uppercase`}
             >

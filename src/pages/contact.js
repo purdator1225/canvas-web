@@ -6,6 +6,7 @@ import PageLinks from "@/components/PageLinks";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { UseTranslation, useTranslation } from "next-i18next";
 import { motion } from "framer-motion";
+import GsapSplitTextWord from "@/components/animations/GsapSplitTextWord";
 
 export async function getStaticProps({ locale }) {
   return {
@@ -26,11 +27,14 @@ function ContactUs(props) {
     <div className="flex bg-[url('/images/contact-us.png')] bg-cover p-10 text-white">
       <div className="m-auto flex w-full flex-col justify-between sm:flex-row sm:gap-[100px] xl:w-[1280px]">
         <div className="left-side mt-[150px] flex flex-col justify-between gap-10">
-          <h3
-            className={`${national.variable} font-national text-[60px] font-medium uppercase lg:font-bold`}
-          >
-            {t("contact:contact_hero_h1")}
-          </h3>
+          <GsapSplitTextWord>
+            
+            <h3
+              className={`${national.variable} font-national text-[60px] font-medium uppercase lg:font-bold`}
+            >
+              {t("contact:contact_hero_h1")}
+            </h3>
+          </GsapSplitTextWord>
 
           <div className="flex flex-col gap-12 lg:flex-row">
             <div className="flex flex-col gap-4">
@@ -44,9 +48,12 @@ function ContactUs(props) {
                 +6011-1116 1106
               </Link>
 
-              <Link rel="noopener noreferrer" href="mailto:gary@canvasglobal-log.com">
-              <p> gary@canvasglobal-log.com</p>
-            </Link>
+              <Link
+                rel="noopener noreferrer"
+                href="mailto:gary@canvasglobal-log.com"
+              >
+                <p> gary@canvasglobal-log.com</p>
+              </Link>
 
               <Image
                 className="aspect-square w-[180px]"
@@ -67,9 +74,12 @@ function ContactUs(props) {
                 +6011-1662 6228
               </Link>
 
-              <Link rel="noopener noreferrer" href="mailto:cglbiz@canvasglobal-log.com">
-              <p>cglbiz@canvasglobal-log.com</p>
-            </Link>
+              <Link
+                rel="noopener noreferrer"
+                href="mailto:cglbiz@canvasglobal-log.com"
+              >
+                <p>cglbiz@canvasglobal-log.com</p>
+              </Link>
 
               <Image
                 className="aspect-square w-[180px]"

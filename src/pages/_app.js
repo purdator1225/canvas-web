@@ -5,14 +5,13 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { appWithTranslation } from "next-i18next";
 import Footer from "@/components/footer";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { DefaultSeo } from "next-seo";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { UseTranslation, useTranslation } from "next-i18next";
 import SEO from "../../next-seo.config";
-
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+import { SmootherContext } from "@/components/SmootherContext";
 
 export async function getStaticProps({ locale }) {
   return {
@@ -23,8 +22,7 @@ export async function getStaticProps({ locale }) {
 }
 
 function App({ Component, pageProps }) {
-  let smoother = useRef();
-  let root = useRef();
+  let [smoother, setSmoother] = useState();
 
   const { t } = useTranslation();
 
@@ -33,33 +31,41 @@ function App({ Component, pageProps }) {
     smoother.current.scrollTo(elID, true, "center center");
   };
 
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      smoother.current = ScrollSmoother.create({
-        wrapper: "#wrapper",
-        content: "#content",
-        smooth: 0.8,
-        effects: true,
-      });
-    }, root);
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+    let smoother = ScrollSmoother.create({
+      wrapper: "#wrapper",
+      content: "#content",
+      smooth: 0.8,
+      effects: true,
+      normalizeScroll: true,
+      smoothTouch: 1,
+      ignoreMobileResize: true
+   
+    });
+
+    setSmoother(smoother);
+
     return () => {
-      ctx.revert();
+      smoother.kill();
     };
   }, []);
 
   return (
-    <>
-      <div ref={root} id="wrapper" className=" overflow-x-hidden">
-        <div id="content">
-          <DefaultSeo {...SEO} />
-          <Navbar t={t} />
+    <div className="overflow-x-hidden">
+      <DefaultSeo {...SEO} />
+      <Navbar t={t} />
 
-          <Component {...pageProps} scrollTo={scrollTo} />
-
-          <Footer t={t} />
+      <SmootherContext.Provider value={smoother}>
+        <div id="wrapper">
+          <div id="content">
+            <Component {...pageProps} scrollTo={scrollTo} />
+            <Footer t={t} />
+          </div>
         </div>
-      </div>
-    </>
+      </SmootherContext.Provider>
+    </div>
   );
 }
 

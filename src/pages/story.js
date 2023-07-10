@@ -1,74 +1,25 @@
-import React from "react";
+import React, { useLayoutEffect, useRef, useContext } from "react";
 import { national, roboto } from "../../utils/font";
 import Image from "next/image";
 import ValuesGrid from "@/components/ValuesGrid";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { UseTranslation, useTranslation } from "next-i18next";
 import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
-import Link from "next/link";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { ScrollSmoother } from "gsap/dist/ScrollSmoother";
+import { SmootherContext } from "@/components/SmootherContext";
+import CareerListing from "@/components/CareerListing";
 
 import ValuesGridMobile from "@/components/ValuesGridMobile";
 
-let storyValues = [
-  {
-    logo: "/images/icons/values-icons/say-yes.png",
-    valueText: "story_values_1",
-    index: 1,
-  },
-  {
-    logo: "/images/icons/values-icons/available-icon.png",
-    valueText: "story_values_2",
-    index: 2,
-  },
-  {
-    logo: "/images/icons/values-icons/learn-icon.png",
-    valueText: "story_values_3",
-    index: 3,
-  },
-  {
-    logo: "/images/icons/values-icons/social-icon.png",
-    valueText: "story_values_4",
-    index: 4,
-  },
-  {
-    logo: "/images/icons/values-icons/commit-icon.png",
-    valueText: "story_values_5",
-    index: 5,
-  },
-  {
-    logo: "/images/icons/values-icons/strengths-icon.png",
-    valueText: "story_values_6",
-    index: 6,
-  },
-  {
-    logo: "/images/icons/values-icons/tasks-icon.png",
-    valueText: "story_values_7",
-    index: 7,
-  },
-  {
-    logo: "/images/icons/values-icons/green-icon.png",
-    valueText: "story_values_8",
-    index: 8,
-  },
-];
-
-let storyImageList = [
-  { url: "/images/story-values-pic1.png" },
-  { url: "/images/story-values-pic2.png" },
-  { url: "/images/story-values-pic3.png" },
-];
-
-let teamImageList = [
-  { url: "/images/story-values-pic1.png", caption: "This is the team name" },
-  { url: "/images/story-values-pic2.png", caption: "This is the team name" },
-  { url: "/images/story-values-pic3.png", caption: "This is the team name" },
-];
-
-let careerList = [
-  { title: "Logistics Executive", role: "Internship" },
-  { title: "Accounts Executive", role: "Internship" },
-];
+import {
+  storyImageList,
+  storyValues,
+  teamImageList,
+  careerList,
+} from "../../utils/data";
+import GsapSplitTextWord from "@/components/animations/GsapSplitTextWord";
 
 export async function getStaticProps({ locale }) {
   return {
@@ -78,33 +29,17 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export const CareerListing = ({ title, role }) => {
-  return (
-    <div className="flex flex-col lg:flex-row lg:min-w-[800px] lg:h-[60px] justify-between gap-4 border-b-[1px] border-b-black pb-4">
-      <p
-        className={`${roboto.variable} font-robo text-[18px] font-medium uppercase leading-6`}
-      >
-        {title}
-      </p>
-      <div className="flex justify-between lg:w-[50%]">
-        <p className={`${roboto.variable} font-robo text-[18px] leading-6`}>
-          {role}
-        </p>
-        <Link rel="noopener noreferrer" href={`mailto:cglbiz@canvasglobal-log.com?subject=Application for ${role}-${title}`}>
-          <div className="flex gap-2">
-            <p className={`${roboto.variable} font-robo text-[18px] leading-6`}>
-              Apply
-            </p>
-            <p>&#x2192;</p>
-          </div>
-        </Link>
-      </div>
-    </div>
-  );
-};
-
 function Story(props) {
   const { t } = useTranslation();
+
+
+  const smoother = useContext(SmootherContext);  //get access to the smoother 
+
+
+  useLayoutEffect(() => {
+
+    smoother && smoother.effects("[data-speed], [data-lag]", {});
+  }, []);
 
   //mobile horizontal scroll values section
   // const storyRef = useRef(null);
@@ -114,7 +49,7 @@ function Story(props) {
   // let picMovement = useTransform(scrollYProgress, [0, 1], ["10%", "100%"]);
 
   return (
-    <div className="flex flex-col bg-white">
+    <div id="smooth-content" className="flex flex-col bg-white">
       <div id="top-wrapper" className=" relative max-w-[850px] self-end">
         <div className="flex w-full flex-col bg-white px-[30px]">
           <div className="mb-10 mt-24 flex flex-col gap-4">
@@ -123,11 +58,13 @@ function Story(props) {
             >
               {t("story:story_hero_h2")}
             </h2>
+            <GsapSplitTextWord>
             <h1
               className={`${national.variable} font-national text-[38px] font-medium uppercase leading-[42px] tracking-wide text-canvasblue sm:text-[60px] sm:font-bold sm:leading-[60px]`}
             >
               {t("story:story_hero_h1")}
             </h1>
+            </GsapSplitTextWord>
           </div>
         </div>
 
@@ -173,12 +110,14 @@ function Story(props) {
           >
             {t("story:story_values_h1")}
           </h1>
-
+          <GsapSplitTextWord>
           <h1
             className={`${national.variable} headings w-[300px] font-national text-[38px] font-medium uppercase leading-[42px] tracking-wide text-canvasblue lg:text-[60px] lg:font-bold lg:leading-[60px]`}
           >
             {t("story:story_values_h2")}
           </h1>
+          </GsapSplitTextWord>
+          
 
           <div className="flex items-start gap-5 self-end">
             <Image
@@ -228,11 +167,14 @@ function Story(props) {
               {t("story:team_h1")}
             </h1>
 
+            <GsapSplitTextWord>
+
             <h2
               className={`${national.variable} max-w-[500px] font-national text-[38px] font-medium uppercase leading-[42px] tracking-wide text-canvasblue lg:text-[48px] lg:font-bold lg:leading-[58px]`}
             >
               {t("story:team_h2")}
             </h2>
+            </GsapSplitTextWord>
           </div>
           <div className="team-image-wrapper flex max-w-[1280px] gap-4 whitespace-nowrap px-[30px]">
             {teamImageList.map((teamImage, index) => (
@@ -263,14 +205,19 @@ function Story(props) {
           </div>
 
           <div className="m-[30px] flex flex-col justify-between gap-6 py-10 sm:flex-row lg:py-[100px]">
-            <h1
-              className={`${national.variable} font-national text-[38px] leading-[42px] sm:text-[60px] font-medium sm:leading-[60px] tracking-wide text-canvasblue uppercase`}
+          <GsapSplitTextWord> <h1
+                className={`${national.variable} max-w-[500px] font-national text-[38px] font-medium uppercase leading-[42px] tracking-wide text-canvasblue lg:text-[48px] lg:font-bold lg:leading-[58px]`}
             >
               Our Careers
-            </h1>
+            </h1></GsapSplitTextWord>
+           
             <div className="flex flex-col  gap-7">
               {careerList.map((career, idx) => (
-                <CareerListing key={idx} title={career.title} role={career.role} />
+                <CareerListing
+                  key={idx}
+                  title={career.title}
+                  role={career.role}
+                />
               ))}
 
               <p className="titlecase my-5 text-canvasblue">

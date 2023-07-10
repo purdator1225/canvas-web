@@ -6,6 +6,13 @@ import ValuesGrid from "@/components/ValuesGrid";
 import ValuesGridMobile from "@/components/ValuesGridMobile";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { UseTranslation, useTranslation } from "next-i18next";
+import GsapSplitTextWord from "@/components/animations/GsapSplitTextWord";
+import {
+  pssContainerFeatures,
+  pssFeaturesImg,
+  asiaLogFeatures,
+  asiaLogFeaturesImg,
+} from "../../utils/data";
 
 export async function getStaticProps({ locale }) {
   return {
@@ -19,104 +26,6 @@ export async function getStaticProps({ locale }) {
 
 function Partner(props) {
   const { t } = useTranslation();
-
-  let asiaLogFeatures = [
-    {
-      logo: "/images/icons/asia-log-feature-icons/asialog-1.png",
-      valueText: "asia_log_val_1",
-      index: 1,
-    },
-    {
-      logo: "/images/icons/asia-log-feature-icons/asialog-2.png",
-      valueText: "asia_log_val_2",
-      index: 2,
-    },
-    {
-      logo: "/images/icons/asia-log-feature-icons/asialog-3.png",
-      valueText: "asia_log_val_3",
-      index: 3,
-    },
-    {
-      logo: "/images/icons/asia-log-feature-icons/asialog-4.png",
-      valueText: "asia_log_val_4",
-      index: 4,
-    },
-    {
-      logo: "/images/icons/asia-log-feature-icons/asialog-5.png",
-      valueText: "asia_log_val_5",
-      index: 5,
-    },
-    {
-      logo: "/images/icons/asia-log-feature-icons/asialog-6.png",
-      valueText: "asia_log_val_6",
-      index: 6,
-    },
-    {
-      logo: "/images/icons/asia-log-feature-icons/asialog-7.png",
-      valueText: "asia_log_val_7",
-      index: 7,
-    },
-    {
-      logo: "/images/icons/asia-log-feature-icons/asialog-8.png",
-      valueText: "asia_log_val_8",
-      index: 8,
-    },
-  ];
-
-  let asiaLogFeaturesImg = [
-    { url: "/images/partners-images/asia-log-img-1.png" },
-    { url: "/images/partners-images/asia-log-img-2.png" },
-    { url: "/images/partners-images/asia-log-img-3.png" },
-  ];
-
-  let pssFeaturesImg = [
-    { url: "/images/partners-images/pss-img-1.png" },
-    { url: "/images/partners-images/pss-img-2.png" },
-    { url: "/images/partners-images/pss-img-3.png" },
-  ];
-
-  let pssContainerFeatures = [
-    {
-      logo: "/images/icons/pss-container-values-icons/pss_1.png",
-      valueText: "pss_val_1",
-      index: 1,
-    },
-    {
-      logo: "/images/icons/pss-container-values-icons/pss_2.png",
-      valueText: "pss_val_2",
-      index: 2,
-    },
-    {
-      logo: "/images/icons/pss-container-values-icons/pss_3.png",
-      valueText: "pss_val_3",
-      index: 3,
-    },
-    {
-      logo: "/images/icons/pss-container-values-icons/pss_4.png",
-      valueText: "pss_val_4",
-      index: 4,
-    },
-    {
-      logo: "/images/icons/pss-container-values-icons/pss_5.png",
-      valueText: "pss_val_5",
-      index: 5,
-    },
-    {
-      logo: "/images/icons/pss-container-values-icons/pss_6.png",
-      valueText: "pss_val_6",
-      index: 6,
-    },
-    {
-      logo: "/images/icons/pss-container-values-icons/pss_7.png",
-      valueText: "pss_val_7",
-      index: 7,
-    },
-    {
-      logo: "/images/icons/pss-container-values-icons/pss_8.png",
-      valueText: "pss_val_8",
-      index: 8,
-    },
-  ];
 
   return (
     <div>
@@ -135,50 +44,21 @@ function Partner(props) {
               >
                 {t("common:canvas_global")}
               </h1>
-              <h2
-                className={`${national.variable} font-national text-[60px] 
+              <GsapSplitTextWord>
+                <h2
+                  className={`${national.variable} font-national text-[60px] 
                 font-bold uppercase leading-[60px]`}
-              >
-                {t("partnership:partner_hero_h1")}
-              </h2>
+                >
+                  {t("partnership:partner_hero_h1")}
+                </h2>
+              </GsapSplitTextWord>
+
               <h3
                 className={`${roboto.variable} max-w-[350px] font-robo uppercase`}
               >
                 {t("partnership:partner_hero_h2")}
               </h3>
             </div>
-
-            {/* <div className="hidden max-w-[400px] flex-col gap-4 self-end lg:flex">
-              <hr className="h-[4px]"></hr>
-              <h1
-                className={`${roboto.variable} font-robo text-[24px] uppercase`}
-              >
-                Need better routes?
-              </h1>
-              <p
-                className={`${roboto.variable} font-robo text-[14px] leading-[20px] `}
-              >
-                Talk to us about your current challenges, we are happy to
-                explore more possibilities that are better suited for your
-                business.
-              </p>
-            </div> */}
-            {/* 
-            <div className="hidden max-w-[400px] flex-col gap-4 self-end lg:flex">
-              <hr className="h-[4px]"></hr>
-              <h1
-                className={`${roboto.variable} font-robo text-[24px] uppercase`}
-              >
-                looking for supply chain?
-              </h1>
-              <p
-                className={`${roboto.variable} font-robo text-[14px] leading-[20px] `}
-              >
-                We are open to discuss new ventures looking for supply chain
-                management, our extensive network will speed up the process of
-                finding the right partner.
-              </p>
-            </div> */}
           </div>
         </div>
 
@@ -187,16 +67,17 @@ function Partner(props) {
             <div className="flex flex-col items-center justify-between lg:flex-row">
               <div className="px-[30px] py-10">
                 <h1
-                  className={`${national.variable} font-national text-[26px] font-medium uppercase leading-[28px] text-canvasblue lg:text-[32px] lg:font-bold lg:leading-[32px]`}
+                  className={`${national.variable} mb-5 font-national text-[26px] font-medium uppercase leading-[28px] text-canvasblue lg:text-[32px] lg:font-bold lg:leading-[32px]`}
                 >
                   {t("partnership:asia_log_h1")}
                 </h1>
-
-                <h2
-                  className={`${national.variable} max-w-[500px] font-national text-[38px] font-medium uppercase leading-[42px] text-canvasblue lg:text-[48px] lg:leading-[58px]`}
-                >
-                  {t("partnership:asia_log_h2")}
-                </h2>
+                <GsapSplitTextWord>
+                  <h2
+                    className={`${national.variable} max-w-[500px] font-national text-[38px] font-medium uppercase leading-[42px] text-canvasblue lg:text-[48px] lg:leading-[48px]`}
+                  >
+                    {t("partnership:asia_log_h2")}
+                  </h2>
+                </GsapSplitTextWord>
               </div>
               <div className="flex flex-col items-center">
                 <div className="relative aspect-square w-[160px]">
@@ -267,16 +148,17 @@ function Partner(props) {
             <div className="flex flex-col justify-between lg:flex-row">
               <div className="px-[30px] py-10">
                 <h1
-                  className={`${national.variable} font-national text-[26px] font-medium uppercase leading-[28px] text-canvasblue sm:text-[32px] sm:font-bold`}
+                  className={`${national.variable} mb-5 font-national text-[26px] font-medium uppercase leading-[28px] text-canvasblue sm:text-[32px] sm:font-bold`}
                 >
                   {t("partnership:pss_h1")}
                 </h1>
-
-                <h2
-                  className={`${national.variable} max-w-[500px] font-national text-[38px] font-medium uppercase leading-[42px] text-canvasblue lg:text-[48px] lg:leading-[58px]`}
-                >
-                  {t("partnership:pss_h2")}
-                </h2>
+                <GsapSplitTextWord>
+                  <h2
+                    className={`${national.variable} max-w-[500px] font-national text-[38px] font-medium uppercase leading-[42px] text-canvasblue lg:text-[48px] lg:leading-[48px]`}
+                  >
+                    {t("partnership:pss_h2")}
+                  </h2>
+                </GsapSplitTextWord>
               </div>
               <div className="flex flex-col items-center">
                 <div className="relative aspect-square w-[212px]">

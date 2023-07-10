@@ -25,26 +25,6 @@ function Navbar({ t }) {
     setMenuOpen(!isMenuOpen);
   };
 
-  //define variants for language div hover
-
-  // const languageMain = {
-  //   hover: { opacity: 1 },
-  //   hidden: { opacity: 1 },
-  //   animate: { x: 1 },
-  // };
-
-  // const languageSub1 = {
-  //   hover: { opacity: 1, display: "flex" },
-  //   hidden: { opacity: 1 },
-  //   animate: { x: 1 },
-  // };
-
-  // const languageSub2 = {
-  //   hover: { opacity: 0, width: "0px" },
-  //   hidden: { opacity: 0 },
-  //   animate: { x: 1 },
-  // };
-
   return (
     <>
       <AnimatePresence>
@@ -54,7 +34,7 @@ function Navbar({ t }) {
             animate={{ x: 0 }}
             transition={{ delay: 0, duration: 0.3, ease: "easeInOut" }}
             exit={{ x: 600 }}
-            className="absolute right-0 z-20 h-[700px] w-[330px] bg-canvasblue"
+            className="fixed right-0 top-0 z-20 h-[700px] w-[330px] overflow-x-hidden bg-canvasblue"
           >
             <div
               onClick={toggleMenu}
@@ -132,18 +112,18 @@ function Navbar({ t }) {
         )}
       </AnimatePresence>
       <div
-        className={`${
+        className={`main-menu ${
           roboto.variable
         } text-[18px]leading-[24px] w-full font-robo tracking-tight ${
           router.pathname === "/story" ? "text-black" : "text-white"
-        } absolute z-10  flex flex-row bg-[#ffffff20]`}
+        } sticky top-0 z-10 flex flex-row bg-[#ffffff20]`}
       >
-        <div className="flex h-[72px]  px-[30px] xl:m-auto xl:px-0 w-screen max-w-[1280px] justify-between items-center">
+        <div className="flex h-[72px]  w-screen max-w-[1280px] items-center justify-between px-[30px] xl:m-auto xl:px-0">
           <Link href="/">
-            <div className="relative h-[40px] p-10 w-[126px] hover:animate-pulse">
+            <div className="relative h-[40px] w-[126px] p-10 hover:animate-pulse">
               <Image
                 fill
-                style={{ objectFit: "contain", }}
+                style={{ objectFit: "contain" }}
                 src={`${
                   router.pathname !== "/story"
                     ? "/images/canvas_logo.svg"
@@ -174,7 +154,7 @@ function Navbar({ t }) {
             <div></div>
           </div>
 
-          <div className="navlinks-wrapper hidden h-full xl:flex justify-evenly">
+          <div className="navlinks-wrapper hidden h-full justify-evenly xl:flex">
             <div
               onClick={() => {
                 if (router.locale === "en") {

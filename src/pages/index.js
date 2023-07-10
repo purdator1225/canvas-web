@@ -1,27 +1,25 @@
 import Image from "next/image";
-import Link from "next/link";
 
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { UseTranslation, useTranslation } from "next-i18next";
 import { national, roboto } from "../../utils/font";
 import StatsCard from "../components/StatsCard";
 
 import Marquee from "react-fast-marquee";
+import HeroCard from "@/components/HeroCard";
 
-import ServicesCard from "../components/ServicesCard";
 import PageLinks from "@/components/PageLinks";
-import SvgMap from "@/components/map-svg";
-import MapDots from "@/components/map-dots";
 import CountryImg from "@/components/country-img";
+import MapDots from "@/components/map-dots";
+import SvgMap from "@/components/map-svg";
+import ServicesCard from "../components/ServicesCard";
 
+import GsapSplitTextWord from "@/components/animations/GsapSplitTextWord";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/dist/DrawSVGPlugin";
-import { SplitText } from "gsap/dist/SplitText";
-import { easeIn, motion, useScroll, useTransform } from "framer-motion";
-
-import { useEffect, useRef } from "react";
-import MapRoutes from "@/components/maproutes";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useLayoutEffect, useRef } from "react";
 
 //on page load, prepare these props statically which takes in the locale file
 export async function getStaticProps({ locale }) {
@@ -32,36 +30,13 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-const HeroCard = ({ text, logo, url, scrollTo }) => {
-  return (
-    <div
-      onClick={() => scrollTo(url)}
-      className=" box-border flex aspect-square h-[180px] flex-col justify-between p-2 transition-colors hover:cursor-pointer hover:bg-[rgba(44,182,108,0.7)]"
-    >
-      <hr className="h-[4px] w-full bg-white"></hr>
-      <h3
-        className={`${national.variable} font-national text-[32px] font-medium uppercase`}
-      >
-        {text}
-      </h3>
-      <div className="relative aspect-square w-[48px]">
-        <Image fill style={{ objectFit: "cover" }} src={logo} />
-      </div>
-    </div>
-  );
-};
-
-gsap.registerPlugin(ScrollTrigger, SplitText, DrawSVGPlugin);
+gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 
 export default function Home(props) {
   //translation
   const { t } = useTranslation();
 
   const scrollTo = props.scrollTo;
-
-  // console.log(scrollTo);
-
-  // console.log(props.locale);
 
   //hero line variants
   const lineParentVariants = {
@@ -91,45 +66,10 @@ export default function Home(props) {
 
   let shipMovement = useTransform(scrollXProgress, [0, 1], ["35%", "100%"]);
 
-  // useEffect(() => {
-  //   let context = gsap.context(() => {
-  //     gsap.fromTo(
-  //       "#wm-us-path",
-  //       { drawSVG: "100% 100%" },
-  //       { drawSVG: "0% 100%", duration: 5, repeat: -1 }
-  //     );
+  useLayoutEffect(() => {
+    let mm = gsap.matchMedia();
 
-  //   }, index);
-
-  //   return context.revert();
-  // }, []);
-
-  useEffect(() => {
-    gsap.fromTo(
-      "#client-card",
-      { y: 200, opacity: 0 },
-
-      {
-        y: 0,
-        autoAlpha: 1,
-        duration: 1.5,
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: "#sectors",
-          // markers: true,
-
-          start: "50% 50%",
-          end: "100% 50%",
-        },
-      }
-    );
-
-    let context = gsap.context(() => {
-      let headingSplit = new SplitText(".headings", { type: "words" });
-
-      let words = headingSplit.words;
-      console.log(words);
-
+    mm.add("(min-width: 1024px)", () => {
       gsap.fromTo(
         "#wm-us-path",
         { drawSVG: "100% 100%" },
@@ -139,18 +79,6 @@ export default function Home(props) {
           repeat: -1,
         }
       );
-
-      gsap.from(words, {
-        y: 1000,
-        ease: "easeOut",
-        stagger: 0.08,
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: ".headings",
-        },
-      });
-
-      let tl = gsap.timeline();
 
       gsap.fromTo(
         "#map-svg",
@@ -200,7 +128,7 @@ export default function Home(props) {
         delay: 3.5,
       });
 
-      tl.fromTo(
+      gsap.fromTo(
         "#ship-large",
         { y: "50%" },
         {
@@ -217,27 +145,60 @@ export default function Home(props) {
           },
         }
       );
-      // ).from("#achievement-card", {
-      //   y: 100,
-      //   duration: 2,
-      //   stagger: 0.2,
-      //   scrollTrigger: {
-      //     trigger: "#hero",
-      //     markers: true,
-      //     scrub: 4,
-      //     start: "50% 10%",
-      //     end: "150% 50%",
-      //   },
-      // });
+
+      gsap.from("#achievement-card", {
+        y: 100,
+        duration: 10,
+        stagger: 2,
+        scrollTrigger: {
+          trigger: "#strengths-large",
+          // markers: true,
+          scrub: 1,
+        },
+      });
+
+      gsap.from("#services-card", {
+        y: 100,
+        duration: 10,
+        stagger: 2,
+        scrollTrigger: {
+          trigger: "#services-card",
+          // markers: true,
+          scrub: 1,
+        },
+      });
+    });
+
+    let context = gsap.context(() => {
+      gsap.from(
+        "#client-card",
+
+        {
+          y: 100,
+          autoAlpha: 0,
+          duration: 0.8,
+          stagger: 0.2,
+
+          scrollTrigger: {
+            trigger: "#sectors",
+            // markers: true,
+
+            start: "50% 50%",
+            end: "100% 50%",
+          },
+        }
+      );
     }, index);
+
     return () => {
       context.revert();
+      mm.revert();
     };
   }, []);
 
   return (
-    <main ref={index} className={`${national.variable} font-nation bg-white`}>
-      <div>
+    <main ref={index} className={`${national.variable} font-nation bg-white overflow-x-hidden`}>
+      <div className="">
         <div
           id="hero-mobile"
           className="relative h-[800px] w-screen items-center justify-center sm:hidden"
@@ -353,16 +314,19 @@ export default function Home(props) {
           >
             <div className="flex w-[400px] flex-col justify-center gap-4 text-white">
               <h1
-                className={`${national.variable} font-national text-[28px] leading-[32px] font-medium uppercase lg:text-[32px] lg:font-bold`}
+                className={`${national.variable} font-national text-[28px] font-medium uppercase leading-[32px] lg:text-[32px] lg:font-bold`}
               >
                 {t("home:home_hero_h2")}
               </h1>
 
-              <h2
-                className={`${national.variable} headings overflow-hidden font-national text-[48px] font-medium uppercase leading-[54px] tracking-wide lg:text-[60px] lg:font-bold lg:leading-[60px]`}
-              >
-                {t("home:home_hero_h1")}
-              </h2>
+              <GsapSplitTextWord>
+                <h2
+                  className={`${national.variable} font-national text-[48px] font-medium uppercase leading-[54px] tracking-wide lg:text-[60px] lg:font-bold lg:leading-[60px]`}
+                >
+                  {t("home:home_hero_h1")}
+                </h2>
+              </GsapSplitTextWord>
+
               <h3
                 className={`${roboto.variable} hidden max-w-[350px] font-robo uppercase lg:block`}
               >
@@ -725,12 +689,14 @@ export default function Home(props) {
                   {t("home:home_services_h1")}
                 </h1>
 
-                <h2
-                  className={`${national.variable} headings overflow-hidden font-national text-[38px]
+                <GsapSplitTextWord>
+                  <h2
+                    className={`${national.variable} headings overflow-hidden font-national text-[38px]
                   leading-[42px] text-white lg:text-[48px] lg:font-bold lg:leading-[58px]`}
-                >
-                  {t("home:home_services_h2")}
-                </h2>
+                  >
+                    {t("home:home_services_h2")}
+                  </h2>
+                </GsapSplitTextWord>
               </div>
               <p
                 className={`${roboto.variable} max-w-[400px] font-robo text-[18px] leading-6 text-white`}
@@ -741,7 +707,7 @@ export default function Home(props) {
 
             {/* services card */}
 
-            <div className=" flex gap-x-10 gap-y-10 overflow-x-auto overflow-y-hidden whitespace-nowrap px-10 lg:grid lg:grid-cols-2">
+            <div className="flex gap-x-10 gap-y-10 overflow-x-auto overflow-y-hidden px-10 lg:grid lg:grid-cols-2">
               <ServicesCard
                 order={1}
                 title={t("home:home_services_card_1")}
@@ -814,11 +780,13 @@ export default function Home(props) {
                   {t("home:home_sector_h1")}
                 </h1>
 
-                <h2
-                  className={`${national.variable} headings max-w-[500px] overflow-hidden font-national text-[38px] font-medium uppercase leading-[42px] text-canvasblue lg:text-[48px] lg:font-bold lg:leading-[58px]`}
-                >
-                  {t("home:home_sector_h2")}
-                </h2>
+                <GsapSplitTextWord>
+                  <h2
+                    className={`${national.variable} headings max-w-[500px]  font-national text-[38px] font-medium uppercase leading-[42px] text-canvasblue lg:text-[48px] lg:font-bold lg:leading-[58px]`}
+                  >
+                    {t("home:home_sector_h2")}
+                  </h2>
+                </GsapSplitTextWord>
               </div>
               <p
                 className={`${roboto.variable} max-w-[400px] font-robo text-canvasblue`}

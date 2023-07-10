@@ -6,7 +6,7 @@ import { national, roboto } from "../../utils/font";
 // style={{gridArea:`area-${order}`}}
 function ServicesCard({ title, logo, number, order }) {
   return (
-    <div  className={`p-6 bg-canvasblue flex flex-col  `}>
+    <div id="services-card" className={`p-6 bg-canvasblue flex flex-col  `}>
       <h1
         className={`${national.variable} font-national uppercase text-white text-[38px] h-[90px]`}
       >

@@ -1,31 +1,5 @@
 import React from "react";
-
-import { Roboto } from "next/font/google";
-
-import localFont from "next/font/local";
-
-const roboto = Roboto({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-roboto",
-});
-
-const national = localFont({
-  src: [
-    {
-      path: "../../public/fonts/TestNational2Condensed-Regular.otf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/TestNational2Condensed-Bold.otf",
-      weight: "600",
-      style: "bold",
-    },
-  ],
-  variable: "--font-nation",
-});
+import { national, roboto } from "../../utils/font";
 
 function Hero() {
   return (
