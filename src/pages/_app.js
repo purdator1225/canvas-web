@@ -28,43 +28,44 @@ function App({ Component, pageProps }) {
 
   //pass down to child props
   const scrollTo = (elID) => {
-    smoother.current.scrollTo(elID, true, "center center");
+    smoother.scrollTo(elID, true, "center center");
   };
 
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+  // useLayoutEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-    let smoother = ScrollSmoother.create({
-      wrapper: "#wrapper",
-      content: "#content",
-      smooth: 0.8,
-      effects: true,
-      normalizeScroll: true,
-      smoothTouch: 1,
-      ignoreMobileResize: true
+  //   let smoother = ScrollSmoother.create({
+  //     wrapper: "#wrapper",
+  //     content: "#content",
+  //     smooth: 0.8,
+  //     effects: true,
+  //     normalizeScroll: true,
+  //     smoothTouch: 1,
+  //     ignoreMobileResize: true,
+  //     preventDefault: true
    
-    });
+  //   });
 
-    setSmoother(smoother);
+  //   setSmoother(smoother);
 
-    return () => {
-      smoother.kill();
-    };
-  }, []);
+  //   return () => {
+  //     smoother.kill();
+  //   };
+  // }, []);
 
   return (
     <div className="overflow-x-hidden">
       <DefaultSeo {...SEO} />
       <Navbar t={t} />
 
-      <SmootherContext.Provider value={smoother}>
+      {/* <SmootherContext.Provider value={smoother}>
         <div id="wrapper">
-          <div id="content">
+          <div id="content"> */}
             <Component {...pageProps} scrollTo={scrollTo} />
             <Footer t={t} />
-          </div>
+          {/* </div>
         </div>
-      </SmootherContext.Provider>
+      </SmootherContext.Provider> */}
     </div>
   );
 }

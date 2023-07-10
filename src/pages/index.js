@@ -197,7 +197,7 @@ export default function Home(props) {
   }, []);
 
   return (
-    <main ref={index} className={`${national.variable} font-nation bg-white overflow-x-hidden`}>
+    <main ref={index} className={`${national.variable} font-nation bg-white`}>
       <div className="">
         <div
           id="hero-mobile"

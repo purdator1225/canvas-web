@@ -33,15 +33,15 @@ function Story(props) {
   const { t } = useTranslation();
 
 
-  const smoother = useContext(SmootherContext);  //get access to the smoother 
+  // const smoother = useContext(SmootherContext);  //get access to the smoother 
 
 
-  useLayoutEffect(() => {
+  // useLayoutEffect(() => {
 
-    smoother && smoother.effects("[data-speed], [data-lag]", {});
-  }, []);
+  //   smoother && smoother.effects("[data-speed], [data-lag]", {});
+  // }, []);
 
-  //mobile horizontal scroll values section
+  // // mobile horizontal scroll values section
   // const storyRef = useRef(null);
 
   // const { scrollYProgress } = useScroll();

@@ -116,7 +116,7 @@ function Navbar({ t }) {
           roboto.variable
         } text-[18px]leading-[24px] w-full font-robo tracking-tight ${
           router.pathname === "/story" ? "text-black" : "text-white"
-        } sticky top-0 z-10 flex flex-row bg-[#ffffff20]`}
+        } absolute top-0 z-10 flex flex-row bg-[#ffffff20]`}
       >
         <div className="flex h-[72px]  w-screen max-w-[1280px] items-center justify-between px-[30px] xl:m-auto xl:px-0">
           <Link href="/">
