@@ -182,9 +182,9 @@ export default function Home(props) {
           scrollTrigger: {
             trigger: "#sectors",
             // markers: true,
-
+            toggleActions: "play pause resume reset",
             start: "50% 50%",
-            end: "100% 50%",
+            // end: "100% 50%",
           },
         }
       );
