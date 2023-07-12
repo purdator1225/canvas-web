@@ -29,38 +29,38 @@ function MapMobile({t}) {
 
         <div
           id="country-section-mobile"
-          className="flex flex-shrink-0 gap-6 overflow-x-scroll bg-white py-[40px] pl-[30px] lg:hidden"
+          className="snap-x flex flex-shrink-0 gap-6 overflow-x-scroll bg-white py-[40px] pl-[30px] lg:hidden"
         >
           <Image
-            className="aspect-square bg-cover"
+            className="aspect-square   bg-cover snap-center"
             width={240}
             height={1}
             src="/images/country-pics/us-mobile.png"
           />
 
           <Image
-            className="aspect-square w-[240px] bg-cover"
+            className="aspect-square w-[240px] bg-cover snap-center"
             width={240}
             height={1}
             src="/images/country-pics/me-mobile.png"
           />
 
           <Image
-            className="aspect-square w-[240px] bg-cover"
+            className="aspect-square w-[240px] bg-cover snap-center"
             width={240}
             height={1}
             src="/images/country-pics/cn-mobile.png"
           />
 
           <Image
-            className="aspect-square w-[240px] bg-cover"
+            className="aspect-square w-[240px] bg-cover snap-center"
             width={240}
             height={1}
             src="/images/country-pics/em-mobile.png"
           />
 
           <Image
-            className="aspect-square w-[240px] bg-cover"
+            className="aspect-square w-[240px] bg-cover snap-center"
             width={240}
             height={1}
             src="/images/country-pics/th-mobile.png"

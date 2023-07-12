@@ -42,11 +42,11 @@ function Story(props) {
   // }, []);
 
   // // mobile horizontal scroll values section
-  // const storyRef = useRef(null);
+  const storyRef = useRef(null);
 
-  // const { scrollYProgress } = useScroll();
+  const { scrollYProgress } = useScroll();
 
-  // let picMovement = useTransform(scrollYProgress, [0, 1], ["10%", "100%"]);
+  let picMovement = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   return (
     <div id="smooth-content" className="flex flex-col bg-white">
@@ -68,8 +68,9 @@ function Story(props) {
           </div>
         </div>
 
-        <div
-          data-lag="0.2"
+        <motion.div
+        style={{y:picMovement}}
+
           className="story-img-wrapper relative aspect-[16/9] w-full"
         >
           <Image
@@ -77,7 +78,7 @@ function Story(props) {
             style={{ objectFit: "cover" }}
             src={"/images/story-hero.png"}
           />
-        </div>
+        </motion.div>
       </div>
 
       <div
@@ -85,20 +86,26 @@ function Story(props) {
         className="story-para flex w-screen bg-[url('/images/story-container-bg.png')] bg-cover"
       >
         <div className="m-auto flex min-h-[50%] w-[90vw] max-w-[1280px] flex-col gap-8 px-[30px] py-[78px]">
-          <div className="max-w-[507px]">
-            <p
+          <div className="max-w-[507px] overflow-hidden">
+            <motion.p
+            initial={{x:-100, opacity:0}}
+            whileInView={{x:0, opacity:1 }}
+            transition={{duration:0.5}}
               className={`${roboto.variable} font-robo text-[18px] leading-[24px] text-white`}
             >
               {t("story:story_para_1")}
-            </p>
+            </motion.p>
           </div>
 
-          <div className="max-w-[507px] place-self-end">
-            <p
+          <div className="max-w-[507px] place-self-end overflow-hidden">
+            <motion.p
+             initial={{x:100, opacity:0}}
+            whileInView={{x:0, opacity:1 }}
+            transition={{duration:0.5}}
               className={`${roboto.variable} font-robo text-[18px] leading-[24px] text-white`}
             >
               {t("story:story_para_2")}
-            </p>
+            </motion.p>
           </div>
         </div>
       </div>

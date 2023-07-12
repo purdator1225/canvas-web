@@ -121,3 +121,8 @@ body::-webkit-scrollbar { width: 0 !important }
 #country-section-mobile::-webkit-scrollbar { width: 0 !important }
 
 #services-horizontal::-webkit-scrollbar { width: 0 !important }
+
+.move-text {
+  transform: translateX(50px)  !important;
+  transition: transform 1s;
+}

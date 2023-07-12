@@ -43,11 +43,8 @@ export default function Home(props) {
   useLayoutEffect(() => {
     let mm = gsap.matchMedia();
 
-    console.log('effect fired')
-
     mm.add("(min-width: 1024px)", () => {
     
-
       gsap.from(
         "#map-svg",
 

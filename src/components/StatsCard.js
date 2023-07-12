@@ -5,7 +5,7 @@ function StatsCard({ title, statistic, units, para, id }) {
   return (
     <div
       id={id}
-      className="flex min-w-[280px] flex-col gap-4 text-canvasblue"
+      className="snap-center flex min-w-[280px] flex-col gap-4 text-canvasblue"
     >
     <div className="min-h-[133px] flex flex-col justify-between">
       <h1

@@ -6,7 +6,7 @@ function HeroCard({ text, logo, url, scrollTo }) {
   return (
     <div
         onClick={() => scrollTo(url)}
-        className=" box-border flex aspect-square h-[180px] flex-col justify-between p-2 transition-colors hover:cursor-pointer hover:bg-[rgba(44,182,108,0.7)]"
+        className="snap-center box-border flex aspect-square h-[180px] flex-col justify-between p-2 transition-colors hover:cursor-pointer hover:bg-[rgba(44,182,108,0.7)]"
       >
         <hr className="h-[4px] w-full bg-white"></hr>
         <h3

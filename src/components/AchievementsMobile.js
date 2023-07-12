@@ -21,7 +21,7 @@ function AchievementsMobile({ t }) {
       <div
         id="strengths-mobile"
         ref={horizontalRef}
-        className="strengths achievement-section-mobile flex flex-col overflow-x-scroll scroll-smooth bg-white sm:hidden"
+        className="strengths achievement-section-mobile flex flex-col overflow-x-scroll snap-x scroll-smooth bg-white sm:hidden"
       >
         <div className="ship-wrapper">
           <motion.div

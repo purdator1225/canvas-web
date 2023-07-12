@@ -14,7 +14,7 @@ function Footer({ t }) {
   return (
     <div className="w-screen bg-canvasblue px-10 pt-[80px]">
       <div
-        className={`${roboto.variable} footer-main max-w-[1440px] m-auto flex justify-between font-robo text-white`}
+        className={`${roboto.variable} footer-main max-w-[1280px] px-4 md:px-6 m-auto flex justify-between font-robo text-white`}
       >
         <div className="left-side flex flex-col gap-5">
           <div>
@@ -132,7 +132,7 @@ function Footer({ t }) {
         </div>
       </div>
 
-      <div className="footer-bottom border-t-solid mt-10 flex flex-col lg:flex-row  justify-between gap-4 border-t-[1px] max-w-[1440px] m-auto  py-10">
+      <div className="footer-bottom border-t-solid mt-10 flex flex-col lg:flex-row  justify-between gap-4 border-t-[1px] max-w-[1280px] m-auto px-4 md:px-6  py-10">
         <div className="text-white">{t("common:footer_disclaimer")}</div>
 
         <div className="flex gap-5 text-white">

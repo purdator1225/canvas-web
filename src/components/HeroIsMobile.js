@@ -38,7 +38,7 @@ function HeroIsMobile({t}) {
 
       <div
         id="hero-flex-mobile"
-        className="mt-10 flex w-full gap-5 overflow-x-scroll whitespace-nowrap pr-5 text-white"
+        className="mt-10 flex w-full gap-5 overflow-x-scroll snap-x whitespace-nowrap pr-5 text-white"
       >
         <HeroCard
           text={t("home:home_hero_strength")}

@@ -9,6 +9,25 @@ import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 
+let parentVariants = {
+  hidden: { opacity: 1 },
+  hover: { opacity: 1 },
+};
+
+let childVariants = {
+  hidden: { x: 0 },
+
+  hover: {
+    x: 50,
+    transition:{
+      ease:'linear',
+      // type:'spring',
+      // bounce:0.2
+    }
+  },
+
+};
+
 function PageLinks({
   logo,
   text,
@@ -46,19 +65,27 @@ function PageLinks({
 
   return (
     <motion.div
-      layout
+      variants={parentVariants}
+      initial="hidden"
+      whileHover={"hover"}
       ref={button}
       onClick={handleClick}
       className={`${
         noclick && "pointer-events-none"
-      } relative flex h-[100px] w-[250px] box-border flex-row items-center justify-between gap-10  hover:cursor-pointer`}
+      } relative box-border flex h-[100px] w-[250px] flex-row items-center justify-between gap-10  hover:cursor-pointer`}
     >
       <BoxSvg hexcode={color} parent_id={parentId} mask_id={mask_id} />
       <div className="absolute ml-[7%] aspect-square w-[62px] transition-transform duration-[0.5s]">
         <Image fill style={{ objectFit: "cover" }} src={logo} />
       </div>
 
-      <h3 className={`absolute left-[45%] text-${color} text-[24px]`}>{text}</h3>
+      <motion.h3
+        id={'pagelink-child'}
+        variants={childVariants}
+        className={`absolute left-[45%] text-${color} transition-transform text-[24px]`}
+      >
+        {text}
+      </motion.h3>
     </motion.div>
   );
 }

@@ -37,7 +37,7 @@ function Services({t}) {
 
       {/* services card */}
 
-      <div id='services-horizontal' className="flex gap-x-10 gap-y-10 overflow-x-auto overflow-y-hidden px-10 py-10 lg:grid lg:grid-cols-2">
+      <div id='services-horizontal' className="flex gap-x-10 gap-y-10 overflow-x-auto overflow-y-hidden snap-x px-10 py-10 lg:grid lg:grid-cols-2">
         <ServicesCard
           order={1}
           title={t("home:home_services_card_1")}

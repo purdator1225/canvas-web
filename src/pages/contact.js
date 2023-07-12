@@ -7,6 +7,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { UseTranslation, useTranslation } from "next-i18next";
 import { motion } from "framer-motion";
 import GsapSplitTextWord from "@/components/animations/GsapSplitTextWord";
+import { useLayoutEffect } from "react";
+import { gsap } from "gsap";
 
 export async function getStaticProps({ locale }) {
   return {
@@ -17,43 +19,81 @@ export async function getStaticProps({ locale }) {
 }
 
 function ContactUs(props) {
+
+ useLayoutEffect(() => {
+
+  let context = gsap.context(()=>{
+
+    let tl = gsap.timeline()
+
+    tl.from('#contact-left',{
+      opacity:0,
+      x:-100,
+    }).from('#contact-right',{
+      opacity:0,
+      x:100,
+    })
+
+
+  })
+  
+  
+ 
+   return () => {
+    context.revert()
+     
+   };
+ }, [])
+
+
+
+
+
+
   let handleSubmit = (e) => {
     e.preventDefault();
+  };
+
+  let handleHover = () => {
+    document.querySelector("#pagelink-child").classList.add("move-text");
+  };
+
+  let handleHoverOut = () => {
+    document.querySelector("#pagelink-child").classList.remove("move-text");
   };
 
   const { t } = useTranslation();
 
   return (
-    <div className="flex bg-[url('/images/contact-us.png')] bg-cover p-10 text-white">
+    <div className="flex bg-[url('/images/contact-us.png')] bg-cover px-6 py-10 text-white">
       <div className="m-auto flex w-full flex-col justify-between sm:flex-row sm:gap-[100px] xl:w-[1280px]">
-        <div className="left-side mt-[150px] flex flex-col justify-between gap-10">
+        <div id='contact-left' className="left-side mt-[100px] flex flex-col justify-between gap-10">
           <GsapSplitTextWord>
-            
             <h3
-              className={`${national.variable} font-national text-[60px] font-medium uppercase lg:font-bold`}
+              className={`${national.variable} font-national text-[60px] font-medium uppercase leading-[68px] lg:font-bold`}
             >
               {t("contact:contact_hero_h1")}
             </h3>
           </GsapSplitTextWord>
 
           <div className="flex flex-col gap-12 lg:flex-row">
-            <div className="flex flex-col gap-4">
-              <h3
-                className={`${roboto.variable} font-robo text-[18px] leading-6`}
-              >
-                Gary Khoo
-              </h3>
+            <div
+              className={`${roboto.variable} flex flex-col gap-6 font-robo text-[18px] leading-6`}
+            >
+              <div className=" flex flex-col gap-2">
+                <h3>Gary Khoo</h3>
 
-              <Link rel="noopener noreferrer" href="tel:+6011-1116 1106">
-                +6011-1116 1106
-              </Link>
+                <Link rel="noopener noreferrer" href="tel:+6011-1116 1106">
+                  +6011-1116 1106
+                </Link>
 
-              <Link
-                rel="noopener noreferrer"
-                href="mailto:gary@canvasglobal-log.com"
-              >
-                <p> gary@canvasglobal-log.com</p>
-              </Link>
+                <Link
+                  rel="noopener noreferrer"
+                  href="mailto:gary@canvasglobal-log.com"
+                >
+                  <p> gary@canvasglobal-log.com</p>
+                </Link>
+              </div>
 
               <Image
                 className="aspect-square w-[180px]"
@@ -63,7 +103,8 @@ function ContactUs(props) {
               />
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-6">
+            <div className=" flex flex-col gap-2">
               <h3
                 className={`${roboto.variable} font-robo text-[18px] leading-6`}
               >
@@ -80,6 +121,8 @@ function ContactUs(props) {
               >
                 <p>cglbiz@canvasglobal-log.com</p>
               </Link>
+
+              </div>
 
               <Image
                 className="aspect-square w-[180px]"
@@ -124,13 +167,13 @@ function ContactUs(props) {
           </div>
         </div>
 
-        <div className="right-side lg:w-1/2">
+        <div id='contact-right' className="right-side lg:w-1/2">
           <form
             action="https://formsubmit.co/briansh1225@gmail.com"
             method="POST"
-            className={`${roboto.variable} mt-[150px] flex h-full max-w-[600px] flex-col gap-[60px] font-robo`}
+            className={`${roboto.variable} mt-[100px] flex h-full max-w-[600px] flex-col gap-[60px] font-robo`}
           >
-            <div className="flex max-w-[280px] flex-col gap-2">
+            <div className="md:max-w-[280px] flex flex-col gap-2">
               <label>{t("contact:contact_name")}</label>
               <input
                 className="shadow-none"
@@ -141,8 +184,8 @@ function ContactUs(props) {
               ></input>
             </div>
 
-            <div className="flex flex-col justify-between gap-[60px] md:flex-row md:gap-0">
-              <div className="flex w-[280px] flex-col gap-2  ">
+            <div className="flex flex-col justify-between gap-[60px] md:flex-row md:gap-10">
+              <div className="md:w-[300px] flex flex-col gap-2  ">
                 <label>{t("contact:contact_email")}</label>
                 <input
                   className="shadow-none"
@@ -153,7 +196,7 @@ function ContactUs(props) {
                 ></input>
               </div>
 
-              <div className="flex w-[280px] flex-col gap-2">
+              <div className="md:w-[300px] flex flex-col gap-2">
                 <label>{t("contact:contact_tel")}</label>
                 <input
                   className="shadow-none"
@@ -179,14 +222,14 @@ function ContactUs(props) {
             Submit
           </button> */}
             <motion.button
-              layout
-              initial={{ width: "280px" }}
-              whileHover={{ width: "350px" }}
+              onClick={handleSubmit}
+              onMouseEnter={handleHover}
+              onMouseLeave={handleHoverOut}
+              className="transition-transform"
               typeof="submit"
-              className=""
             >
               <PageLinks
-              mask_id={"contact-id-button-mask"}
+                mask_id={"contact-id-button-mask"}
                 parentId={"contact-id-button"}
                 text={t("common:button_submit")}
                 logo={"/images/icons/submit-button.png"}

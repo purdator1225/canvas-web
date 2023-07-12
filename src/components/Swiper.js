@@ -36,7 +36,7 @@ function Swiper({ slides, namespace }) {
   return (
     <div className="flex h-full w-full justify-between">
       <div className="w-screen lg:w-1/2">
-        <div className="m-auto flex flex-col gap-10 lg:px-10 lg:py-10 xl:w-[557px]">
+        <div className="m-auto flex flex-col gap-10  lg:py-10 xl:w-[557px]">
           <h1 className={`${national.variable} font-national text-[32px]`}>
             {t(`${namespace}:${slides[currentIndex].title}`)}
           </h1>

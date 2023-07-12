@@ -46,7 +46,7 @@ function Services(props) {
           {/* first-card */}
           
 
-          <div className="hidden min-h-[220px] max-w-[400px] gap-4 self-end lg:flex lg:flex-col ">
+          {/* <div className="hidden min-h-[220px] max-w-[400px] gap-4 self-end lg:flex lg:flex-col ">
             <div className="h-[4px] w-full bg-white"></div>
             <h1
               className={`${roboto.variable} font-robo text-[24px] uppercase`}
@@ -60,9 +60,9 @@ function Services(props) {
               management, our extensive network will speed up the process of
               finding the right partner.
             </p>
-          </div>
+          </div> */}
 
-          <div className="hidden min-h-[220px]  max-w-[400px] flex-col gap-4 self-end lg:flex">
+          {/* <div className="hidden min-h-[220px]  max-w-[400px] flex-col gap-4 self-end lg:flex">
             <div className="h-[4px] w-full bg-white"></div>
             <h1
               className={`${roboto.variable} font-robo text-[24px] uppercase`}
@@ -75,7 +75,7 @@ function Services(props) {
               Talk to us about your current challenges, we are happy to explore
               more possibilities that are better suited for your business.
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
 
