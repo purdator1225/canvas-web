@@ -17,7 +17,7 @@ function ClientTestimonials({t}) {
     <div className="flex aspect-square w-full items-start justify-between bg-[url('/images/client-testimonial.png')] bg-cover lg:hidden"></div>
 
     <div className="relative top-[-200px] w-full items-start justify-between bg-cover lg:top-0 lg:flex lg:bg-[url('/images/client-testimonial.png')] lg:py-[100px]">
-      <div className="m-auto flex flex-col-reverse items-stretch gap-8 lg:flex-row xl:w-[1280px]">
+      <div className="m-auto flex flex-col-reverse items-stretch gap-8 lg:flex-row xl:w-[1280px] px-[30px]">
         <div
           id="mobile-link"
           className="flex justify-center sm:self-center lg:hidden"

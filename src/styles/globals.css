@@ -112,3 +112,12 @@ label {
 /* #client-card{
   opacity: 0;
 } */
+body::-webkit-scrollbar { width: 0 !important }
+
+#hero-flex-mobile::-webkit-scrollbar { width: 0 !important }
+
+#strengths-mobile::-webkit-scrollbar { width: 0 !important }
+
+#country-section-mobile::-webkit-scrollbar { width: 0 !important }
+
+#services-horizontal::-webkit-scrollbar { width: 0 !important }

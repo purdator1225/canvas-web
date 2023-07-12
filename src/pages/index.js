@@ -43,6 +43,8 @@ export default function Home(props) {
   useLayoutEffect(() => {
     let mm = gsap.matchMedia();
 
+    console.log('effect fired')
+
     mm.add("(min-width: 1024px)", () => {
     
 
@@ -123,13 +125,16 @@ export default function Home(props) {
       });
 
       gsap.from("#services-card", {
-        y: 100,
-        duration: 10,
-        stagger: 2,
+        y: 200,
+        opacity:0,
+        duration: 1,
+        stagger: 0.2,
+        ease:"easeIn",
         scrollTrigger: {
-          trigger: "#services-card",
+          trigger: "#services-section",
+          toggleActions: "restart reverse complete reverse"
+
           // markers: true,
-          scrub: 1,
         },
       });
     });
@@ -167,6 +172,7 @@ export default function Home(props) {
     <main ref={index} className={`${national.variable} font-nation bg-white`}>
       <HeroIsMobile t={t} />
 
+
       <HeroIsDesktop t={t} />
 
       {/* //Achievement Section */}
@@ -175,11 +181,7 @@ export default function Home(props) {
       
 
 
-  
-   
-
-
-      <div id="values-button-large" className="hidden w-[400px] sm:flex ">
+      <div id="values-button-large" className="hidden sm:block w-screen max-w-[1280px] m-auto px-[30px] ">
         <PageLinks
           mask_id={"values-large-mask"}
           parentId="values-large"
@@ -187,7 +189,7 @@ export default function Home(props) {
           route={"/services"}
           text={t("common:button_values")}
           width={"w-[300px]"}
-          hoverWidth={"350px"}
+          hoverWidth={"w-[350px]"}
           logo={"/images/icons/our-values.png"}
         />
 
@@ -203,8 +205,7 @@ export default function Home(props) {
 
       
 
-      
-
+    
 
       
 
@@ -212,24 +213,11 @@ export default function Home(props) {
 
       
 
-
-
-
       <MapDesktop t={t} />
 
       
 
-      
-
-      
-      
-
       <Services t={t} />
-
-      
-      
-
-      
 
       
 

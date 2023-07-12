@@ -96,7 +96,7 @@ function AchievementsMobile({ t }) {
           color={"canvasblue"}
           route={"/services"}
           width={"w-[300px]"}
-          hoverWidth={"400px"}
+          hoverWidth={"w-[400px]"}
           text={t("common:button_values")}
           logo={"/images/icons/our-values.png"}
         />

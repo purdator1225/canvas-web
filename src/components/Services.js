@@ -7,11 +7,11 @@ import PageLinks from './PageLinks'
 function Services({t}) {
   return (
     <div
-    id="services"
+    id="services-section"
     className="our-services-section bg-[url('/images/home-our-services.png')] bg-cover bg-no-repeat  py-[79px]"
   >
     <div className="m-auto flex flex-col justify-between xl:w-[1280px]  ">
-      <div className=" mb-[90px] px-10">
+      <div className="px-10">
         <div>
           <h1
             className={`${national.variable} font-national text-[26px] font-medium uppercase leading-[28px] tracking-wide text-white lg:text-[32px] lg:font-bold`}
@@ -37,7 +37,7 @@ function Services({t}) {
 
       {/* services card */}
 
-      <div className="flex gap-x-10 gap-y-10 overflow-x-auto overflow-y-hidden px-10 lg:grid lg:grid-cols-2">
+      <div id='services-horizontal' className="flex gap-x-10 gap-y-10 overflow-x-auto overflow-y-hidden px-10 py-10 lg:grid lg:grid-cols-2">
         <ServicesCard
           order={1}
           title={t("home:home_services_card_1")}
@@ -72,7 +72,7 @@ function Services({t}) {
         <div className="hidden w-full self-end lg:block">
           <PageLinks
             width={"w-[320px]"}
-            hoverWidth={"400px"}
+            hoverWidth={"w-[400px]"}
             mask_id="#values-button-services-large-mask"
             parentId="values-button-services-large"
             color={"white"}
@@ -88,7 +88,7 @@ function Services({t}) {
           parentId="values-button-services-mobile"
           color={"white"}
           width={"w-[350px]"}
-          hoverWidth={"400px"}
+          hoverWidth={"w-[400px]"}
           route={"/services"}
           text={t("common:button_services")}
           logo={"/images/icons/our-values.svg"}
