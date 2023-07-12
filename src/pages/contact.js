@@ -180,13 +180,14 @@ function ContactUs(props) {
           </button> */}
             <motion.button
               layout
-              initial={{ width: "300px" }}
-              whileHover={{ width: "400px" }}
+              initial={{ width: "280px" }}
+              whileHover={{ width: "350px" }}
               typeof="submit"
               className=""
             >
               <PageLinks
-                id={"contact-id-button"}
+              mask_id={"contact-id-button-mask"}
+                parentId={"contact-id-button"}
                 text={t("common:button_submit")}
                 logo={"/images/icons/submit-button.png"}
                 noclick={true}

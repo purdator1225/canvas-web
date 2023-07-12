@@ -3,7 +3,7 @@ import React from "react";
 function SvgMap({ id }) {
   return (
     <svg
-      className="w-full h-full"
+      className="w-full h-full z-10"
       width="1170"
       height="795"
       viewBox="0 0 1170 795"

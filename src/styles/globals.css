@@ -100,19 +100,6 @@ label {
   line-height: 20px;
 }
 
-.mask-path-class {
-  stroke: #0057c1;
-  stroke-width: 1.46498;
-  stroke-dasharray: 5.33 5.33;
-  fill: none;
-  mask: url(#mask-0);
-}
-
-#wm-us-path {
-  fill: none;
-  stroke-width: 23;
-  stroke: rgb(255, 255, 255);
-}
 
 #tnc h1 {
   font-size: xx-large;

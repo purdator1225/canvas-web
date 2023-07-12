@@ -5,71 +5,58 @@ import { DrawSVGPlugin } from "gsap/dist/DrawSVGPlugin";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 
-// gsap.registerPlugin(DrawSVGPlugin);
-
-// function TestSVG() {
-
-//     useEffect(() => {
-//         let context = gsap.context(() => {
-
-//           gsap.fromTo(
-//             "#wm-us-path",
-//             { drawSVG: "100% 100%" },
-//             { drawSVG: "0% 100%", duration: 5, repeat: -1, }
-//           );
-
-//         })
-
-//     },[])
-
-//   return (
-//     <div className='relative w-full h-[900px] bg-[yellow]'>
-
-//         <MapRoutes width={"w-[600px]"} height={"h-[720px]"}/>
-//     </div>
-//   )
-// }
-
-const ParentVariants = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1 },
-  transition: {
-    delay: 10,
-    duration: 1,
-    when: "beforeChildren",
-    staggerChildren: 0.8,
-  },
-};
-
-const ChildVariants = {
-  hidden: { rotate: 0 },
-  show: { rotate: 45, x: 200 },
-};
-
+gsap.registerPlugin(DrawSVGPlugin);
 
 function TestSVG() {
-  
+  useEffect(() => {
+    gsap.fromTo(
+      "#maskLayer",
+      {
+        drawSVG: "0",
+      },
+      {
+        drawSVG: "true",
+        duration: 5,
+        repeat: -1,
+        yoyo: true,
+      }
+    );
+    return () => {};
+  }, []);
+
   return (
-    <div>
-      <motion.div
-        className=" h-[50vh] bg-black"
-        variants={ParentVariants}
-        initial="hidden"
-        animate="show"
+    <div className="bg-white pt-[100px] relative w-[600px] h-[700px]">
+      <div
+        id="my-us-div"
+        className="h=[600px] w-[700px]"
       >
-        <motion.div
-          className="aspect-square w-[40px] bg-red-100"
-          variants={ChildVariants}
-        ></motion.div>
-        <motion.div
-          className="aspect-square w-[40px] bg-red-100"
-          variants={ChildVariants}
-        ></motion.div>
-        <motion.div
-          className="aspect-square w-[40px] bg-red-100"
-          variants={ChildVariants}
-        ></motion.div>
-      </motion.div>
+        <svg
+          viewBox="0 0 600 700"
+          preserveAspectRatio="meet"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <mask id="mask-0">
+              <path
+                d="M 22.626 45.349 C 55.977 382.047 423.854 633.742 584.224 680.575"
+                style={{
+                  fill: "none",
+                  strokeWidth: "15px",
+                  stroke: "white",
+                }}
+                id="maskLayer"
+              ></path>
+            </mask>
+          </defs>
+          <path
+            d="M 19.621 40.616 C 52.972 377.314 420.849 629.009 581.219 675.842"
+            stroke="#0057C1"
+            strokeWidth="1.46498"
+            strokeDasharray="5.33 5.33"
+            style={{ fill: "none", mask: "url(#mask-0)" }}
+          ></path>
+        </svg>
+      </div>
     </div>
   );
 }

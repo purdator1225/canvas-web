@@ -160,7 +160,7 @@ function Story(props) {
 
       <div id="our-team" className="team-culture bg-white py-20">
         <div className="m-auto max-w-screen-xl">
-          <div className="flex flex-col gap-4 px-[30px] py-10">
+          {/* <div className="flex flex-col gap-4 px-[30px] py-10">
             <h1
               className={`${national.variable} font-national text-[26px] font-medium uppercase leading-[28px] text-canvasblue lg:text-[32px] lg:font-bold`}
             >
@@ -175,8 +175,8 @@ function Story(props) {
               {t("story:team_h2")}
             </h2>
             </GsapSplitTextWord>
-          </div>
-          <div className="team-image-wrapper flex max-w-[1280px] gap-4 whitespace-nowrap px-[30px]">
+          </div> */}
+          {/* <div className="team-image-wrapper flex max-w-[1280px] gap-4 whitespace-nowrap px-[30px]">
             {teamImageList.map((teamImage, index) => (
               <div key={index} className="flex w-full flex-col gap-3">
                 <div
@@ -195,14 +195,14 @@ function Story(props) {
                   />
                 </div>
 
-                {/* <p
+                 <p
                   className={`${roboto.variable} self-end font-robo text-[16px] leading-[20px] text-canvasblue`}
                 >
                   {teamImage.caption}
-                </p> */}
+                </p> 
               </div>
             ))}
-          </div>
+          </div> */}
 
           <div className="m-[30px] flex flex-col justify-between gap-6 py-10 sm:flex-row lg:py-[100px]">
           <GsapSplitTextWord> <h1

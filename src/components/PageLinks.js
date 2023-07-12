@@ -12,11 +12,10 @@ gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 function PageLinks({
   logo,
   text,
-  order,
   route,
   color,
+  parentId,
   noclick,
-  id,
   mask_id,
   width,
   hoverWidth,
@@ -24,16 +23,14 @@ function PageLinks({
   useEffect(() => {
     //first-trigger
     gsap.fromTo(
-      `#${id}`,
+      `#${parentId}`,
       { drawSVG: 0 },
       {
         drawSVG: true,
         duration: 2,
         scrollTrigger: {
-          trigger: `#${id}`,
-          // markers: true,
-          start: "-300% 50%",
-          end: "100% 50%",
+          trigger: `#${parentId}`,
+          toggleActions: "play pause resume reset",
         },
       }
     );
@@ -59,7 +56,7 @@ function PageLinks({
       } relative flex h-[100px] ${width} flex-row items-center justify-between gap-10 px-[30px] hover:cursor-pointer`}
     >
       <div className="relative flex h-full items-center">
-        <BoxSvg hexcode={color} id={id} mask_id={mask_id} />
+        <BoxSvg hexcode={color} parent_id={parentId} mask_id={mask_id} />
         <div className="absolute ml-[20px] aspect-square w-[62px] transition-transform duration-[0.5s]">
           <Image fill style={{ objectFit: "cover" }} src={logo} />
         </div>
@@ -72,7 +69,7 @@ function PageLinks({
 
 export default PageLinks;
 
-function BoxSvg({ hexcode, id, mask_id }) {
+function BoxSvg({ hexcode, parent_id , mask_id }) {
   return (
     <svg
       className="button-svg absolute h-full"
@@ -81,8 +78,9 @@ function BoxSvg({ hexcode, id, mask_id }) {
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
-        <mask id="mask-0">
+        <mask id={mask_id}>
           <polyline
+            id={parent_id}
             style={{
               fill: "none",
               strokeWidth: "10px",
@@ -90,7 +88,6 @@ function BoxSvg({ hexcode, id, mask_id }) {
               paintOrder: "fill",
             }}
             points="94.07 45.677 94.091 3.425 3.782 3.425 3.782 93.791 94.321 93.725 94.055 61.698 211.883 61.681"
-            id={id}
           ></polyline>
         </mask>
       </defs>
@@ -99,7 +96,7 @@ function BoxSvg({ hexcode, id, mask_id }) {
           strokeDasharray: "2px",
           fill: "none",
           stroke: `${hexcode === "canvasblue" ? "#0057C1" : "#FFFFFF"}`,
-          mask: "url(#mask-0)",
+          mask: `url(#${mask_id})`,
         }}
         points="94.07 45.682 94.091 3.43 3.782 3.43 3.782 93.796 94.321 93.73 94.055 61.703 211.883 61.686"
       ></polyline>
