@@ -3,11 +3,14 @@ import { national,roboto } from "../../utils/font";
 import GsapSplitTextWord from "./animations/GsapSplitTextWord";
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
+import { forwardRef, useRef } from "react";
 
 
-function Sectors({ t }) {
+
+function Sectors({ t },ref) {
   return (
     <div
+    ref={ref}
       id="sectors"
       className="sector-section overflow-x-hidden bg-white  py-[79px]"
     >
@@ -171,4 +174,4 @@ function Sectors({ t }) {
   );
 }
 
-export default Sectors;
+export default forwardRef(Sectors);

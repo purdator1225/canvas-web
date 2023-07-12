@@ -1,8 +1,6 @@
-
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { national } from "../../utils/font";
-
 
 import PageLinks from "@/components/PageLinks";
 
@@ -37,6 +35,27 @@ export default function Home(props) {
 
   // const scrollTo = props.scrollTo;
 
+  const strengthRef = useRef(null);
+  const servicesRef = useRef("");
+  const sectorRef = useRef("");
+  const clientRef = useRef("");
+
+  const strengthScroll = () => {
+    strengthRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const servicesScroll = () => {
+    servicesRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const sectorScroll = () => {
+    sectorRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
+  const clientScroll = () => {
+    clientRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   // animate banner
   const index = useRef();
 
@@ -44,17 +63,15 @@ export default function Home(props) {
     let mm = gsap.matchMedia();
 
     mm.add("(min-width: 1024px)", () => {
-    
       gsap.from(
         "#map-svg",
 
         {
-          drawSVG: "0%",
+          drawSVG: "0",
           stagger: 0.08,
 
           scrollTrigger: {
             trigger: "#strengths-large",
-          
             scrub: 2,
             start: "125% 50%",
             end: "175% 50%",
@@ -117,28 +134,34 @@ export default function Home(props) {
         scrollTrigger: {
           trigger: "#strengths-large",
           // markers: true,
+     
           scrub: 1,
         },
       });
 
-      gsap.from("#services-card", {
-        y: 200,
-        opacity:0,
-        duration: 1,
-        stagger: 0.2,
-        ease:"easeIn",
+      const servicesWrapperChildren = document.querySelector(
+        "#services-card-wrapper"
+      ).children;
+
+      console.log(servicesWrapperChildren);
+
+      gsap.from(servicesWrapperChildren, {
+        y: 100,
+        opacity: 0,
+        duration: 2,
+        stagger:0.05,
         scrollTrigger: {
           trigger: "#services-section",
-          toggleActions: "restart reverse complete reverse"
+          toggleActions: "play pause resume reverse",
+          start:"0% 50%",
+          end:"100% 50%",
 
-          // markers: true,
+          markers: true,
         },
       });
     });
 
     let context = gsap.context(() => {
-      
-
       gsap.from(
         "#client-card",
 
@@ -169,16 +192,21 @@ export default function Home(props) {
     <main ref={index} className={`${national.variable} font-nation bg-white`}>
       <HeroIsMobile t={t} />
 
-
-      <HeroIsDesktop t={t} />
+      <HeroIsDesktop
+        t={t}
+        strengthScroll={strengthScroll}
+        servicesScroll={servicesScroll}
+        clientScroll={clientScroll}
+        sectorScroll={sectorScroll}
+      />
 
       {/* //Achievement Section */}
-      <AchievementsSection t={t} />
+      <AchievementsSection ref={strengthRef} t={t} />
 
-      
-
-
-      <div id="values-button-large" className="hidden sm:block w-screen max-w-[1280px] m-auto px-[30px] ">
+      <div
+        id="values-button-large"
+        className="m-auto hidden w-screen max-w-[1280px] px-[30px] sm:block "
+      >
         <PageLinks
           mask_id={"values-large-mask"}
           parentId="values-large"
@@ -189,41 +217,19 @@ export default function Home(props) {
           hoverWidth={"w-[350px]"}
           logo={"/images/icons/our-values.png"}
         />
-
-        
-
-        
       </div>
 
-      
-
-  
       <AchievementsMobile t={t} />
-
-      
-
-    
-
-      
 
       <MapMobile t={t} />
 
-      
-
       <MapDesktop t={t} />
 
-      
+      <Services ref={servicesRef} t={t} />
 
-      <Services t={t} />
+      <Sectors ref={sectorRef} t={t} />
 
-      
-
-      <Sectors t={t} />
-      
-
-      <ClientTestimonials t={t} />
-
-      
+      <ClientTestimonials ref={clientRef} t={t} />
     </main>
   );
 }

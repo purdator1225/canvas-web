@@ -12,9 +12,9 @@ function Footer({ t }) {
   console.log(route);
 
   return (
-    <div className="w-screen bg-canvasblue px-10 pt-[80px]">
+    <div className="w-screen bg-canvasblue px-4 pt-[80px] lg:px-10">
       <div
-        className={`${roboto.variable} footer-main max-w-[1280px] px-4 md:px-6 m-auto flex justify-between font-robo text-white`}
+        className={`${roboto.variable} footer-main m-auto flex max-w-[1280px] justify-between px-4 font-robo text-white lg:px-6`}
       >
         <div className="left-side flex flex-col gap-5">
           <div>
@@ -54,7 +54,7 @@ function Footer({ t }) {
             </Link>
           </div>
 
-          <div className="gap-3 hidden">
+          <div className="hidden gap-3">
             <Image width={18} height={18} src={"/images/icons/fb_2.svg"} />
             <Image width={18} height={18} src={"/images/icons/insta.svg"} />
             <Image width={18} height={18} src={"/images/icons/twitter.svg"} />
@@ -132,7 +132,7 @@ function Footer({ t }) {
         </div>
       </div>
 
-      <div className="footer-bottom border-t-solid mt-10 flex flex-col lg:flex-row  justify-between gap-4 border-t-[1px] max-w-[1280px] m-auto px-4 md:px-6  py-10">
+      <div className="footer-bottom border-t-solid m-auto mt-10 flex max-w-[1280px]  flex-col justify-between gap-4 border-t-[1px] px-4 py-10 lg:flex-row lg:px-6">
         <div className="text-white">{t("common:footer_disclaimer")}</div>
 
         <div className="flex gap-5 text-white">

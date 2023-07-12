@@ -22,14 +22,14 @@ export async function getStaticProps({ locale }) {
 }
 
 function App({ Component, pageProps }) {
-  let [smoother, setSmoother] = useState();
+  // let [smoother, setSmoother] = useState();
 
   const { t } = useTranslation();
 
   //pass down to child props
-  const scrollTo = (elID) => {
-    smoother.scrollTo(elID, true, "center center");
-  };
+  // const scrollTo = (elID) => {
+  //   smoother.scrollTo(elID, true, "center center");
+  // };
 
   // useLayoutEffect(() => {
   //   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
@@ -61,7 +61,7 @@ function App({ Component, pageProps }) {
       {/* <SmootherContext.Provider value={smoother}>
         <div id="wrapper">
           <div id="content"> */}
-            <Component {...pageProps} scrollTo={scrollTo} />
+            <Component {...pageProps}  />
             <Footer t={t} />
           {/* </div>
         </div>

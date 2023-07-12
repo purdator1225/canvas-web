@@ -1,23 +1,27 @@
 import Image from "next/image";
-import React from "react";
-import { national, roboto } from "../../utils/font";
-
+import { national } from "../../utils/font";
 
 // style={{gridArea:`area-${order}`}}
 function ServicesCard({ title, logo, number, order }) {
   return (
-    <div id="services-card" className={`p-6 bg-canvasblue snap-center flex flex-col justify-between flex-wrap min-w-[300px] max-w-[500px]`}>
-      <h1
-        className={`${national.variable} font-national break-words uppercase text-white text-[38px]`}
-      >
-        {title}
-      </h1>
-      <div className="flex justify-between items-center">
-        <div className="relative w-[38px] h-[38px]">
+    <div
+      id="services-card"
+      className={`flex w-[300px] lg:w-[400px] xl:w-[500px] h-[230px] flex-shrink-0 snap-center flex-col justify-between bg-canvasblue p-6`}
+    >
+      <div>
+        <h1
+          className={`${national.variable} font-national text-[38px] uppercase text-white`}
+        >
+          {title}
+        </h1>
+      </div>
+
+      <div className="flex items-center justify-between">
+        <div className="relative h-[38px] w-[38px]">
           <Image fill cover style={{ objectFit: "cover" }} src={logo} />
         </div>
         <h1
-          className={`${national.variable} font-national text-[48px] text-stroke`}
+          className={`${national.variable} text-stroke font-national text-[48px]`}
         >
           {number}
         </h1>

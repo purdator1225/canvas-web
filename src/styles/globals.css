@@ -126,3 +126,8 @@ body::-webkit-scrollbar { width: 0 !important }
   transform: translateX(50px)  !important;
   transition: transform 1s;
 }
+
+.remove-text {
+  transform: translateX(1px)  !important;
+  transition: transform 1s;
+}

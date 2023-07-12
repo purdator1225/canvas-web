@@ -2,10 +2,10 @@ import React from 'react'
 import { national } from '../../utils/font'
 import Image from 'next/image'
 
-function HeroCard({ text, logo, url, scrollTo }) {
+function HeroCard({ text, logo, click }) {
   return (
     <div
-        onClick={() => scrollTo(url)}
+        onClick={click}
         className="snap-center box-border flex aspect-square h-[180px] flex-col justify-between p-2 transition-colors hover:cursor-pointer hover:bg-[rgba(44,182,108,0.7)]"
       >
         <hr className="h-[4px] w-full bg-white"></hr>

@@ -19,47 +19,36 @@ export async function getStaticProps({ locale }) {
 }
 
 function ContactUs(props) {
+  useLayoutEffect(() => {
+    let context = gsap.context(() => {
+      let tl = gsap.timeline();
 
- useLayoutEffect(() => {
+      tl.from("#contact-left", {
+        opacity: 0,
+        x: -100,
+      }).from("#contact-right", {
+        opacity: 0,
+        x: 100,
+      });
+    });
 
-  let context = gsap.context(()=>{
-
-    let tl = gsap.timeline()
-
-    tl.from('#contact-left',{
-      opacity:0,
-      x:-100,
-    }).from('#contact-right',{
-      opacity:0,
-      x:100,
-    })
-
-
-  })
-  
-  
- 
-   return () => {
-    context.revert()
-     
-   };
- }, [])
-
-
-
-
-
+    return () => {
+      context.revert();
+    };
+  }, []);
 
   let handleSubmit = (e) => {
     e.preventDefault();
   };
 
   let handleHover = () => {
-    document.querySelector("#pagelink-child").classList.add("move-text");
+    document.querySelector("#contact-button").classList.add("move-text");
+    document.querySelector("#contact-button").classList.remove("remove-text")
   };
 
   let handleHoverOut = () => {
-    document.querySelector("#pagelink-child").classList.remove("move-text");
+    document.querySelector("#contact-button").classList.remove("move-text");
+    document.querySelector("#contact-button").classList.add("remove-text")
   };
 
   const { t } = useTranslation();
@@ -67,7 +56,10 @@ function ContactUs(props) {
   return (
     <div className="flex bg-[url('/images/contact-us.png')] bg-cover px-6 py-10 text-white">
       <div className="m-auto flex w-full flex-col justify-between sm:flex-row sm:gap-[100px] xl:w-[1280px]">
-        <div id='contact-left' className="left-side mt-[100px] flex flex-col justify-between gap-10">
+        <div
+          id="contact-left"
+          className="left-side mt-[100px] flex flex-col justify-between gap-10"
+        >
           <GsapSplitTextWord>
             <h3
               className={`${national.variable} font-national text-[60px] font-medium uppercase leading-[68px] lg:font-bold`}
@@ -104,24 +96,23 @@ function ContactUs(props) {
             </div>
 
             <div className="flex flex-col gap-6">
-            <div className=" flex flex-col gap-2">
-              <h3
-                className={`${roboto.variable} font-robo text-[18px] leading-6`}
-              >
-                Jackson Lim
-              </h3>
+              <div className=" flex flex-col gap-2">
+                <h3
+                  className={`${roboto.variable} font-robo text-[18px] leading-6`}
+                >
+                  Jackson Lim
+                </h3>
 
-              <Link rel="noopener noreferrer" href="tel:+6011-1662 6228">
-                +6011-1662 6228
-              </Link>
+                <Link rel="noopener noreferrer" href="tel:+6011-1662 6228">
+                  +6011-1662 6228
+                </Link>
 
-              <Link
-                rel="noopener noreferrer"
-                href="mailto:cglbiz@canvasglobal-log.com"
-              >
-                <p>cglbiz@canvasglobal-log.com</p>
-              </Link>
-
+                <Link
+                  rel="noopener noreferrer"
+                  href="mailto:cglbiz@canvasglobal-log.com"
+                >
+                  <p>cglbiz@canvasglobal-log.com</p>
+                </Link>
               </div>
 
               <Image
@@ -167,13 +158,13 @@ function ContactUs(props) {
           </div>
         </div>
 
-        <div id='contact-right' className="right-side lg:w-1/2">
+        <div id="contact-right" className="right-side lg:w-1/2">
           <form
             action="https://formsubmit.co/briansh1225@gmail.com"
             method="POST"
             className={`${roboto.variable} mt-[100px] flex h-full max-w-[600px] flex-col gap-[60px] font-robo`}
           >
-            <div className="md:max-w-[280px] flex flex-col gap-2">
+            <div className="flex flex-col gap-2 md:max-w-[280px]">
               <label>{t("contact:contact_name")}</label>
               <input
                 className="shadow-none"
@@ -185,7 +176,7 @@ function ContactUs(props) {
             </div>
 
             <div className="flex flex-col justify-between gap-[60px] md:flex-row md:gap-10">
-              <div className="md:w-[300px] flex flex-col gap-2  ">
+              <div className="flex flex-col gap-2 md:w-[300px]  ">
                 <label>{t("contact:contact_email")}</label>
                 <input
                   className="shadow-none"
@@ -196,7 +187,7 @@ function ContactUs(props) {
                 ></input>
               </div>
 
-              <div className="md:w-[300px] flex flex-col gap-2">
+              <div className="flex flex-col gap-2 md:w-[300px]">
                 <label>{t("contact:contact_tel")}</label>
                 <input
                   className="shadow-none"
@@ -229,6 +220,7 @@ function ContactUs(props) {
               typeof="submit"
             >
               <PageLinks
+                noClickId="contact-button"
                 mask_id={"contact-id-button-mask"}
                 parentId={"contact-id-button"}
                 text={t("common:button_submit")}

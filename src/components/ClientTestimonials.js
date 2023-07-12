@@ -1,11 +1,12 @@
 import React from 'react'
 import { national, roboto } from '../../utils/font'
 import PageLinks from './PageLinks'
+import { forwardRef } from 'react'
 
-function ClientTestimonials({t}) {
+function ClientTestimonials({t},ref) {
   return (
     
-    <div className="client-testimonials w-screen bg-white ">
+    <div id='client-test' ref={ref} className="client-testimonials w-screen bg-white ">
     <div className="m-auto flex justify-center xl:w-[1280px]">
       <h1
         className={`${national.variable} headings overflow-hidden font-national text-[60px] text-canvasblue`}
@@ -83,4 +84,4 @@ function ClientTestimonials({t}) {
   )
 }
 
-export default ClientTestimonials
+export default forwardRef(ClientTestimonials)

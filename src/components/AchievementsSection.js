@@ -1,18 +1,19 @@
 import React from 'react'
 import StatsCard from './StatsCard'
 import Image from 'next/image'
+import { forwardRef } from 'react'
 
 
 
-function AchievementsSection({t}) {
+function AchievementsSection({t}, ref) {
 
 
   return (
-    <div
-          id="strengths-large"
+    <div ref={ref}
+      
           className="strengths relative hidden justify-center pb-[60px] pt-[200px] sm:flex"
         >
-          <div className="absolute z-[-1] h-[1214px] w-[400px] xl:z-0">
+          <div id="strengths-large" className="absolute z-[-1] h-[1214px] w-[400px] xl:z-0">
             <div
               id="ship-large"
               className="relative hidden h-[1214px] w-[400px] sm:block"
@@ -76,4 +77,4 @@ function AchievementsSection({t}) {
   )
 }
 
-export default AchievementsSection
+export default forwardRef(AchievementsSection)

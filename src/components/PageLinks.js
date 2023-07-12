@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Router, { useRouter } from "next/router";
 import { useRef } from "react";
 import { gsap } from "gsap";
-import { motion } from "framer-motion";
+import { easeOut, motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 
@@ -20,15 +20,15 @@ let childVariants = {
   hover: {
     x: 50,
     transition:{
-      ease:'linear',
-      // type:'spring',
-      // bounce:0.2
+    duration:0.5,
+     ease:"linear"
     }
   },
 
 };
 
 function PageLinks({
+  noClickId,
   logo,
   text,
   route,
@@ -80,9 +80,9 @@ function PageLinks({
       </div>
 
       <motion.h3
-        id={'pagelink-child'}
+        id={noClickId}
         variants={childVariants}
-        className={`absolute left-[45%] text-${color} transition-transform text-[24px]`}
+        className={`absolute left-[45%] text-${color}  text-[24px]`}
       >
         {text}
       </motion.h3>
