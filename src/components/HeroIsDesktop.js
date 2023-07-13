@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HeroCard from "./HeroCard";
 import GsapSplitTextWord from "./animations/GsapSplitTextWord";
 import { motion } from "framer-motion";
 import { national, roboto } from "../../utils/font";
+import { gsap } from "gsap";
 
 //hero line variants
 const lineParentVariants = {
@@ -20,13 +21,7 @@ const lineVariants = {
   transition: { duration: 3 },
 };
 
-function HeroIsDesktop({
-  t,
-  strengthScroll,
-  servicesScroll,
-  sectorScroll,
-  clientScroll,
-}) {
+function HeroIsDesktop({ t }) {
   return (
     <div
       id="hero"
@@ -107,25 +102,22 @@ function HeroIsDesktop({
             text={t("home:home_hero_strength")}
             logo="/images/icons/strength.png"
             url="#strengths-large"
-            click={strengthScroll}
+            scrollSection={"#strengths-large"}
           />
           <HeroCard
             text={t("home:home_hero_service")}
             logo="/images/icons/services.png"
-            url="#services"
-            click={servicesScroll}
+            scrollSection={"#services-section"}
           />
           <HeroCard
             text={t("home:home_hero_sector")}
             logo="/images/icons/sector.png"
-            url="#sectors"
-            click={sectorScroll}
+            scrollSection={"#sectors"}
           />
           <HeroCard
             text={t("home:home_hero_clients")}
             logo="/images/icons/client-icon.png"
-            url="#clients"
-            click={clientScroll}
+            scrollSection={"#clients"}
           />
         </div>
       </div>

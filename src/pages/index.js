@@ -134,7 +134,7 @@ export default function Home(props) {
         scrollTrigger: {
           trigger: "#strengths-large",
           // markers: true,
-     
+
           scrub: 1,
         },
       });
@@ -143,19 +143,16 @@ export default function Home(props) {
         "#services-card-wrapper"
       ).children;
 
-      console.log(servicesWrapperChildren);
-
       gsap.from(servicesWrapperChildren, {
         y: 100,
         opacity: 0,
-        duration: 2,
-        stagger:0.05,
+        duration: 1,
+        stagger: 0.05,
         scrollTrigger: {
           trigger: "#services-section",
-          toggleActions: "play pause resume reverse",
+          toggleActions: "play complete resume reverse",
           start:"0% 50%",
           end:"100% 50%",
-
           markers: true,
         },
       });
