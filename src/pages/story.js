@@ -211,7 +211,7 @@ function Story(props) {
             ))}
           </div> */}
 
-          <div className="m-[30px] flex flex-col justify-between gap-6 py-10 sm:flex-row lg:py-[100px]">
+          <div id='careers-section' className="m-[30px] flex flex-col justify-between gap-6 py-10 sm:flex-row lg:py-[100px]">
           <GsapSplitTextWord> <h1
                 className={`${national.variable} max-w-[500px] font-national text-[38px] font-medium uppercase leading-[42px] tracking-wide text-canvasblue lg:text-[48px] lg:font-bold lg:leading-[58px]`}
             >

@@ -86,7 +86,7 @@ function Navbar({ t }) {
               <Link href="/contact">
                 <h3>{t("common:nav_contact")}</h3>
               </Link>
-              <Link href="/story">
+              <Link href="/story/#careers-section">
                 <h3>{t("common:nav_careers")}</h3>
               </Link>
             </div>
@@ -212,7 +212,7 @@ function Navbar({ t }) {
               </div>
             </Link>
 
-            <Link href={"/story"}>
+            <Link href={"/story/#careers-section"}>
               <div
                 className={`hover:text-white" w-[180px] py-[24px] text-center uppercase transition-colors hover:bg-canvasgreen`}
               >

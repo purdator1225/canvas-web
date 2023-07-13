@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { useRef, useState } from "react";
 import { national, roboto } from "../../utils/font";
 import Image from "next/image";
 import PageLinks from "@/components/PageLinks";
@@ -9,6 +10,7 @@ import { motion } from "framer-motion";
 import GsapSplitTextWord from "@/components/animations/GsapSplitTextWord";
 import { useLayoutEffect } from "react";
 import { gsap } from "gsap";
+import emailjs from "@emailjs/browser";
 
 export async function getStaticProps({ locale }) {
   return {
@@ -19,6 +21,10 @@ export async function getStaticProps({ locale }) {
 }
 
 function ContactUs(props) {
+  const form = useRef();
+
+  const [formState, setFormState] = useState("");
+
   useLayoutEffect(() => {
     let context = gsap.context(() => {
       let tl = gsap.timeline();
@@ -37,18 +43,39 @@ function ContactUs(props) {
     };
   }, []);
 
-  let handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
+
+    setFormState("loading");
+
+    emailjs
+      .sendForm(
+        "service_c9ey7dj",
+        "template_hy8hm96",
+        form.current,
+        "TIJqrcwO385NCF-WS"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setFormState("success");
+          form.current.reset();
+        },
+        (error) => {
+          console.log(error.text);
+          setFormState("error");
+        }
+      );
   };
 
   let handleHover = () => {
     document.querySelector("#contact-button").classList.add("move-text");
-    document.querySelector("#contact-button").classList.remove("remove-text")
+    document.querySelector("#contact-button").classList.remove("remove-text");
   };
 
   let handleHoverOut = () => {
     document.querySelector("#contact-button").classList.remove("move-text");
-    document.querySelector("#contact-button").classList.add("remove-text")
+    document.querySelector("#contact-button").classList.add("remove-text");
   };
 
   const { t } = useTranslation();
@@ -160,8 +187,8 @@ function ContactUs(props) {
 
         <div id="contact-right" className="right-side lg:w-1/2">
           <form
-            action="https://formsubmit.co/briansh1225@gmail.com"
-            method="POST"
+            ref={form}
+            onSubmit={sendEmail}
             className={`${roboto.variable} mt-[100px] flex h-full max-w-[600px] flex-col gap-[60px] font-robo`}
           >
             <div className="flex flex-col gap-2 md:max-w-[280px]">
@@ -171,7 +198,7 @@ function ContactUs(props) {
                 required
                 placeholder={t("contact:contact_name")}
                 type="text"
-                name="name"
+                name="user_name"
               ></input>
             </div>
 
@@ -183,7 +210,7 @@ function ContactUs(props) {
                   required
                   placeholder={t("contact:contact_email")}
                   type="email"
-                  name="email"
+                  name="user_email"
                 ></input>
               </div>
 
@@ -194,7 +221,7 @@ function ContactUs(props) {
                   required
                   placeholder={t("contact:contact_tel")}
                   type="phone"
-                  name="phone"
+                  name="user_phone"
                 ></input>
               </div>
             </div>
@@ -204,30 +231,47 @@ function ContactUs(props) {
               <textarea
                 className="min-h-fit text-white shadow-none"
                 placeholder={t("contact:contact_msg")}
-                type="phone"
-                name="phone"
+                type="text"
+                name="message"
               ></textarea>
             </div>
 
             {/* <button className="p-6 bg-gray-100 text-black self-start" typeof="submit">
             Submit
           </button> */}
-            <motion.button
-              onClick={handleSubmit}
-              onMouseEnter={handleHover}
-              onMouseLeave={handleHoverOut}
-              className="transition-transform"
-              typeof="submit"
-            >
-              <PageLinks
-                noClickId="contact-button"
-                mask_id={"contact-id-button-mask"}
-                parentId={"contact-id-button"}
-                text={t("common:button_submit")}
-                logo={"/images/icons/submit-button.png"}
-                noclick={true}
-              />
-            </motion.button>
+
+            {formState === "loading" ? (
+              <p>Sending Message...</p>
+            ) : formState === "error" ? (
+              <div className="bg-red-500 p-2">
+                Sorry, your message was not sent. Please try again or contact us
+                at: <br />
+                +6011-1116 1106
+              </div>
+            ) : formState === "success" ? (
+              <div className="flex flex-col gap-6">
+                <div className="bg-green-500 p-2">
+                  <p>Thank You! Our team will be contacting you shortly.</p>
+                </div>
+                <div className="cursor-pointer underline" onClick={() => setFormState("")}>Send Another Message</div>
+              </div>
+            ) : (
+              <motion.button
+                onMouseEnter={handleHover}
+                onMouseLeave={handleHoverOut}
+                className="transition-transform"
+                typeof="submit"
+              >
+                <PageLinks
+                  noClickId="contact-button"
+                  mask_id={"contact-id-button-mask"}
+                  parentId={"contact-id-button"}
+                  text={t("common:button_submit")}
+                  logo={"/images/icons/submit-button.png"}
+                  noclick={true}
+                />
+              </motion.button>
+            )}
           </form>
         </div>
       </div>
