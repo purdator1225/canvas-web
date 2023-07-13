@@ -226,7 +226,22 @@ export default function Home(props) {
 
       <Sectors ref={sectorRef} t={t} />
 
-      <ClientTestimonials ref={clientRef} t={t} />
+      <div className="flex justify-center py-14">
+
+      <PageLinks
+            width={"w-[300px]"}
+            hoverWidth={"400px"}
+            mask_id={"contact-button-large-mask"}
+            parentId="contact-button-large"
+            color="canvasblue"
+            route={"/contact"}
+            text={t("common:button_contact")}
+            logo="/images/icons/contact-logo.png"
+          />
+
+</div>
+
+      {/* <ClientTestimonials ref={clientRef} t={t} /> */}
     </main>
   );
 }

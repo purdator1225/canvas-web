@@ -9,7 +9,7 @@ function Services({ t }, ref) {
   return (
     <div
       ref={ref}
-      className="our-services-section bg-[url('/images/home-our-services.png')] bg-cover bg-no-repeat py-[79px]"
+      className="our-services-section bg-[url('/images/home-services.png')] bg-cover bg-no-repeat py-[79px]"
     >
       <div
         id="services-section"
