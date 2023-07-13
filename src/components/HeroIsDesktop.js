@@ -25,7 +25,7 @@ function HeroIsDesktop({ t }) {
   return (
     <div
       id="hero"
-      className="relative hidden h-screen max-h-[1200px] w-screen justify-center bg-[url('/images/hero_pattern_home-min.png')] bg-cover sm:flex"
+      className="relative hidden h-screen max-h-[1200px] w-screen justify-center bg-[url('/images/hero_pattern_home-min.png')] bg-cover md:flex"
     >
       <div className="absolute hidden h-full w-[1280px] justify-end xl:flex">
         <motion.div
@@ -96,7 +96,7 @@ function HeroIsDesktop({ t }) {
 
         <div
           id="hero-flex-tab-above"
-          className=" hidden flex-wrap  self-end text-white sm:flex"
+          className=" hidden sm:flex-wrap self-end text-white sm:flex"
         >
           <HeroCard
             text={t("home:home_hero_strength")}

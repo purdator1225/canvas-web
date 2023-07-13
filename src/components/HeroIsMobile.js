@@ -7,7 +7,7 @@ function HeroIsMobile({t}) {
   return (
     <div
     id="hero-mobile"
-    className="relative h-[800px] w-screen items-center justify-center sm:hidden"
+    className="relative h-[800px] w-screen items-center justify-center md:hidden"
   >
     <div
       id="video-wrapper"
@@ -16,7 +16,7 @@ function HeroIsMobile({t}) {
 
     <div
       id="hero-text-wrapper"
-      className="absolute bottom-0 z-[10] m-auto flex h-[60%] w-full flex-col items-start bg-gradient-to-t  from-canvasblue via-canvasblue to-[#83b0e800] pl-[30px]"
+      className="absolute bottom-0 z-[10] m-auto flex h-[60%] w-full flex-col items-start bg-gradient-to-t  from-canvasblue via-canvasblue to-[#83b0e800] px-[30px]"
     >
       <div className="flex flex-col justify-center gap-6 text-white">
         <h1
