@@ -11,7 +11,7 @@ function HeroIsMobile({t}) {
   >
     <div
       id="video-wrapper"
-      className="absolute h-[75%] w-screen bg-[url('/images/hero_pattern_home')] bg-cover lg:h-full"
+      className="absolute h-[75%] w-screen bg-[url('/images/hero_pattern_home.png')] bg-cover lg:h-full"
     ></div>
 
     <div
