@@ -185,7 +185,6 @@ function Partner(props) {
                         height={50}
                       />
                       <p className={`${roboto.variable} font-robo`}>
-                        {" "}
                         {t("partnership:pss_repair")}
                       </p>
                     </div>

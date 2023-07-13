@@ -57,12 +57,12 @@ function ContactUs(props) {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          // console.log(result.text);
           setFormState("success");
           form.current.reset();
         },
         (error) => {
-          console.log(error.text);
+          // console.log(error.text);
           setFormState("error");
         }
       );
@@ -253,7 +253,12 @@ function ContactUs(props) {
                 <div className="bg-green-500 p-2">
                   <p>Thank You! Our team will be contacting you shortly.</p>
                 </div>
-                <div className="cursor-pointer underline" onClick={() => setFormState("")}>Send Another Message</div>
+                <div
+                  className="cursor-pointer underline"
+                  onClick={() => setFormState("")}
+                >
+                  Send Another Message
+                </div>
               </div>
             ) : (
               <motion.button

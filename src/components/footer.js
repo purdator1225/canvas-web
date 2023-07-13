@@ -9,7 +9,7 @@ function Footer({ t }) {
 
   const route = router.asPath;
 
-  console.log(route);
+  // console.log(route);
 
   return (
     <div className="w-screen bg-canvasblue px-4 pt-[80px] lg:px-10">
