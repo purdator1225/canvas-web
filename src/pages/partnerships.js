@@ -31,7 +31,7 @@ function Partner(props) {
     <div>
       <main className={`${national.variable} font-nation bg-white text-white`}>
         {/* <div>{props.locale}</div> */}
-        <div className=" relative flex h-screen w-screen bg-[url('/images/partnerships.png')] bg-cover px-4 py-[150px]">
+        <div className=" relative flex h-screen w-screen bg-[url('/images/partnership_hero_pattern-min.png')] bg-cover px-4 py-[150px]">
        
           <div className=" w-screen max-w-[1280px] m-auto">
             <div className="lg:px-0 flex h-[430px] flex-col gap-6 ">
