@@ -153,7 +153,7 @@ export default function Home(props) {
           toggleActions: "play complete resume reverse",
           start:"0% 50%",
           end:"100% 50%",
-          markers: true,
+          // markers: true,
         },
       });
     });
