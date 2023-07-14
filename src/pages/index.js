@@ -76,7 +76,7 @@ export default function Home(props) {
             trigger: "#strengths-large",
             start: "125% 50%",
             end: "175% 50%",
-            markers:true
+            // markers:true
           },
         }
       );
