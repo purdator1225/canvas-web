@@ -9,6 +9,7 @@ function MapMobile({t}) {
 <div className="relative aspect-[9/16] w-full bg-white sm:hidden">
           <Image
             fill
+            alt='mob-map'
             style={{ objectFit: "contain" }}
             src="/images/mobile-map.png"
           />
@@ -35,10 +36,12 @@ function MapMobile({t}) {
             className="aspect-square   bg-cover snap-center"
             width={240}
             height={1}
+            alt='us-mob'
             src="/images/country-pics/us-mobile.png"
           />
 
           <Image
+                alt='me-mob'
             className="aspect-square w-[240px] bg-cover snap-center"
             width={240}
             height={1}
@@ -46,6 +49,7 @@ function MapMobile({t}) {
           />
 
           <Image
+                alt='cn-mob'
             className="aspect-square w-[240px] bg-cover snap-center"
             width={240}
             height={1}
@@ -53,6 +57,7 @@ function MapMobile({t}) {
           />
 
           <Image
+                alt='em-mob'
             className="aspect-square w-[240px] bg-cover snap-center"
             width={240}
             height={1}
@@ -60,6 +65,7 @@ function MapMobile({t}) {
           />
 
           <Image
+          alt='th-mob'
             className="aspect-square w-[240px] bg-cover snap-center"
             width={240}
             height={1}

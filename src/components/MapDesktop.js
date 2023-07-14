@@ -128,7 +128,6 @@ function MapDesktop({ t }) {
         >
           <svg
             viewBox="0 0 600 700"
-            preserveAspectRatio="meet"
             xmlns="http://www.w3.org/2000/svg"
           >
             <defs>

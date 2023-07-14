@@ -5,7 +5,7 @@ function CountryImg({ url, position, width, height }) {
   return (
     <div className={`${position} absolute w-full z-50 country-img opacity-0`}>
       <div className={`${width} ${height} relative`}>
-        <Image fill style={{ objectFit: "contain" }} src={url} />
+        <Image alt={url} fill style={{ objectFit: "contain" }} src={url} />
       </div>
     </div>
   );

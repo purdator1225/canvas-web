@@ -8,7 +8,6 @@ import { servicesSliderData } from "../../utils/data";
 
 // import "/swiper/css";
 
-
 export async function getStaticProps({ locale }) {
   return {
     props: {
@@ -23,19 +22,22 @@ function Services(props) {
   return (
     <div className="text-white">
       <div className="flex min-h-[800px] w-screen bg-[url('/images/services-hero.png')] bg-cover">
-        <div className="w-full max-w-[1280px] m-auto ">
-          <div className="flex flex-col gap-4 max-w-[400px]">
+        <div className="m-auto w-full max-w-[1280px] ">
+          <div className="flex max-w-[400px] flex-col gap-4">
             <h1
               className={`${national.variable} font-national text-[26px] font-medium uppercase leading-[28px] sm:text-[32px] sm:font-bold`}
             >
               {t("common:canvas_global")}
             </h1>
-            <GsapSplitTextWord>     <h2
-              className={`${national.variable} font-national text-[48px] font-medium uppercase leading-[54px] lg:text-[60px] lg:font-bold`}
-            >
-              {t("services:services_hero_h1")}
-            </h2></GsapSplitTextWord>
-       
+            <GsapSplitTextWord>
+              {" "}
+              <h2
+                className={`${national.variable} font-national text-[48px] font-medium uppercase leading-[54px] lg:text-[60px] lg:font-bold`}
+              >
+                {t("services:services_hero_h1")}
+              </h2>
+            </GsapSplitTextWord>
+
             <h3
               className={`${roboto.variable} max-w-[350px] font-robo uppercase`}
             >
@@ -44,7 +46,6 @@ function Services(props) {
           </div>
 
           {/* first-card */}
-          
 
           {/* <div className="hidden min-h-[220px] max-w-[400px] gap-4 self-end lg:flex lg:flex-col ">
             <div className="h-[4px] w-full bg-white"></div>

@@ -19,6 +19,7 @@ function AchievementsSection({t}, ref) {
               className="relative hidden h-[1214px] w-[400px] sm:block"
             >
               <Image
+              alt='ship-large'
                 fill
                 src={"/images/ship-large.png"}
                 style={{ objectFit: "contain" }}

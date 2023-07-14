@@ -24,7 +24,7 @@ function HeroCard({ text, logo, scrollSection }) {
         {text}
       </h3>
       <div className="relative aspect-square w-[48px]">
-        <Image fill style={{ objectFit: "cover" }} src={logo} />
+        <Image alt={text} fill style={{ objectFit: "cover" }} src={logo} />
       </div>
     </div>
   );

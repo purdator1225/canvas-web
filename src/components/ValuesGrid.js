@@ -32,7 +32,7 @@ function ValuesGrid({ valuesList, imageList, bg, namespace }) {
               : null
           } `}
         >
-          <Image fill style={{ objectFit: "cover" }} src={image.url} />
+          <Image alt={image.url} fill style={{ objectFit: "cover" }} src={image.url} />
         </div>
       ))}
     </div>

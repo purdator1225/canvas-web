@@ -18,7 +18,7 @@ function Footer({ t }) {
       >
         <div className="left-side flex flex-col gap-5">
           <div>
-            <Image width={230} height={60} src={"/images/icons/logo.png"} />
+            <Image alt="canvas-logo" width={230} height={60} src={"/images/icons/logo.png"} />
           </div>
 
           <Link
@@ -55,9 +55,9 @@ function Footer({ t }) {
           </div>
 
           <div className="hidden gap-3">
-            <Image width={18} height={18} src={"/images/icons/fb_2.svg"} />
-            <Image width={18} height={18} src={"/images/icons/insta.svg"} />
-            <Image width={18} height={18} src={"/images/icons/twitter.svg"} />
+            <Image alt="fb" width={18} height={18} src={"/images/icons/fb_2.svg"} />
+            <Image alt="insta" width={18} height={18} src={"/images/icons/insta.svg"} />
+            <Image alt="twitter" width={18} height={18} src={"/images/icons/twitter.svg"} />
           </div>
         </div>
         <div className="right-side hidden gap-20 lg:flex">

@@ -122,6 +122,7 @@ function Navbar({ t }) {
           <Link href="/">
             <div className="relative h-[40px] w-[126px] p-10 hover:animate-pulse">
               <Image
+                alt="canvas-log-logo"
                 fill
                 style={{ objectFit: "contain" }}
                 src={`${

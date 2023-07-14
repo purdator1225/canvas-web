@@ -86,6 +86,7 @@ function Sectors({ t },ref) {
           className="flex justify-center bg-canvaslightgrey py-9"
         >
           <Image
+          alt="aji-no-kiri"
             width={125}
             height={100}
             style={{ objectFit: "contain" }}
@@ -97,6 +98,7 @@ function Sectors({ t },ref) {
           className="flex justify-center bg-canvaslightgrey py-9"
         >
           <Image
+          alt="ntpm"
             width={125}
             height={100}
             style={{ objectFit: "contain" }}
@@ -108,6 +110,7 @@ function Sectors({ t },ref) {
           className="flex justify-center bg-canvaslightgrey py-9"
         >
           <Image
+          alt="premier"
             width={125}
             height={100}
             style={{ objectFit: "contain" }}
@@ -119,6 +122,7 @@ function Sectors({ t },ref) {
           className="flex justify-center bg-canvaslightgrey py-9"
         >
           <Image
+          alt="cap-oats"
             width={125}
             height={100}
             style={{ objectFit: "contain" }}
@@ -130,6 +134,7 @@ function Sectors({ t },ref) {
           className="flex justify-center bg-canvaslightgrey py-9"
         >
           <Image
+          alt="hzpg"
             width={125}
             height={100}
             style={{ objectFit: "contain" }}
@@ -141,6 +146,7 @@ function Sectors({ t },ref) {
           className="flex justify-center bg-canvaslightgrey py-9"
         >
           <Image
+          alt="intimate"
             width={125}
             height={100}
             style={{ objectFit: "contain" }}
@@ -152,6 +158,7 @@ function Sectors({ t },ref) {
           className="flex justify-center bg-canvaslightgrey py-9"
         >
           <Image
+          alt="royalgold"
             width={125}
             height={100}
             style={{ objectFit: "contain" }}
@@ -163,6 +170,7 @@ function Sectors({ t },ref) {
           className="flex justify-center bg-canvaslightgrey py-9"
         >
           <Image
+          alt='fed-oats'
             width={125}
             height={100}
             style={{ objectFit: "contain" }}

@@ -74,8 +74,9 @@ function Story(props) {
           className="story-img-wrapper relative aspect-[16/9] w-full"
         >
           <Image
+          alt="story-hero"
             fill
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "cover", zIndex:10 }}
             src={"/images/story-hero.png"}
           />
         </motion.div>
@@ -83,9 +84,12 @@ function Story(props) {
 
       <div
         id="our-journey"
-        className="story-para flex w-screen bg-[url('/images/story-container-bg.png')] bg-cover"
+        className="story-para relative  flex w-screen bg-[url(')] bg-cover"
       >
-        <div className="m-auto flex min-h-[50%] w-[90vw] max-w-[1280px] flex-col gap-8 px-[30px] py-[78px]">
+
+      <Image fill className='object-cover' src='/images/story-container-bg.png'/>
+
+        <div className="m-auto relative flex min-h-[50%] w-[90vw] max-w-[1280px] flex-col gap-8 px-[30px] py-[78px]">
           <div className="max-w-[507px] overflow-hidden">
             <motion.p
             initial={{x:-100, opacity:0}}
@@ -128,21 +132,25 @@ function Story(props) {
 
           <div className="flex items-start gap-5 self-end">
             <Image
+              alt="sus-value-1"
               width={80}
               height={80}
               src="/images/sustainability/sustainability1.png"
             />
             <Image
+              alt="sus-value-2"
               width={80}
               height={80}
               src="/images/sustainability/sustainability2.png"
             />
             <Image
+              alt="sus-value-3"
               width={80}
               height={80}
               src="/images/sustainability/sustainability3.png"
             />
             <Image
+              alt="sus-value-4"
               width={80}
               height={80}
               src="/images/sustainability/sustainability4.png"

@@ -18,7 +18,7 @@ function ServicesCard({ title, logo, number, order }) {
 
       <div className="flex items-center justify-between">
         <div className="relative h-[38px] w-[38px]">
-          <Image fill cover style={{ objectFit: "cover" }} src={logo} />
+          <Image alt={title} fill cover style={{ objectFit: "cover" }} src={logo} />
         </div>
         <h1
           className={`${national.variable} text-stroke font-national text-[48px]`}
