@@ -25,9 +25,9 @@ function HeroIsDesktop({ t }) {
   return (
     <div
       id="hero"
-      className="relative hidden h-screen max-h-[1200px] w-screen justify-center bg-[url('/images/hero_pattern_home-min.png')] bg-cover md:flex"
+      className="relative hidden min-h-[800px] max-h-[1200px] w-screen justify-center bg-[url('/images/hero_pattern_home-min.png')] bg-cover md:flex"
     >
-      <div className="absolute hidden h-full w-[1280px] justify-end xl:flex">
+      {/* <div className="absolute hidden h-full w-[1280px] justify-end xl:flex">
         <motion.div
           variants={lineParentVariants}
           initial="hidden"
@@ -66,7 +66,7 @@ function HeroIsDesktop({ t }) {
             className="h-[1px] w-[1px] bg-white"
           ></motion.div>
         </motion.div>
-      </div>
+      </div> */}
 
       <div
         id="hero-text-wrapper"
@@ -88,7 +88,7 @@ function HeroIsDesktop({ t }) {
           </GsapSplitTextWord>
 
           <h3
-            className={`${roboto.variable} hidden max-w-[350px] font-robo uppercase lg:block`}
+            className={`${roboto.variable}  max-w-[350px] font-robo uppercase lg:block`}
           >
             {t("home:home_hero_para")}
           </h3>

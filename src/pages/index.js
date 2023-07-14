@@ -68,13 +68,15 @@ export default function Home(props) {
 
         {
           drawSVG: "0",
-          stagger: 0.08,
+          duration: 5,
+          stagger:0.08,
+
 
           scrollTrigger: {
             trigger: "#strengths-large",
-            scrub: 2,
             start: "125% 50%",
             end: "175% 50%",
+            markers:true
           },
         }
       );

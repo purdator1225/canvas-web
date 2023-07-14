@@ -54,7 +54,7 @@ function App({ Component, pageProps }) {
   // }, []);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden min-h-screen">
       <DefaultSeo {...SEO} />
       <Navbar t={t} />
 
