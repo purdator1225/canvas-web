@@ -192,7 +192,7 @@ function ContactUs(props) {
             className={`${roboto.variable} mt-[100px] flex h-full max-w-[600px] flex-col gap-[60px] font-robo`}
           >
             <div className="flex flex-col gap-2 md:max-w-[280px]">
-              <label>{t("contact:contact_name")}</label>
+              {/* <label>{t("contact:contact_name")}</label> */}
               <input
                 className="shadow-none"
                 required
@@ -204,7 +204,7 @@ function ContactUs(props) {
 
             <div className="flex flex-col justify-between gap-[60px] md:flex-row md:gap-10">
               <div className="flex flex-col gap-2 md:w-[300px]  ">
-                <label>{t("contact:contact_email")}</label>
+                {/* <label>{t("contact:contact_email")}</label> */}
                 <input
                   className="shadow-none"
                   required
@@ -215,7 +215,7 @@ function ContactUs(props) {
               </div>
 
               <div className="flex flex-col gap-2 md:w-[300px]">
-                <label>{t("contact:contact_tel")}</label>
+                {/* <label>{t("contact:contact_tel")}</label> */}
                 <input
                   className="shadow-none"
                   required
@@ -227,7 +227,7 @@ function ContactUs(props) {
             </div>
 
             <div className="flex h-fit flex-col gap-2">
-              <label>{t("contact:contact_msg")}</label>
+              {/* <label>{t("contact:contact_msg")}</label> */}
               <textarea
                 className="min-h-fit text-white shadow-none"
                 placeholder={t("contact:contact_msg")}
