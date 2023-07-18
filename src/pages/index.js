@@ -89,7 +89,6 @@ export default function Home(props) {
         scrollTrigger: {
           trigger: "#strengths-large",
           // markers: true,
-          scrub: 2,
           start: "105% 50%",
           end: "150% 50%",
         },
@@ -104,7 +103,6 @@ export default function Home(props) {
         scrollTrigger: {
           trigger: "#strengths-large",
           // markers: true,
-          scrub: 2,
           start: "105% 50%",
           end: "150% 50%",
         },
