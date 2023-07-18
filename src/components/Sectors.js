@@ -15,7 +15,7 @@ function Sectors({ t },ref) {
       className="sector-section overflow-x-hidden bg-white  py-[79px]"
     >
       <div className="m-auto xl:w-[1280px] ">
-        <div className="mb-[90px] flex flex-col justify-between gap-4 px-10 lg:flex-row">
+        <div className="mb-[90px] flex flex-col justify-between gap-4 px-6 lg:flex-row">
           <div className="flex flex-col gap-4">
             <h1
               className={`${national.variable} font-national text-[26px] font-medium uppercase leading-[28px] text-canvasblue lg:text-[32px] lg:font-bold`}
@@ -39,7 +39,7 @@ function Sectors({ t },ref) {
         </div>
       </div>
 
-      <div className="h-[400px] w-full bg-[url('/images/sector-banner.png')] bg-cover"></div>
+      {/* <div className="h-[400px] w-full bg-[url('/images/sector-banner.png')] bg-cover"></div> */}
 
       <div id="sector-banner" className="py-10">
         <Marquee>

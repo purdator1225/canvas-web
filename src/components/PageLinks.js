@@ -76,7 +76,7 @@ function PageLinks({
     >
       <BoxSvg hexcode={color} parent_id={parentId} mask_id={mask_id} />
       <div className="absolute ml-[7%] aspect-square w-[62px] transition-transform duration-[0.5s]">
-        <Image fill style={{ objectFit: "cover" }} src={logo} />
+        <Image alt='page-link-icon' fill style={{ objectFit: "cover" }} src={logo} />
       </div>
 
       <motion.h3

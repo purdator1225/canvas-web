@@ -114,26 +114,29 @@ function Navbar({ t }) {
       <div
         className={`main-menu ${
           roboto.variable
-        } text-[18px]leading-[24px] w-full font-robo tracking-tight ${
-          router.pathname === "/story" ? "text-black" : "text-white"
-        } fixed top-0 z-10 flex flex-row bg-[#ffffff20]`}
+        } text-[18px]leading-[24px] w-full font-robo tracking-tight text-white  fixed top-0 z-[200] flex flex-row bg-canvasblue`}
       >
+{/* 
+${
+          router.pathname === "/story" ? "text-black" : "text-white"
+        } */}
+
         <div className="flex h-[72px] w-screen max-w-[1280px] items-center justify-between px-[30px] xl:m-auto xl:px-0">
           <Link href="/">
-            <div className="relative h-[40px] w-[126px] p-10 hover:animate-pulse">
+            <div className="relative h-[40px] w-[126px] p-10">
               <Image
                 alt="canvas-log-logo"
                 fill
                 style={{ objectFit: "contain" }}
-                src={`${
-                  router.pathname !== "/story"
-                    ? "/images/canvas_logo.svg"
-                    : "/images/canvas-color-logo.png"
-                }`}
+                src='images/canvas_logo.svg'
               />
             </div>
           </Link>
-
+          {/* {`${
+                  router.pathname !== "/story"
+                    ? "/images/canvas_logo.svg"
+                    : "/images/canvas-color-logo.png"
+                }`} */}
           <div
             onClick={toggleMenu}
             className="menu-button relative h-[45px] w-[45px] xl:hidden"

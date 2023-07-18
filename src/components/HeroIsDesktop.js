@@ -25,7 +25,7 @@ function HeroIsDesktop({ t }) {
   return (
     <div
       id="hero"
-      className="relative hidden min-h-[800px] max-h-[1200px] w-screen justify-center bg-[url('/images/hero_pattern_home-min.png')] bg-cover md:flex"
+      className="relative hidden min-h-[800px] max-h-[1200px] w-screen justify-center bg-[url('/images/hero_pattern_home-min.webp')] bg-cover md:flex"
     >
       {/* <div className="absolute hidden h-full w-[1280px] justify-end xl:flex">
         <motion.div

@@ -30,7 +30,7 @@ function StatsCard({ title, statistic, units, para, id }) {
 
       <hr className="h-[2px] w-full bg-canvasblue" />
 
-      <p className={`${roboto.variable} text-[18px]leading font-robo`}>
+      <p className={`${roboto.variable} text-[18px] w-full leading font-robo`}>
         {para}
       </p>
     </div>

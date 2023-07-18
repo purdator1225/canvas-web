@@ -9,14 +9,14 @@ function Services({ t }, ref) {
   return (
     <div
       ref={ref}
-      className="our-services-section bg-[url('/images/home-services-min.png')] bg-cover bg-no-repeat py-[79px]"
+      className="our-services-section bg-[url('/images/home-services-min.webp')] bg-cover bg-no-repeat py-[79px]"
     >
       <div
         id="services-section"
-        className="m-auto flex max-w-[1280px] flex-col"
+        className="m-auto flex max-w-[1280px] flex-col gap-4 px-6"
       >
-        <div className="px-10">
-          <div>
+
+          <div className="flex flex-col gap-4">
             <h1
               className={`${national.variable} font-national text-[26px] font-medium uppercase leading-[28px] tracking-wide text-white lg:text-[32px] lg:font-bold`}
             >
@@ -25,7 +25,7 @@ function Services({ t }, ref) {
 
             <GsapSplitTextWord>
               <h2
-                className={`${national.variable} headings overflow-hidden font-national text-[38px]
+                className={`${national.variable} headings overflow-hidden font-national text-[38px] font-medium uppercase
             leading-[42px] text-white lg:text-[48px] lg:font-bold lg:leading-[58px]`}
               >
                 {t("home:home_services_h2")}
@@ -37,13 +37,13 @@ function Services({ t }, ref) {
           >
             {t("home:home_services_para")}
           </p>
-        </div>
+
 
         {/* services card */}
 
         <div
           id="services-card-wrapper"
-          className="my-10 flex w-screen lg:overflow-hidden max-w-[1280px] snap-x justify-between gap-6 overflow-x-scroll px-10 lg:flex-wrap"
+          className="my-10 flex w-screen lg:overflow-hidden max-w-[1280px] snap-x justify-between gap-6 overflow-x-scroll lg:flex-wrap"
         >
           <ServicesCard
             title={t("home:home_services_card_1")}

@@ -81,7 +81,7 @@ function ContactUs(props) {
   const { t } = useTranslation();
 
   return (
-    <div className="flex min-h-[800px] bg-[url('/images/contact-us.png')] bg-cover px-6 py-10 text-white">
+    <div className="flex min-h-[800px] bg-[url('/images/contact-us.webp')] bg-cover px-6 py-10 text-white">
       <div className="m-auto flex w-full flex-col justify-between sm:flex-row sm:gap-[100px] xl:w-[1280px]">
         <div
           id="contact-left"

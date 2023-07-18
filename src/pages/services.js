@@ -22,7 +22,7 @@ function Services(props) {
   return (
     <div className="text-white">
       <div className="flex min-h-[800px] w-screen bg-[url('/images/services-hero.png')] bg-cover">
-        <div className="m-auto w-full max-w-[1280px] ">
+        <div className="m-auto w-full max-w-[1280px] px-6 ">
           <div className="flex max-w-[400px] flex-col gap-4">
             <h1
               className={`${national.variable} font-national text-[26px] font-medium uppercase leading-[28px] sm:text-[32px] sm:font-bold`}

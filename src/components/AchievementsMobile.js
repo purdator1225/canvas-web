@@ -98,7 +98,7 @@ function AchievementsMobile({ t }) {
           width={"w-[300px]"}
           hoverWidth={"w-[400px]"}
           text={t("common:button_values")}
-          logo={"/images/icons/our-values.png"}
+          logo={"/images/icons/values-icon.svg"}
         />
       </div>
     </>

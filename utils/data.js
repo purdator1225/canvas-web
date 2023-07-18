@@ -66,27 +66,27 @@ export const  careerList = [
 export const servicesSliderData = [
     {
       title: "service_1_title",
-      url: "/images/services-imgs/services-sea-freight.png",
+      url: "/images/services-imgs/services-sea-freight.webp",
       para: "service_1_para",
     },
     {
       title: "service_2_title",
-      url: "/images/services-imgs/services-trucking.png",
+      url: "/images/services-imgs/services-trucking.webp",
       para: "service_2_para",
     },
     {
       title: "service_3_title",
-      url: "/images/services-imgs/services-warehousing.png",
+      url: "/images/services-imgs/services-warehousing.webp",
       para: "service_3_para",
     },
     {
       title: "service_4_title",
-      url: "/images/services-imgs/services-transloading.png",
+      url: "/images/services-imgs/services-transloading.webp",
       para: "service_4_para",
     },
     {
       title: "service_5_title",
-      url: "/images/services-imgs/services-fumigation.png",
+      url: "/images/services-imgs/services-fumigation.webp",
       para: "service_5_para",
     },
   ];

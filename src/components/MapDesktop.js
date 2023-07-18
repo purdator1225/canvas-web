@@ -24,7 +24,7 @@ function MapDesktop({ t }) {
               start: "65% 50%",
               end:"100% 50%",
             //   markers: true,
-              toggleActions: "restart reverse restart reverse"
+              // toggleActions: "restart reverse restart reverse"
       
             },
           });
@@ -96,14 +96,17 @@ function MapDesktop({ t }) {
                 duration: 3,
               },
               "<"
-            ).from(
+            ).fromTo(
                 "#key_routes_card",
                 {
-                y: 100,
-                autoAlpha:0,
+                y: 400,
                   duration: 1,
                 },
-                "<"
+                {
+                  y: 0,
+                    duration: 1,
+                  },
+                "<1"
               );
       
     })
@@ -309,34 +312,34 @@ function MapDesktop({ t }) {
         {/* these are for pics */}
 
         <CountryImg
-          url={"/images/country-pics/us.png"}
+          url={"/images/country-pics/us-mobile.webp"}
           width={"w-[30%]"}
           height={"aspect-[3/2]"}
           position={"top-[9%] left-[32%]"}
         />
 
         <CountryImg
-          url={"/images/country-pics/me.png"}
+          url={"/images/country-pics/me-mobile.webp"}
           width={"w-[30%]"}
           height={"aspect-[3/2]"}
           position={"bottom-[38%] left-[4%]"}
         />
 
         <CountryImg
-          url={"/images/country-pics/cn.png"}
+          url={"/images/country-pics/cn-mobile.webp"}
           width={"w-[20%]"}
           height={"aspect-[2/3]"}
           position={"left-[71%] bottom-[47%]"}
         />
         <CountryImg
-          url={"/images/country-pics/th.png"}
+          url={"/images/country-pics/th-mobile.webp"}
           width={"w-[30%]"}
           height={"aspect-[3/2]"}
           position={"left-[45%] bottom-[21%]"}
         />
 
         <CountryImg
-          url={"/images/country-pics/em.png"}
+          url={"/images/country-pics/em-mobile.webp"}
           width={"w-[20%]"}
           height={"aspect-[2/3]"}
           position={"right-[-78%] bottom-[11%]"}
