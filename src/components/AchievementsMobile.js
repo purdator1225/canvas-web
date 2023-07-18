@@ -1,48 +1,73 @@
 import { useScroll, useTransform } from "framer-motion";
-import React from "react";
-import { useRef } from "react";
+import React, { useLayoutEffect } from "react";
 import { motion } from "framer-motion";
 import StatsCard from "./StatsCard";
 import Image from "next/image";
 import PageLinks from "@/components/PageLinks";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function AchievementsMobile({ t }) {
+  useLayoutEffect(() => {
+    const tl = gsap.timeline();
+
+    tl.fromTo(
+      ".ship-wrapper",
+      {
+        xPercent: 100,
+        
+      },
+      {
+        xPercent: 20,
+        scrollTrigger: {
+          trigger: "#strengths-mobile",
+      
+          markers: true,
+          end:'center center'
+        },
+      }
+    );
+
+    // return () => {
+
+    // };
+  }, []);
   //mobile horizontal scroll values section
-  const horizontalRef = useRef(null);
+  // const horizontalRef = useRef(null);
 
-  const { scrollXProgress } = useScroll({
-    container: horizontalRef,
-  });
+  // const { scrollXProgress } = useScroll({
+  //   container: horizontalRef,
+  // });
 
-  let shipMovement = useTransform(scrollXProgress, [0, 1], ["25%", "100%"]);
+  // let shipMovement = useTransform(scrollXProgress, [0, 1], ["25%", "100%"]);
 
   return (
     <>
       <div
         id="strengths-mobile"
-        ref={horizontalRef}
-        className="strengths achievement-section-mobile flex flex-col overflow-x-scroll snap-x scroll-smooth bg-white sm:hidden"
+        // ref={horizontalRef}
+        className="strengths achievement-section-mobile px-6 flex snap-x flex-col overflow-x-scroll scroll-smooth bg-white sm:hidden"
       >
-        <div className="ship-wrapper">
-          <motion.div
-            transition={{duration:1}}
-          
-            style={{ translateX: shipMovement }}
+        <div className="ship-wrapper h-[200px] w-[1400px] ">
+          <div
+            // transition={{duration:1}}
+
+            // style={{ translateX: shipMovement }}
             id="ship-small"
-            className="relative h-[200px] w-[950px] my-6 sm:hidden"
+            className="relative my-6 w-full h-full sm:hidden"
           >
             <Image
               fill
               src={"/images/ship_water.svg"}
-              style={{ objectFit: "cover", objectPosition:"0%"}}
+              style={{ objectFit: "cover", objectPosition: "0%" }}
             />
-          
-          </motion.div>
+          </div>
         </div>
 
         <div
-          id="map-section"
-          className="flex gap-6 px-[30px] py-[30px] text-canvasblue"
+          className="flex gap-6 w-full px-6 py-[30px] text-canvasblue"
         >
           <StatsCard
             id="achievement-card"
