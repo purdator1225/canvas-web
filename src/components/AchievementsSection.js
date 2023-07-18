@@ -10,10 +10,9 @@ function AchievementsSection({t}, ref) {
 
   return (
     <div ref={ref}
-      
-          className="strengths relative hidden justify-center pb-[60px] pt-[200px] sm:flex"
+          className="strengths relative hidden justify-center pb-[60px] pt-[150px] sm:flex px-4"
         >
-          <div id="strengths-large" className="absolute z-[-1] h-[1214px] w-[400px] xl:z-0">
+          <div id="strengths-large" className="absolute z-[-1]  h-[1214px] w-[400px] lg:z-0">
             <div
               id="ship-large"
               className="relative hidden h-[1214px] w-[400px] sm:block"
@@ -29,19 +28,19 @@ function AchievementsSection({t}, ref) {
 
           <div
             id="achievement-section"
-            className="grid w-full grid-cols-[330px_330px] justify-between gap-y-[120px] px-[30px] py-[30px] text-canvasblue xl:max-w-[1280px]"
+            className="grid w-full grid-cols-[330px_330px] justify-between gap-y-[120px] py-[30px] text-canvasblue xl:max-w-[1280px]"
           >
             <StatsCard
               id="achievement-card"
               title={t("home:home_ach_1")}
-              statistic="1000+"
+              statistic="1,000+"
               units={t("home:home_ach_units_1")}
               para={t("home:home_ach_para_1")}
             />
             <StatsCard
               id="achievement-card"
               title={t("home:home_ach_2")}
-              statistic="10000+"
+              statistic="10,000+"
               units={t("home:home_ach_units_2")}
               para={t("home:home_ach_para_2")}
             />

@@ -69,8 +69,7 @@ export default function Home(props) {
         {
           drawSVG: "0",
           duration: 5,
-          stagger:0.08,
-
+          stagger: 0.08,
 
           scrollTrigger: {
             trigger: "#strengths-large",
@@ -106,7 +105,6 @@ export default function Home(props) {
           start: "105% 50%",
           end: "150% 50%",
         },
-        delay: 3.5,
       });
 
       gsap.fromTo(
@@ -151,8 +149,8 @@ export default function Home(props) {
         scrollTrigger: {
           trigger: "#services-section",
           toggleActions: "play complete resume reverse",
-          start:"0% 50%",
-          end:"100% 50%",
+          start: "0% 50%",
+          end: "100% 50%",
           // markers: true,
         },
       });
@@ -212,7 +210,7 @@ export default function Home(props) {
           text={t("common:button_values")}
           width={"w-[300px]"}
           hoverWidth={"w-[350px]"}
-          logo={"/images/icons/our-values.png"}
+          logo={"/images/icons/values-icon.svg"}
         />
       </div>
 
@@ -227,19 +225,17 @@ export default function Home(props) {
       <Sectors ref={sectorRef} t={t} />
 
       <div className="flex justify-center py-14">
-
-      <PageLinks
-            width={"w-[300px]"}
-            hoverWidth={"400px"}
-            mask_id={"contact-button-large-mask"}
-            parentId="contact-button-large"
-            color="canvasblue"
-            route={"/contact"}
-            text={t("common:button_contact")}
-            logo="/images/icons/contact-logo.png"
-          />
-
-</div>
+        <PageLinks
+          width={"w-[300px]"}
+          hoverWidth={"400px"}
+          mask_id={"contact-button-large-mask"}
+          parentId="contact-button-large"
+          color="canvasblue"
+          route={"/contact"}
+          text={t("common:button_contact")}
+          logo="/images/icons/phone-logo.svg"
+        />
+      </div>
 
       {/* <ClientTestimonials ref={clientRef} t={t} /> */}
     </main>

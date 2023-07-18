@@ -58,6 +58,7 @@ export const storyValues = [
 export const  careerList = [
     { title: "Logistics Executive", role: "Internship" },
     { title: "Accounts Executive", role: "Internship" },
+    { title: "Sales Executive", role: "Full Time" },
   ];
 
 

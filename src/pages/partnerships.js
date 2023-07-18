@@ -32,9 +32,8 @@ function Partner(props) {
       <main className={`${national.variable} font-nation bg-white text-white`}>
         {/* <div>{props.locale}</div> */}
         <div className="relative flex min-h-[800px] w-screen bg-[url('/images/partnership_hero_pattern-min.webp')] bg-cover px-4 py-[150px]">
-       
-          <div className="max-w-[1280px] w-full m-auto">
-            <div className="lg:px-0 flex max-w-[400px] h-[430px] flex-col gap-6 ">
+          <div className="w-full max-w-[1280px]">
+            <div className="flex h-[430px] max-w-[400px] flex-col gap-6 lg:px-0 ">
               <h1
                 className={`${national.variable} font-national text-[32px] font-bold uppercase`}
               >
@@ -78,7 +77,7 @@ function Partner(props) {
               <div className="flex flex-col items-center">
                 <div className="relative aspect-square w-[160px]">
                   <Image
-                  alt="asia-log-logo"
+                    alt="asia-log-logo"
                     fill
                     style={{ objectFit: "cover" }}
                     src={"/images/clients/asia-log.png"}
@@ -88,7 +87,7 @@ function Partner(props) {
                 <div className="icons-wrapper my-8 flex w-[290px] justify-evenly">
                   <div className="flex flex-col items-center justify-center">
                     <Image
-                    alt="road"
+                      alt="road"
                       src="/images/icons/road.png"
                       width={50}
                       height={50}
@@ -101,7 +100,7 @@ function Partner(props) {
                   </div>
                   <div className="flex flex-col items-center ">
                     <Image
-                    alt="ship-round"
+                      alt="ship-round"
                       src="/images/icons/sea-ship-round.png"
                       width={50}
                       height={50}
@@ -114,7 +113,7 @@ function Partner(props) {
                   </div>
                   <div className="flex flex-col items-center">
                     <Image
-                    alt="rail"
+                      alt="rail"
                       src="/images/icons/rail.png"
                       width={50}
                       height={50}
@@ -163,7 +162,7 @@ function Partner(props) {
               <div className="flex flex-col items-center">
                 <div className="relative aspect-square w-[212px]">
                   <Image
-                  alt="pss-logo"
+                    alt="pss-logo"
                     fill
                     style={{ objectFit: "contain" }}
                     src={"/images/icons/pss_logo.png"}
@@ -174,7 +173,7 @@ function Partner(props) {
                   <div className="m-auto flex w-[288px] flex-wrap justify-center gap-8 sm:w-auto">
                     <div className="flex flex-col  items-center">
                       <Image
-                      alt="storage"
+                        alt="storage"
                         src="/images/icons/pss-feature-icons/storage.png"
                         width={50}
                         height={50}
@@ -186,7 +185,7 @@ function Partner(props) {
                     </div>
                     <div className="flex flex-col items-center">
                       <Image
-                      alt="repair"
+                        alt="repair"
                         src="/images/icons/pss-feature-icons/repair.png"
                         width={50}
                         height={50}
@@ -197,7 +196,7 @@ function Partner(props) {
                     </div>
                     <div className="flex flex-col items-center">
                       <Image
-                      alt="reefer"
+                        alt="reefer"
                         src="/images/icons/pss-feature-icons/reefer.png"
                         width={50}
                         height={50}
@@ -208,7 +207,7 @@ function Partner(props) {
                     </div>
                     <div className="flex flex-col items-center">
                       <Image
-                      alt="railing"
+                        alt="railing"
                         src="/images/icons/pss-feature-icons/railing.png"
                         width={50}
                         height={50}
@@ -220,7 +219,7 @@ function Partner(props) {
                     </div>
                     <div className="flex flex-col items-center">
                       <Image
-                      alt="barging"
+                        alt="barging"
                         src="/images/icons/pss-feature-icons/barging.png"
                         width={50}
                         height={50}

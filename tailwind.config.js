@@ -25,6 +25,10 @@ module.exports = {
 
   theme: {
     extend: {
+      screens: {
+        'minheights': {'raw': '(max-height: 400px)'},
+        // => @media (max-height: 1234px) { ... }
+      },
       colors: {
         canvasblue: "#0057C1",
         canvasgreen: "#2CB66D",

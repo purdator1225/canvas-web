@@ -18,7 +18,7 @@ function Footer({ t }) {
       >
         <div className="left-side flex flex-col gap-5">
           <div>
-            <Image alt="canvas-logo" width={230} height={60} src={"/images/icons/logo.png"} />
+            <Image alt="canvas-logo" width={230} height={60} src={"/images/footer-logo-canvas.svg"} />
           </div>
 
           <Link

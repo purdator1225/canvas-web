@@ -5,12 +5,12 @@ import { national, roboto } from "../../utils/font";
 function ValueCard({ logo, valueText, index, bg }) {
   return (
     <div
-      className={`w-full min-h-[180px] lg:min-h-[360px] flex flex-col gap-10 justify-between bg-${bg} text-${
+      className={` h-full lg:min-h-[360px] flex flex-col gap-10 justify-start bg-${bg} text-${
         bg === "canvasblue" ? "white" : "canvasblue"
       } px-[24px] py-[32px] border-solid border-[1px]`}
     >
       <div className="flex justify-between">
-        <Image src={logo} width={40} height={40} />
+        <Image alt='value-logos' src={logo} width={40} height={40} />
         <h3
           className={`${roboto.variable} font-robo text-[15px] leading-[19px] lg:text-[24px] lg:leading-[30px] uppercase`}
         >

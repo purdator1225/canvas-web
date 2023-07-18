@@ -81,7 +81,9 @@ function ContactUs(props) {
   const { t } = useTranslation();
 
   return (
-    <div className="flex min-h-[800px] bg-[url('/images/contact-us.webp')] bg-cover px-6 py-10 text-white">
+    <div className="relative min-h-[800px] px-6 py-10 text-white">
+
+    <Image style={{objectFit:'cover', backgroundPosition:'center'}} fill alt='contact-bg' src={'/images/contact-us.webp'} className="blur-[4px] lg:blur-none"/>
       <div className="m-auto flex w-full flex-col justify-between sm:flex-row sm:gap-[100px] xl:w-[1280px]">
         <div
           id="contact-left"

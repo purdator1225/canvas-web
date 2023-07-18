@@ -16,9 +16,9 @@ function HeroIsMobile({t}) {
 
     <div
       id="hero-text-wrapper"
-      className="absolute bottom-0 z-[10] m-auto flex h-content w-full flex-col items-start bg-gradient-to-t  from-canvasblue via-canvasblue to-[#83b0e800] px-[30px]"
+      className="absolute bottom-0 z-[10] m-auto flex h-content w-full flex-col items-start bg-gradient-to-t  from-canvasblue via-canvasblue to-[#83b0e800] pl-[30px]"
     >
-      <div className="flex flex-col justify-center gap-6 text-white">
+      <div className="flex flex-col justify-center gap-6 text-white pr-4">
         <h1
           className={`${national.variable} font-national text-[28px] font-medium uppercase`}
         >

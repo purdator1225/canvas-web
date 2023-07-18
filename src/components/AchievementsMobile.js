@@ -14,7 +14,7 @@ function AchievementsMobile({ t }) {
     container: horizontalRef,
   });
 
-  let shipMovement = useTransform(scrollXProgress, [0, 1], ["35%", "100%"]);
+  let shipMovement = useTransform(scrollXProgress, [0, 1], ["25%", "100%"]);
 
   return (
     <>
@@ -25,16 +25,16 @@ function AchievementsMobile({ t }) {
       >
         <div className="ship-wrapper">
           <motion.div
-
+            transition={{duration:1}}
           
             style={{ translateX: shipMovement }}
             id="ship-small"
-            className="relative my-[70px] h-[100px] w-[600px] sm:hidden"
+            className="relative h-[200px] w-[950px] my-6 sm:hidden"
           >
             <Image
               fill
-              src={"/images/ship-small.png"}
-              style={{ objectFit: "cover", width: "100%" }}
+              src={"/images/ship_water.svg"}
+              style={{ objectFit: "cover", objectPosition:"0%"}}
             />
           
           </motion.div>
@@ -47,14 +47,14 @@ function AchievementsMobile({ t }) {
           <StatsCard
             id="achievement-card"
             title={t("home:home_ach_1")}
-            statistic="1000+"
+            statistic="1,000+"
             units={t("home:home_ach_units_1")}
             para={t("home:home_ach_para_1")}
           />
           <StatsCard
             id="achievement-card"
             title={t("home:home_ach_2")}
-            statistic="10000+"
+            statistic="10,000+"
             units={t("home:home_ach_units_2")}
             para={t("home:home_ach_para_2")}
           />

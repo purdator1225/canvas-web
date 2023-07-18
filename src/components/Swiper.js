@@ -4,14 +4,12 @@ import Image from "next/image";
 import { national, roboto } from "../../utils/font";
 import { useTranslation } from "react-i18next";
 
-
 function Swiper({ slides, namespace }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // console.log(slides[currentIndex]);
 
   const { t } = useTranslation();
-  
 
   const goToPrev = () => {
     const isFirstSlide = currentIndex === 0;
@@ -44,13 +42,14 @@ function Swiper({ slides, namespace }) {
           <div className="relative h-[340px] w-full">
             <Image
               fill
+              alt="slide-img"
               style={{ objectFit: "cover" }}
               src={slides[currentIndex].url}
             />
           </div>
 
           <p
-            className={`${national.variable} lg:h-[232px] font-national text-[26px] leading:text-[28px]  lg:text-[48px]  uppercase lg:leading-[58px]`}
+            className={`${national.variable} h-[100px] leading:text-[28px] font-national text-[26px] uppercase  lg:h-[232px]  lg:text-[48px] lg:leading-[58px]`}
           >
             {t(`${namespace}:${slides[currentIndex].para}`)}
           </p>
@@ -116,6 +115,7 @@ function Swiper({ slides, namespace }) {
       </div>
       <div className="relative hidden h-full w-1/2 lg:block">
         <Image
+        alt="slide-image"
           fill
           cover
           style={{ objectFit: "cover" }}
