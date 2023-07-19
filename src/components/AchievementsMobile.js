@@ -11,20 +11,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 function AchievementsMobile({ t }) {
   useLayoutEffect(() => {
-    const tl = gsap.timeline();
+  
+    let shipAnimate = gsap.fromTo(".ship-wrapper", {
+      xPercent: 100,
+    },{
+      xPercent:18,
+      duration:1.8,
+      scrollTrigger:{
+        trigger:'#strengths-mobile',
 
-    tl.set(
-      ".ship-wrapper",
-      {
-        xPercent: 18,
-        
-      },
-     
-    );
+        start:'start center'
 
-    // return () => {
+      }
+    });
 
-    // };
+    return (
+      ()=>{shipAnimate.kill()}
+    )
+
   }, []);
   //mobile horizontal scroll values section
   // const horizontalRef = useRef(null);
@@ -40,7 +44,7 @@ function AchievementsMobile({ t }) {
       <div
         id="strengths-mobile"
         // ref={horizontalRef}
-        className="strengths achievement-section-mobile px-6 flex snap-x flex-col overflow-x-scroll scroll-smooth bg-white sm:hidden"
+        className="strengths achievement-section-mobile flex snap-x flex-col overflow-x-scroll scroll-smooth bg-white px-6 sm:hidden"
       >
         <div className="ship-wrapper my-6 h-[200px] w-[1230px] ">
           <div
@@ -48,20 +52,18 @@ function AchievementsMobile({ t }) {
 
             // style={{ translateX: shipMovement }}
             id="ship-small"
-            className="relative  w-full h-full sm:hidden"
+            className="relative  h-full w-full sm:hidden"
           >
             <Image
               fill
-              alt='canvas-ship-water'
+              alt="canvas-ship-water"
               src={"/images/ship_water.svg"}
               style={{ objectFit: "cover", objectPosition: "0%" }}
             />
           </div>
         </div>
 
-        <div
-          className="flex gap-6 w-full text-canvasblue"
-        >
+        <div className="flex w-full gap-6 text-canvasblue">
           <StatsCard
             id="achievement-card"
             title={t("home:home_ach_1")}
@@ -107,7 +109,10 @@ function AchievementsMobile({ t }) {
         </div>
       </div>
 
-      <div id="values-button-mobile" className="flex my-6 justify-center sm:hidden ">
+      <div
+        id="values-button-mobile"
+        className="my-6 flex justify-center sm:hidden "
+      >
         <PageLinks
           mask_id="values-button-mobile-mask"
           parentId="values-button-mobile"
