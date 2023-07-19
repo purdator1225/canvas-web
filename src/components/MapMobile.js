@@ -16,7 +16,7 @@ function MapMobile({ t }) {
 
       <div
         id="country-section-mobile"
-        className="flex flex-shrink-0 snap-x gap-6 overflow-x-scroll bg-white py-[40px] pl-[30px] lg:hidden"
+        className="flex flex-shrink-0 snap-x gap-6 overflow-x-scroll bg-white pt-[60px] pb-[40px] pl-[30px] lg:hidden"
       >
         <Image
           className="aspect-square   snap-center bg-cover"

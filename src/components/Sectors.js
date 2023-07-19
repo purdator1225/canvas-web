@@ -12,7 +12,7 @@ function Sectors({ t },ref) {
     <div
     ref={ref}
       id="sectors"
-      className="sector-section overflow-x-hidden bg-white  py-[79px]"
+      className="sector-section overflow-x-hidden bg-white  pt-[79px]"
     >
       <div className="m-auto xl:w-[1280px] ">
         <div className="mb-[90px] flex flex-col justify-between gap-4 px-6 lg:flex-row">
@@ -79,7 +79,7 @@ function Sectors({ t },ref) {
 
       <div
         id="clients"
-        className="client-testimonials m-auto grid grid-cols-2 gap-3 overflow-hidden px-[30px] py-10 lg:grid-cols-4 xl:w-[1280px]"
+        className="client-testimonials m-auto grid sm:grid-cols-2 gap-3 overflow-hidden px-[30px] py-10 lg:grid-cols-4 xl:w-[1280px]"
       >
         <div
           id="client-card"

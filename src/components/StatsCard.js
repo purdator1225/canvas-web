@@ -5,9 +5,9 @@ function StatsCard({ title, statistic, units, para, id }) {
   return (
     <div
       id={id}
-      className="snap-center flex min-w-[280px] flex-col gap-4 text-canvasblue"
+      className="snap-center flex min-w-[240px] max-w-[280px] flex-col gap-4 px-2 text-canvasblue"
     >
-    <div className="min-h-[133px] flex flex-col justify-between">
+    <div className="min-h-[120px] flex flex-col justify-between">
       <h1
         className={`${national.variable} font-national text-[26px] leading-7 xl:text-[32px] font-medium tracking-wide uppercase`}
       >

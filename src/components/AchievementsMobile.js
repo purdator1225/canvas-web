@@ -13,21 +13,13 @@ function AchievementsMobile({ t }) {
   useLayoutEffect(() => {
     const tl = gsap.timeline();
 
-    tl.fromTo(
+    tl.set(
       ".ship-wrapper",
       {
-        xPercent: 100,
+        xPercent: 18,
         
       },
-      {
-        xPercent: 20,
-        scrollTrigger: {
-          trigger: "#strengths-mobile",
-      
-          markers: true,
-          end:'center center'
-        },
-      }
+     
     );
 
     // return () => {
@@ -50,16 +42,17 @@ function AchievementsMobile({ t }) {
         // ref={horizontalRef}
         className="strengths achievement-section-mobile px-6 flex snap-x flex-col overflow-x-scroll scroll-smooth bg-white sm:hidden"
       >
-        <div className="ship-wrapper h-[200px] w-[1400px] ">
+        <div className="ship-wrapper my-6 h-[200px] w-[1230px] ">
           <div
             // transition={{duration:1}}
 
             // style={{ translateX: shipMovement }}
             id="ship-small"
-            className="relative my-6 w-full h-full sm:hidden"
+            className="relative  w-full h-full sm:hidden"
           >
             <Image
               fill
+              alt='canvas-ship-water'
               src={"/images/ship_water.svg"}
               style={{ objectFit: "cover", objectPosition: "0%" }}
             />
@@ -67,7 +60,7 @@ function AchievementsMobile({ t }) {
         </div>
 
         <div
-          className="flex gap-6 w-full px-6 py-[30px] text-canvasblue"
+          className="flex gap-6 w-full text-canvasblue"
         >
           <StatsCard
             id="achievement-card"
@@ -114,7 +107,7 @@ function AchievementsMobile({ t }) {
         </div>
       </div>
 
-      <div id="values-button-mobile" className="flex justify-center sm:hidden ">
+      <div id="values-button-mobile" className="flex my-6 justify-center sm:hidden ">
         <PageLinks
           mask_id="values-button-mobile-mask"
           parentId="values-button-mobile"

@@ -13,7 +13,7 @@ function Services({ t }, ref) {
     >
       <div
         id="services-section"
-        className="m-auto flex max-w-[1280px] flex-col gap-4 pl-4"
+        className="m-auto flex max-w-[1280px] flex-col gap-4 pl-6"
       >
 
           <div className="flex flex-col gap-4">
