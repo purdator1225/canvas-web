@@ -32,7 +32,7 @@ function Partner(props) {
       <main className={`${national.variable} font-nation bg-white text-white`}>
         {/* <div>{props.locale}</div> */}
         <div className="relative flex min-h-[800px] w-screen bg-[url('/images/partnership_hero_pattern-min.webp')] bg-cover px-4 py-[150px]">
-          <div className="w-full max-w-[1280px]">
+          <div className="w-full max-w-[1280px] mx-auto">
             <div className="flex h-[430px] max-w-[400px] flex-col gap-6 lg:px-0 ">
               <h1
                 className={`${national.variable} font-national text-[32px] font-bold uppercase`}

@@ -99,7 +99,7 @@ function MapDesktop({ t }) {
             ).fromTo(
                 "#key_routes_card",
                 {
-                y: 400,
+                y: 600,
                   duration: 1,
                 },
                 {
@@ -345,7 +345,7 @@ function MapDesktop({ t }) {
           position={"right-[-78%] bottom-[11%]"}
         />
 
-        <div id='key_routes_card' className="absolute bottom-[20px] left-[4%] w-[360px] items-center">
+        <div id='key_routes_card' className="absolute bottom-[-40px] left-[4%] w-[360px] items-center">
           <StatsCard
             title={t("home:home_map_h1")}
             statistic={"7+"}

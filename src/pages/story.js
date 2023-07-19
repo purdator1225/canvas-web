@@ -52,7 +52,7 @@ function Story(props) {
     <div id="smooth-content" className="flex flex-col bg-white">
       <div id="top-wrapper" className=" relative max-w-[850px] self-end">
         <div className="flex w-full flex-col bg-white px-[30px]">
-          <div className="mb-10 mt-24 flex flex-col gap-4">
+          <div className="mb-10 mt-24 lg:py-10 flex flex-col gap-4">
             <h2
               className={`${national.variable} font-national text-[26px] font-medium uppercase leading-[28px] tracking-wide  text-canvasblue sm:text-[32px] sm:font-bold`}
             >

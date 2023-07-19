@@ -138,15 +138,15 @@ export const asiaLogFeatures = [
   ];
 
   export const asiaLogFeaturesImg = [
-    { url: "/images/partners-images/asia-log-img-1.png" },
-    { url: "/images/partners-images/asia-log-img-2.png" },
-    { url: "/images/partners-images/asia-log-img-3.png" },
+    { url: "/images/partners-images/asia-log-img-1.webp" },
+    { url: "/images/partners-images/asia-log-img-2.webp" },
+    { url: "/images/partners-images/asia-log-img-3.webp" },
   ];
 
   export const pssFeaturesImg = [
-    { url: "/images/partners-images/pss-img-1.png" },
-    { url: "/images/partners-images/pss-img-2.png" },
-    { url: "/images/partners-images/pss-img-3.png" },
+    { url: "/images/partners-images/pss-img-1.webp" },
+    { url: "/images/partners-images/pss-img-2.webp" },
+    { url: "/images/partners-images/pss-img-3.webp" },
   ];
 
   export const pssContainerFeatures = [
