@@ -11,24 +11,25 @@ gsap.registerPlugin(ScrollTrigger);
 
 function AchievementsMobile({ t }) {
   useLayoutEffect(() => {
-  
-    let shipAnimate = gsap.fromTo(".ship-wrapper", {
-      xPercent: 100,
-    },{
-      xPercent:18,
-      duration:1.8,
-      scrollTrigger:{
-        trigger:'#strengths-mobile',
+    let shipAnimate = gsap.fromTo(
+      ".ship-wrapper",
+      {
+        xPercent: 100,
+      },
+      {
+        xPercent: 18,
+        duration: 1.8,
+        scrollTrigger: {
+          trigger: "#strengths-mobile",
 
-        start:'start center'
-
+          start: "start center",
+        },
       }
-    });
+    );
 
-    return (
-      ()=>{shipAnimate.kill()}
-    )
-
+    return () => {
+      shipAnimate.kill();
+    };
   }, []);
   //mobile horizontal scroll values section
   // const horizontalRef = useRef(null);

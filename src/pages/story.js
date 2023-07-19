@@ -84,10 +84,10 @@ function Story(props) {
 
       <div
         id="our-journey"
-        className="story-para relative  flex w-screen bg-[url(')] bg-cover"
+        className="story-para relative flex w-screen"
       >
 
-      <Image fill className='object-cover' src='/images/story-container-bg.png'/>
+      <Image fill className='object-cover object-center' src='/images/home-services-min.webp'/>
 
         <div className="m-auto relative flex min-h-[50%] w-[90vw] max-w-[1280px] flex-col gap-8 px-[30px] py-[78px]">
           <div className="max-w-[507px] overflow-hidden">

@@ -21,7 +21,7 @@ function Services(props) {
 
   return (
     <div className="text-white">
-      <div className="flex min-h-[800px] w-screen bg-[url('/images/services-hero.png')] bg-cover py-[150px] px-4">
+      <div className="flex min-h-[800px] w-screen bg-[url('/images/services-hero.webp')] bg-cover bg-center py-[150px] px-4">
         <div className=" w-full max-w-[1280px] h-[430px] ">
           <div className="flex max-w-[400px] flex-col gap-4">
             <h1
