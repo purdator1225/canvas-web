@@ -19,42 +19,42 @@ function MapMobile({ t }) {
         className="flex flex-shrink-0 snap-x gap-6 overflow-x-scroll bg-white pt-[60px] pb-[40px] pl-[30px] lg:hidden"
       >
         <Image
-          className="aspect-square   snap-center bg-cover"
+          className="snap-center bg-cover"
           width={240}
-          height={1}
+          height={240}
           alt="us-mob"
           src="/images/country-pics/us-mobile.webp"
         />
 
         <Image
           alt="me-mob"
-          className="aspect-square w-[240px] snap-center bg-cover"
+          className=" snap-center bg-cover"
           width={240}
-          height={1}
+          height={240}
           src="/images/country-pics/me-mobile.webp"
         />
 
         <Image
           alt="cn-mob"
-          className="aspect-square w-[240px] snap-center bg-cover"
+          className="aspect-square snap-center bg-cover"
           width={240}
-          height={1}
+          height={240}
           src="/images/country-pics/cn-mobile.webp"
         />
 
         <Image
           alt="em-mob"
-          className="aspect-square w-[240px] snap-center bg-cover"
+          className="aspect-square snap-center bg-cover"
           width={240}
-          height={1}
+          height={240}
           src="/images/country-pics/em-mobile.webp"
         />
 
         <Image
           alt="th-mob"
-          className="aspect-square w-[240px] snap-center bg-cover"
+          className="aspect-square snap-center bg-cover"
           width={240}
-          height={1}
+          height={240}
           src="/images/country-pics/th-mobile.webp"
         />
       </div>
