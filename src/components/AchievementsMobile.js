@@ -58,7 +58,7 @@ function AchievementsMobile({ t }) {
             <Image
               fill
               alt="canvas-ship-water"
-              src={"/images/ship_water.svg"}
+              src={"/images/ship_water.png"}
               style={{ objectFit: "cover", objectPosition: "0%" }}
             />
           </div>

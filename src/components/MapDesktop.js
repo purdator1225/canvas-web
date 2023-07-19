@@ -10,108 +10,102 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 function MapDesktop({ t }) {
-
-
   useLayoutEffect(() => {
-
     let mm = gsap.matchMedia();
 
     mm.add("(min-width: 1024px)", () => {
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#big-map-section",
+          start: "65% 50%",
+          end: "100% 50%",
+          //   markers: true,
+          // toggleActions: "restart reverse restart reverse"
+        },
+      });
 
-        let tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: "#big-map-section",
-              start: "65% 50%",
-              end:"100% 50%",
-            //   markers: true,
-              // toggleActions: "restart reverse restart reverse"
-      
-            },
-          });
-      
-          tl.fromTo(
-            "#maskLayer",
-            {
-              drawSVG: "100% 100%",
-            },
-            {
-              drawSVG: "true",
-              duration: 3,
-              ease:"easeInOut"
-            }
-          )
-            .fromTo(
-              "#middleEastMask",
-              {
-                drawSVG: "0",
-              },
-              {
-                drawSVG: "true",
-                duration: 3,
-                ease:"easeInOut"
-              },
-              "<"
-            )
-            .fromTo(
-              "#chinaMask",
-              {
-                drawSVG: "100% 100%",
-              },
-              {
-                drawSVG: "true",
-                duration: 3,
-                ease:"easeInOut"
-              },
-              "<"
-            )
-            .fromTo(
-              "#wm_th_mask",
-              {
-                drawSVG: "100% 100%",
-              },
-              {
-                drawSVG: "true",
-                duration: 1,
-              },
-              "<"
-            )
-            .fromTo(
-              "#em_wm_mask",
-              {
-                drawSVG: "100% 100%",
-              },
-              {
-                drawSVG: "true",
-                duration: 2,
-              },
-              "<"
-            )
-            .fromTo(
-              "#em_china_mask",
-              {
-                drawSVG: "100% 100%",
-              },
-              {
-                drawSVG: "true",
-                duration: 3,
-              },
-              "<"
-            ).fromTo(
-                "#key_routes_card",
-                {
-                y: 600,
-                  duration: 1,
-                },
-                {
-                  y: 0,
-                    duration: 1,
-                  },
-                "<1"
-              );
-      
-    })
+      tl.fromTo(
+        "#maskLayer",
+        {
+          drawSVG: "100% 100%",
+        },
+        {
+          drawSVG: "true",
+          duration: 3,
+          ease: "easeInOut",
+        }
+      )
+        .fromTo(
+          "#middleEastMask",
+          {
+            drawSVG: "0",
+          },
+          {
+            drawSVG: "true",
+            duration: 3,
+            ease: "easeInOut",
+          },
+          "<"
+        )
+        .fromTo(
+          "#chinaMask",
+          {
+            drawSVG: "100% 100%",
+          },
+          {
+            drawSVG: "true",
+            duration: 3,
+            ease: "easeInOut",
+          },
+          "<"
+        )
+        .fromTo(
+          "#wm_th_mask",
+          {
+            drawSVG: "100% 100%",
+          },
+          {
+            drawSVG: "true",
+            duration: 1,
+          },
+          "<"
+        )
+        .fromTo(
+          "#em_wm_mask",
+          {
+            drawSVG: "100% 100%",
+          },
+          {
+            drawSVG: "true",
+            duration: 2,
+          },
+          "<"
+        )
+        .fromTo(
+          "#em_china_mask",
+          {
+            drawSVG: "100% 100%",
+          },
+          {
+            drawSVG: "true",
+            duration: 3,
+          },
+          "<"
+        )
+        .fromTo(
+          "#key_routes_card",
+          {
+            y: 600,
+            duration: 1,
+          },
+          {
+            y: 0,
+            duration: 1,
+          },
+          "<1"
+        );
+    });
 
-   
     return () => {
       mm.revert();
     };
@@ -129,10 +123,7 @@ function MapDesktop({ t }) {
           id="my-us-div"
           className="aspect-[6:7] absolute left-[28%] top-[16.5%] z-50 w-[50%]"
         >
-          <svg
-            viewBox="0 0 600 700"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+          <svg viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <mask id="mask-10">
                 <path
@@ -345,7 +336,10 @@ function MapDesktop({ t }) {
           position={"right-[-78%] bottom-[11%]"}
         />
 
-        <div id='key_routes_card' className="absolute bottom-[-40px] left-[4%] w-[360px] items-center">
+        <div
+          id="key_routes_card"
+          className="absolute bottom-[-40px] left-[4%] w-[360px] items-center"
+        >
           <StatsCard
             title={t("home:home_map_h1")}
             statistic={"7+"}
