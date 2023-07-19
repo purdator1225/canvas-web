@@ -79,13 +79,13 @@ function PageLinks({
         <Image alt='page-link-icon' fill style={{ objectFit: "cover" }} src={logo} />
       </div>
 
-      <motion.h3
+      <motion.p
         id={noClickId}
         variants={childVariants}
         className={`absolute left-[45%] text-${color}  text-[24px]`}
       >
         {text}
-      </motion.h3>
+      </motion.p>
     </motion.div>
   );
 }
