@@ -43,7 +43,7 @@ function Services({ t }, ref) {
 
         <div
           id="services-card-wrapper"
-          className="my-10 flex w-full lg:overflow-hidden max-w-[1280px] snap-x justify-between gap-6 overflow-x-scroll lg:flex-wrap"
+          className="my-10 pr-8 flex w-full lg:overflow-hidden max-w-[1280px] snap-x justify-between gap-6 overflow-x-scroll lg:flex-wrap"
         >
           <ServicesCard
             title={t("home:home_services_card_1")}
