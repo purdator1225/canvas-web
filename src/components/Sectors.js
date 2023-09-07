@@ -79,7 +79,7 @@ function Sectors({ t },ref) {
 
       <div
         id="clients"
-        className="client-testimonials m-auto grid sm:grid-cols-2 gap-3 overflow-hidden px-[30px] py-10 lg:grid-cols-4 xl:w-[1280px]"
+        className="client-testimonial hidden m-auto  sm:grid-cols-2 gap-3 overflow-hidden px-[30px] py-10 lg:grid-cols-4 xl:w-[1280px]"
       >
         <div
           id="client-card"
