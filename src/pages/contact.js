@@ -82,8 +82,12 @@ function ContactUs(props) {
 
   return (
     <div className="relative min-h-[800px] px-6 py-10 text-white">
-
-    <Image style={{objectFit:'cover', backgroundPosition:'center'}} fill alt='contact-bg' src={'/images/contact_us.webp'}/>
+      <Image
+        style={{ objectFit: "cover", backgroundPosition: "center" }}
+        fill
+        alt="contact-bg"
+        src={"/images/contact_us.webp"}
+      />
       <div className="m-auto flex w-full flex-col justify-between sm:flex-row sm:gap-[100px] xl:w-[1280px]">
         <div
           id="contact-left"
@@ -163,22 +167,31 @@ function ContactUs(props) {
             {/* <Link rel="noopener noreferrer" href="mailto:cglbiz@canvasglobal-log.com">
               <p>cglbiz@canvasglobal-log.com</p>
             </Link> */}
-            <Link rel="noopener noreferrer" href="cs@canvasglobal-log.com">
+            <Link target="_blank" rel="noopener noreferrer" href="mailto:cs@canvasglobal-log.com">
               <p>cs@canvasglobal-log.com</p>
             </Link>
           </div>
 
           <div>
             <div className="flex gap-10">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M10.0011 0C6.00711 0 2.75781 3.2493 2.75781 7.2432C2.75781 12.1998 9.2398 19.4763 9.51578 19.7836C9.775 20.0723 10.2276 20.0718 10.4863 19.7836C10.7623 19.4763 17.2443 12.1998 17.2443 7.2432C17.2442 3.2493 13.995 0 10.0011 0ZM10.0011 10.8875C7.9916 10.8875 6.35684 9.25266 6.35684 7.2432C6.35684 5.23375 7.99164 3.59898 10.0011 3.59898C12.0105 3.59898 13.6452 5.23379 13.6452 7.24324C13.6452 9.2527 12.0105 10.8875 10.0011 10.8875Z" fill="#F6F6F6"/>
-</svg>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.0011 0C6.00711 0 2.75781 3.2493 2.75781 7.2432C2.75781 12.1998 9.2398 19.4763 9.51578 19.7836C9.775 20.0723 10.2276 20.0718 10.4863 19.7836C10.7623 19.4763 17.2443 12.1998 17.2443 7.2432C17.2442 3.2493 13.995 0 10.0011 0ZM10.0011 10.8875C7.9916 10.8875 6.35684 9.25266 6.35684 7.2432C6.35684 5.23375 7.99164 3.59898 10.0011 3.59898C12.0105 3.59898 13.6452 5.23379 13.6452 7.24324C13.6452 9.2527 12.0105 10.8875 10.0011 10.8875Z"
+                  fill="#F6F6F6"
+                />
+              </svg>
 
               <p className={`${roboto.variable} font-robo uppercase`}>
                 {t("contact:contact_address")}
               </p>
             </div>
-            <Link href="/">
+            <Link target="_blank" rel="noopener noreferrer"  href="https://www.google.com/maps/dir//canvas+global+logistics/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x304ac33c63123219:0xdeb7046d5afd3d52?sa=X&ved=2ahUKEwjIycDu5dmCAxUbSGwGHT8zC_MQ9Rd6BAguEAA">
               <div>18 Unit 34-C, Menara Gurney </div>
               <div>Persiaran Gurney, </div>
               <div>10250 Penang, Malaysia.</div>

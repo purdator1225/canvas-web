@@ -22,6 +22,7 @@ function Footer({ t }) {
           </div>
 
           <Link
+          target="_blank"
             rel="noopener noreferrer"
             href={
               "https://www.google.com/maps/place/Canvas+Global+Logistics+Sdn.+Bhd.+%E5%8D%8E%E4%B8%B0%E8%BF%9C%E6%B4%8B%E7%89%A9%E6%B5%81/@5.4336213,100.3131806,16.24z/data=!4m6!3m5!1s0x304ac33c63123219:0xdeb7046d5afd3d52!8m2!3d5.4294559!4d100.3193405!16s%2Fg%2F11sk2jpqxf?entry=ttu"
@@ -43,13 +44,13 @@ function Footer({ t }) {
               {t("common:footer_contact")}
             </h3>
 
-            <Link rel="noopener noreferrer" href="tel:+604 2870130">
+            <Link target="_blank" rel="noopener noreferrer" href="tel:+604 2870130">
               <p className="text-[14px] leading-6"> +604 2870130</p>
             </Link>
             {/* <Link rel="noopener noreferrer" href="mailto:cglbiz@canvasglobal-log.com">
               <p>cglbiz@canvasglobal-log.com</p>
             </Link> */}
-            <Link rel="noopener noreferrer" href="cs@canvasglobal-log.com">
+            <Link target="_blank" rel="noopener noreferrer" href="mailto:cs@canvasglobal-log.com">
               <p>cs@canvasglobal-log.com</p>
             </Link>
           </div>
