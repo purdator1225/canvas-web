@@ -229,15 +229,12 @@ function ContactUs(props) {
                 </p>
               </div>
               <h3 className="my-3 font-bold">Kuala Lumpur</h3>
-              <Link
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.google.com/maps/dir//canvas+global+logistics/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x304ac33c63123219:0xdeb7046d5afd3d52?sa=X&ved=2ahUKEwjIycDu5dmCAxUbSGwGHT8zC_MQ9Rd6BAguEAA"
-              >
+
+              <div>
                 <div> 11A, Jalan Ramin 1,</div>
                 <div>Bandar Botanik,</div>
                 <div>41200 Pelabuhan Klang, Selangor</div>
-              </Link>
+              </div>
             </div>
           </div>
         </div>
