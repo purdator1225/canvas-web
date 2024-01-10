@@ -197,7 +197,7 @@ function ContactUs(props) {
                 </p>
               </div>
 
-              <div className="m-auto flex w-full flex-col justify-between gap-y-[30px] sm:flex-row sm:gap-[100px] xl:w-[1280px]">
+              <div className="m-auto flex w-full flex-col justify-between gap-y-[30px] sm:flex-row  sm:gap-[100px] xl:max-w-[1280px]">
                 <div>
                   <h3 className="my-3 font-bold">Penang</h3>
                   <Link
