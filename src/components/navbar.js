@@ -55,7 +55,7 @@ function Navbar({ t }) {
               </svg>
             </div>
             <div
-              className={`submenu-items-wrapper absolute z-20 m-auto ml-[77px] flex min-h-[700px] flex-col gap-10 overflow-y-scroll text-[18px] uppercase leading-[24px] text-white ${roboto.variable} font-robo`}
+              className={`submenu-items-wrapper absolute z-20 m-auto ml-[77px] flex min-h-[700px] flex-col gap-10  text-[18px] uppercase leading-[24px] text-white ${roboto.variable} font-robo`}
             >
               <div
                 id="locale-toggler"
@@ -76,29 +76,55 @@ function Navbar({ t }) {
               </div>
               <div onClick={() => setMenuOpen(false)}>
                 <Link href="/partnerships">
-                  <h3 className={`${router.asPath==="/partnerships" && 'underline'}`}>{t("common:nav_partnership")}</h3>
+                  <h3
+                    className={`${
+                      router.asPath === "/partnerships" && "underline"
+                    }`}
+                  >
+                    {t("common:nav_partnership")}
+                  </h3>
                 </Link>
               </div>
 
               <div onClick={() => setMenuOpen(false)}>
                 <Link href="/story">
-                  <h3 className={`${router.asPath==="/story" && 'underline'}`}>{t("common:nav_story")}</h3>
+                  <h3
+                    className={`${router.asPath === "/story" && "underline"}`}
+                  >
+                    {t("common:nav_story")}
+                  </h3>
                 </Link>
               </div>
               <div onClick={() => setMenuOpen(false)}>
                 <Link href="/services">
-                  <h3 className={`${router.asPath==="/services" && 'underline'}`}>{t("common:nav_service")}</h3>
+                  <h3
+                    className={`${
+                      router.asPath === "/services" && "underline"
+                    }`}
+                  >
+                    {t("common:nav_service")}
+                  </h3>
                 </Link>
               </div>
               <div onClick={() => setMenuOpen(false)}>
                 {" "}
                 <Link href="/contact">
-                  <h3 className={`${router.asPath==="/contact" && 'underline'}`}>{t("common:nav_contact")}</h3>
+                  <h3
+                    className={`${router.asPath === "/contact" && "underline"}`}
+                  >
+                    {t("common:nav_contact")}
+                  </h3>
                 </Link>
               </div>
               <div onClick={() => setMenuOpen(false)}>
                 <Link href="/story/#careers-section">
-                  <h3 className={`${router.asPath==="/story/#careers-section" && 'underline'}`}>{t("common:nav_careers")}</h3>
+                  <h3
+                    className={`${
+                      router.asPath === "/story/#careers-section" && "underline"
+                    }`}
+                  >
+                    {t("common:nav_careers")}
+                  </h3>
                 </Link>{" "}
               </div>
             </div>
@@ -133,17 +159,21 @@ ${
         } */}
 
         <div className="flex h-[72px] w-screen max-w-[1280px] items-center justify-between px-[30px] xl:m-auto xl:px-0">
-          <div onClick={()=>{setMenuOpen(false)}}>
-          <Link href="/">
-            <div className="relative h-[40px] w-[126px] p-10">
-              <Image
-                alt="canvas-log-logo"
-                fill
-                style={{ objectFit: "contain" }}
-                src="images/canvas_logo.svg"
-              />
-            </div>
-          </Link>
+          <div
+            onClick={() => {
+              setMenuOpen(false);
+            }}
+          >
+            <Link href="/">
+              <div className="relative h-[40px] w-[126px] p-10">
+                <Image
+                  alt="canvas-log-logo"
+                  fill
+                  style={{ objectFit: "contain" }}
+                  src="images/canvas_logo.svg"
+                />
+              </div>
+            </Link>
           </div>
           {/* {`${
                   router.pathname !== "/story"

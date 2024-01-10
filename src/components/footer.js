@@ -18,11 +18,16 @@ function Footer({ t }) {
       >
         <div className="left-side flex flex-col gap-5">
           <div>
-            <Image alt="canvas-logo" width={230} height={60} src={"/images/footer-logo-canvas.svg"} />
+            <Image
+              alt="canvas-logo"
+              width={230}
+              height={60}
+              src={"/images/footer-logo-canvas.svg"}
+            />
           </div>
 
           <Link
-          target="_blank"
+            target="_blank"
             rel="noopener noreferrer"
             href={
               "https://www.google.com/maps/place/Canvas+Global+Logistics+Sdn.+Bhd.+%E5%8D%8E%E4%B8%B0%E8%BF%9C%E6%B4%8B%E7%89%A9%E6%B5%81/@5.4336213,100.3131806,16.24z/data=!4m6!3m5!1s0x304ac33c63123219:0xdeb7046d5afd3d52!8m2!3d5.4294559!4d100.3193405!16s%2Fg%2F11sk2jpqxf?entry=ttu"
@@ -33,8 +38,8 @@ function Footer({ t }) {
                 {t("common:footer_address")}
               </h3>
               <p className="text-[14px] leading-6">
-                18 Unit 34-C, Menara Gurney, Persiaran Gurney 10250 Penang
-                Malaysia
+                11A, Jalan Ramin 1, Bandar Botanik,
+                <br></br>41200 Pelabuhan Klang, Selangor
               </p>
             </div>
           </Link>
@@ -44,21 +49,44 @@ function Footer({ t }) {
               {t("common:footer_contact")}
             </h3>
 
-            <Link target="_blank" rel="noopener noreferrer" href="tel:+604 2870130">
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="tel:+604 2870130"
+            >
               <p className="text-[14px] leading-6"> +604 2870130</p>
             </Link>
             {/* <Link rel="noopener noreferrer" href="mailto:cglbiz@canvasglobal-log.com">
               <p>cglbiz@canvasglobal-log.com</p>
             </Link> */}
-            <Link target="_blank" rel="noopener noreferrer" href="mailto:cs@canvasglobal-log.com">
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="mailto:cs@canvasglobal-log.com"
+            >
               <p>cs@canvasglobal-log.com</p>
             </Link>
           </div>
 
           <div className="hidden gap-3">
-            <Image alt="fb" width={18} height={18} src={"/images/icons/fb_2.svg"} />
-            <Image alt="insta" width={18} height={18} src={"/images/icons/insta.svg"} />
-            <Image alt="twitter" width={18} height={18} src={"/images/icons/twitter.svg"} />
+            <Image
+              alt="fb"
+              width={18}
+              height={18}
+              src={"/images/icons/fb_2.svg"}
+            />
+            <Image
+              alt="insta"
+              width={18}
+              height={18}
+              src={"/images/icons/insta.svg"}
+            />
+            <Image
+              alt="twitter"
+              width={18}
+              height={18}
+              src={"/images/icons/twitter.svg"}
+            />
           </div>
         </div>
         <div className="right-side hidden gap-20 lg:flex">
