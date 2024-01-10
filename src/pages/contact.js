@@ -101,7 +101,7 @@ function ContactUs(props) {
             </h3>
           </GsapSplitTextWord>
 
-          <div className="flex flex-col-reverse gap-12 lg:flex-row-reverse">
+          <div className="flex flex-col-reverse justify-start gap-12 lg:flex-row-reverse">
             <div
               className={`${roboto.variable} flex flex-col gap-6 font-robo text-[18px] leading-6`}
             >
