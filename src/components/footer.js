@@ -38,8 +38,8 @@ function Footer({ t }) {
                 {t("common:footer_address")}
               </h3>
               <p className="text-[14px] leading-6">
-                11A, Jalan Ramin 1, Bandar Botanik,
-                <br></br>41200 Pelabuhan Klang, Selangor
+                18 Unit 34-C, Menara Gurney, Persiaran Gurney 10250 Penang
+                Malaysia
               </p>
             </div>
           </Link>

@@ -200,9 +200,9 @@ function ContactUs(props) {
               rel="noopener noreferrer"
               href="https://www.google.com/maps/dir//canvas+global+logistics/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x304ac33c63123219:0xdeb7046d5afd3d52?sa=X&ved=2ahUKEwjIycDu5dmCAxUbSGwGHT8zC_MQ9Rd6BAguEAA"
             >
-              <div>11A, Jalan Ramin 1,</div>
-              <div>Bandar Botanik</div>
-              <div>41200 Pelabuhan Klang, Selangor</div>
+              <div>18 Unit 34-C, Menara Gurney </div>
+              <div>Persiaran Gurney, </div>
+              <div>10250 Penang, Malaysia.</div>
             </Link>
           </div>
         </div>
