@@ -3,8 +3,13 @@ import React from "react";
 import { national, roboto } from "../../utils/font";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState } from "react";
+
+import { getYear } from "date-fns";
 
 function Footer({ t }) {
+  const [year, setYear] = useState(getYear(new Date()));
+
   let router = useRouter();
 
   const route = router.asPath;
@@ -46,9 +51,7 @@ function Footer({ t }) {
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-[14px] font-bold leading-6">
-                    Kuala Lumpur
-                  </h4>
+                  <h4 className="text-[14px] font-bold leading-6">Klang</h4>
                   <p className="text-[14px] leading-6">
                     11A, Jalan Ramin 1, Bandar Botanik, <br></br>41200 Pelabuhan
                     Klang, Selangor
@@ -177,7 +180,10 @@ function Footer({ t }) {
       </div>
 
       <div className="footer-bottom border-t-solid m-auto mt-10 flex max-w-[1280px]  flex-col justify-between gap-4 border-t-[1px] px-4 py-10 lg:flex-row lg:px-6">
-        <div className="text-white">{t("common:footer_disclaimer")}</div>
+        <div className="text-white">
+          {t("common:footer_disclaimer")} <span>{year}</span>,{" "}
+          {t("common:footer_rights")}
+        </div>
 
         <div className="flex gap-5 text-white">
           <Link href={"/privacy-policy"}> {t("common:footer_privacy")}</Link>

@@ -214,7 +214,7 @@ function ContactUs(props) {
                 </div>
 
                 <div>
-                  <h3 className="my-3 font-bold">Kuala Lumpur</h3>
+                  <h3 className="my-3 font-bold">Klang</h3>
 
                   <div>
                     <div>
