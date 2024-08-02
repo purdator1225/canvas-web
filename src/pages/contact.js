@@ -208,7 +208,7 @@ function ContactUs(props) {
                     <div>
                       9-02-01, Jalan Ahmad Nor, Pusat Perdagangan Nova,
                       Jelutong,
-                      <br></br>Persiaran Gurney, <br></br> 11600, Pulau Pinang
+                      <br></br> 11600, Pulau Pinang
                     </div>
                   </Link>
                 </div>
