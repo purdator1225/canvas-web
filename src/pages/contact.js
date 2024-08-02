@@ -206,9 +206,9 @@ function ContactUs(props) {
                     href="https://www.google.com/maps/dir//canvas+global+logistics/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x304ac33c63123219:0xdeb7046d5afd3d52?sa=X&ved=2ahUKEwjIycDu5dmCAxUbSGwGHT8zC_MQ9Rd6BAguEAA"
                   >
                     <div>
-                      18 Unit 34-C, <br></br> Menara Gurney,
-                      <br></br>Persiaran Gurney, <br></br>10250 Penang,
-                      Malaysia.
+                      9-02-01, Jalan Ahmad Nor, Pusat Perdagangan Nova,
+                      Jelutong,
+                      <br></br>Persiaran Gurney, <br></br> 11600, Pulau Pinang
                     </div>
                   </Link>
                 </div>

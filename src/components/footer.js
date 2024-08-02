@@ -46,8 +46,9 @@ function Footer({ t }) {
                 <div>
                   <h4 className="text-[14px] font-bold  leading-6">Penang</h4>
                   <p className="text-[14px] leading-6">
-                    18 Unit 34-C, Menara Gurney, Persiaran Gurney, <br></br>
-                    10250 Penang Malaysia
+                    9-02-01, Jalan Ahmad Nor, Pusat Perdagangan Nova, Jelutong,
+                    <br></br>
+                    11600, Pulau Pinang
                   </p>
                 </div>
                 <div>
@@ -69,9 +70,9 @@ function Footer({ t }) {
               <Link
                 target="_blank"
                 rel="noopener noreferrer"
-                href="tel:+604 2870130"
+                href="tel:+6046560094"
               >
-                <p className="text-[14px] leading-6"> +604 2870130</p>
+                <p className="text-[14px] leading-6"> +604-6560094</p>
               </Link>
               {/* <Link rel="noopener noreferrer" href="mailto:cglbiz@canvasglobal-log.com">
               <p>cglbiz@canvasglobal-log.com</p>
