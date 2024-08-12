@@ -63,6 +63,7 @@ function App({ Component, pageProps }) {
         <div id="wrapper">
           <div id="content"> */}
       <Component {...pageProps} />
+      <GoogleTagManager gtmId="GTM-NX9F7FLL" />
       <Footer t={t} />
       {/* </div>
         </div>
