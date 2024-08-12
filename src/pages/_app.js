@@ -7,6 +7,7 @@ import { appWithTranslation } from "next-i18next";
 import Footer from "@/components/footer";
 import { useLayoutEffect, useRef, useState } from "react";
 import { DefaultSeo } from "next-seo";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { UseTranslation, useTranslation } from "next-i18next";
@@ -43,7 +44,7 @@ function App({ Component, pageProps }) {
   //     smoothTouch: 1,
   //     ignoreMobileResize: true,
   //     preventDefault: true
-   
+
   //   });
 
   //   setSmoother(smoother);
@@ -54,16 +55,16 @@ function App({ Component, pageProps }) {
   // }, []);
 
   return (
-    <div className="overflow-x-hidden min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <DefaultSeo {...SEO} />
       <Navbar t={t} />
 
       {/* <SmootherContext.Provider value={smoother}>
         <div id="wrapper">
           <div id="content"> */}
-            <Component {...pageProps}  />
-            <Footer t={t} />
-          {/* </div>
+      <Component {...pageProps} />
+      <Footer t={t} />
+      {/* </div>
         </div>
       </SmootherContext.Provider> */}
     </div>
