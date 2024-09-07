@@ -6,11 +6,11 @@ function ServicesCard({ title, logo, number, order }) {
   return (
     <div
       id="services-card"
-      className={`flex w-[300px] lg:w-[400px] xl:w-[500px] h-[230px] flex-shrink-0 snap-center flex-col justify-between bg-canvasblue p-6`}
+      className={`flex max-w-[400px] flex-col justify-between bg-canvasblue p-6`}
     >
       <div>
         <h1
-          className={`${national.variable} font-national text-[38px] uppercase text-white`}
+          className={`${national.variable} font-national text-[24px] uppercase text-white lg:text-[38px] `}
         >
           {title}
         </h1>
@@ -18,7 +18,13 @@ function ServicesCard({ title, logo, number, order }) {
 
       <div className="flex items-center justify-between">
         <div className="relative h-[38px] w-[38px]">
-          <Image alt={title} fill cover style={{ objectFit: "cover" }} src={logo} />
+          <Image
+            alt={title}
+            fill
+            cover
+            style={{ objectFit: "cover" }}
+            src={logo}
+          />
         </div>
         <h1
           className={`${national.variable} text-stroke font-national text-[48px]`}

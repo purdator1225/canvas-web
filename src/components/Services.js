@@ -13,37 +13,36 @@ function Services({ t }, ref) {
     >
       <div
         id="services-section"
-        className="m-auto flex max-w-[1280px] flex-col gap-4 pl-6"
+        className="m-auto flex max-w-[1280px] flex-col gap-4 px-6"
       >
-
-          <div className="flex flex-col gap-4">
-            <h1
-              className={`${national.variable} font-national text-[26px] font-medium uppercase leading-[28px] tracking-wide text-white lg:text-[32px] lg:font-bold`}
-            >
-              {t("home:home_services_h1")}
-            </h1>
-
-            <GsapSplitTextWord>
-              <h2
-                className={`${national.variable} headings overflow-hidden font-national text-[38px] font-medium uppercase
-            leading-[42px] text-white lg:text-[48px] lg:font-bold lg:leading-[58px]`}
-              >
-                {t("home:home_services_h2")}
-              </h2>
-            </GsapSplitTextWord>
-          </div>
-          <p
-            className={`${roboto.variable} max-w-[400px] font-robo text-[18px] leading-6 text-white`}
+        <div className="flex flex-col gap-4">
+          <h1
+            className={`${national.variable} font-national text-[26px] font-medium uppercase leading-[28px] tracking-wide text-white lg:text-[32px] lg:font-bold`}
           >
-            {t("home:home_services_para")}
-          </p>
+            {t("home:home_services_h1")}
+          </h1>
 
+          <GsapSplitTextWord>
+            <h2
+              className={`${national.variable} headings overflow-hidden font-national text-[38px] font-medium uppercase
+            leading-[42px] text-white lg:text-[48px] lg:font-bold lg:leading-[58px]`}
+            >
+              {t("home:home_services_h2")}
+            </h2>
+          </GsapSplitTextWord>
+        </div>
+        <p
+          className={`${roboto.variable} max-w-[400px] font-robo text-[18px] leading-6 text-white`}
+        >
+          {t("home:home_services_para")}
+        </p>
 
         {/* services card */}
 
         <div
           id="services-card-wrapper"
-          className="my-10 pr-8 flex w-full lg:overflow-hidden max-w-[1280px] snap-x justify-between gap-6 overflow-x-scroll lg:flex-wrap"
+          className="mx-auto my-10 grid  max-w-[1280px] grid-cols-[minmax(250px,_300px)] gap-4
+          sm:grid-cols-[minmax(250px,_400px),minmax(250px,_400px)] "
         >
           <ServicesCard
             title={t("home:home_services_card_1")}
