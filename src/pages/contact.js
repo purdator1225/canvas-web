@@ -315,7 +315,7 @@ function ContactUs(props) {
       <form
         ref={form}
         onSubmit={sendEmail}
-        className={`${roboto.variable} flex  hidden h-full  flex-col gap-[60px] font-robo`}
+        className={`${roboto.variable}  hidden h-full  flex-col gap-[60px] font-robo`}
       >
         <div className="flex flex-col gap-2 md:max-w-[280px]">
           {/* <label>{t("contact:contact_name")}</label> */}

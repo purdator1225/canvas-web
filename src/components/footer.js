@@ -119,11 +119,11 @@ function Footer({ t }) {
                   Canvas Global Logistics (Thailand) Co., Ltd.
                 </h4>
                 <p className="text-[14px] leading-6">
-                  26 Sathorn Prime Building, , Jelutong,
+                  26 Sathorn Prime Building,
                   <br></br>16 Floor, Room 1602B, <br />
-                  Naradhiwas Rajanagarindra Rd.,
+                  Naradhiwas Rajanagarindra Rd,
                   <br />
-                  Yannawa, Sathorn, Bangkok <br />
+                  Yannawa, Sathorn, Bangkok 10120 <br />
                   Post box: 068
                 </p>
               </div>
